@@ -1020,6 +1020,10 @@ func build() error {
 		return err
 	}
 
+	if err := buildArcaDemo(); err != nil {
+		return err
+	}
+
 	if err := buildSEOFiles(); err != nil {
 		return err
 	}
@@ -1114,6 +1118,43 @@ func buildTechnologyPages() error {
 	return nil
 }
 
+func buildArcaDemo() error {
+	tmpl, err :=
+		template.ParseFiles(
+			"templates/arca-demo.html",
+		)
+
+	if err != nil {
+		return fmt.Errorf(
+			"parse Arca demo template: %w",
+			err,
+		)
+	}
+
+	target :=
+		filepath.Join(
+			publicDir,
+			"arca",
+			"demo",
+			"index.html",
+		)
+
+	if err :=
+		renderTemplate(
+			tmpl,
+			target,
+			nil,
+		); err != nil {
+
+		return fmt.Errorf(
+			"build Arca demo: %w",
+			err,
+		)
+	}
+
+	return nil
+}
+
 func buildSEOFiles() error {
 	robots := "User-agent: *\n" +
 		"Allow: /\n\n" +
@@ -1144,6 +1185,11 @@ func buildSEOFiles() error {
 				technology.Slug +
 				"/</loc></url>\n"
 	}
+
+	sitemap +=
+		"  <url><loc>" +
+			siteURL +
+			"/arca/demo/</loc></url>\n"
 
 	sitemap += "</urlset>\n"
 

@@ -243,7 +243,14 @@
             >
               Explore {{ .Name }}
             </a>
-
+{{ if eq .Slug "arca" }}
+<a
+  class="cta secondary"
+  href="/arca/demo/"
+>
+  See Arca in action
+</a>
+{{ end }}
             <a
               class="scroll-hint"
               href="/#proof"

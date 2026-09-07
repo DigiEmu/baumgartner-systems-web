@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arca Demo — Evidence, Verification & Reconstruction | Baumgartner Systems</title>
+  <meta name="description" content="Interactive Arca walkthrough showing how fictional source records become a verifiable and reconstructable evidence trail.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://baumgartner.systems/arca/demo/">
+
+  <meta name="theme-color" content="#b8912b" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151619" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" type="image/webp" href="/assets/images/brand/glyph.webp">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/arca-demo.css">
+
+  <script>
+    (() => {
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = dark ? "dark" : "light";
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-brand" href="/" aria-label="Baumgartner Systems home">
+        <picture class="site-brand__picture">
+          <source srcset="/assets/images/brand/logo-header-dark.webp" media="(prefers-color-scheme: dark)">
+          <img
+            class="site-brand__logo"
+            src="/assets/images/brand/logo-header.webp"
+            alt="Baumgartner Digital Infrastructure"
+            decoding="async"
+          >
+        </picture>
+      </a>
+
+      <a class="arca-demo__back" href="/arca/">
+        Back to Arca
+      </a>
+    </div>
+  </header>
+
+  <main class="arca-demo">
+    <section class="arca-demo__hero">
+      <div class="container arca-demo__hero-inner">
+        <div>
+          <p class="eyebrow">Interactive Arca walkthrough</p>
+          <h1>See the evidence trail.</h1>
+          <p class="lead">
+            A controlled demonstration using fictional care-home records.
+            No live customer data is processed.
+          </p>
+        </div>
+
+        <div class="arca-demo__hero-orbit" aria-hidden="true">
+          <span class="arca-demo__hero-ring"></span>
+          <span class="arca-demo__hero-pearl"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-demo__stage" data-stage="1">
+      <div class="container arca-demo__stage-grid">
+        <div class="arca-demo__stage-copy">
+          <div class="section-label">
+            <span class="section-number">01</span>
+            <span>Evidence received</span>
+          </div>
+
+          <h2>Three records define the evidence boundary.</h2>
+          <p class="lead">
+            Arca starts with the exact records available to the workflow.
+          </p>
+        </div>
+
+        <div class="arca-demo__panel">
+          <div class="arca-demo__files">
+            <article class="arca-demo__file-card">
+              <span class="arca-demo__file-type">TXT</span>
+              <h3>resident-request.txt</h3>
+              <p>
+                Move a recurring family visit from Wednesday afternoon
+                to Thursday morning for four weeks.
+              </p>
+            </article>
+
+            <article class="arca-demo__file-card">
+              <span class="arca-demo__file-type">MD</span>
+              <h3>policy.md</h3>
+              <p>
+                The change is allowed when no documented care activity
+                conflicts with the requested time.
+              </p>
+            </article>
+
+            <article class="arca-demo__file-card">
+              <span class="arca-demo__file-type">TXT</span>
+              <h3>staff-note.txt</h3>
+              <p>
+                No conflicting activity is recorded. Recommendation:
+                approve the change for four weeks.
+              </p>
+            </article>
+          </div>
+
+          <button class="cta arca-demo__next" type="button" data-next="2">
+            Continue
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-demo__stage" data-stage="2" hidden>
+      <div class="container arca-demo__stage-grid">
+        <div class="arca-demo__stage-copy">
+          <div class="section-label">
+            <span class="section-number">02</span>
+            <span>Provenance captured</span>
+          </div>
+
+          <h2>The sources remain attached to the workflow.</h2>
+          <p class="lead">
+            Arca records which exact records formed the basis of the result.
+          </p>
+        </div>
+
+        <div class="arca-demo__panel">
+          <div class="arca-demo__provenance" aria-label="Evidence sources connected to Arca">
+            <div class="arca-demo__source-stack">
+              <span>resident-request.txt</span>
+              <span>policy.md</span>
+              <span>staff-note.txt</span>
+            </div>
+
+            <div class="arca-demo__connector" aria-hidden="true"></div>
+
+            <div class="arca-demo__node">
+              <span class="arca-demo__node-pearl"></span>
+              <strong>ARCA</strong>
+              <small>Evidence state</small>
+            </div>
+          </div>
+
+          <div class="arca-demo__facts">
+            <div><span>Sources</span><strong>3</strong></div>
+            <div><span>Policy version</span><strong>1.0</strong></div>
+            <div><span>Evidence boundary</span><strong>Defined</strong></div>
+          </div>
+
+          <button class="cta arca-demo__next" type="button" data-next="3">
+            Reconstruct decision
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-demo__stage" data-stage="3" hidden>
+      <div class="container arca-demo__stage-grid">
+        <div class="arca-demo__stage-copy">
+          <div class="section-label">
+            <span class="section-number">03</span>
+            <span>Decision reconstructed</span>
+          </div>
+
+          <h2>The recorded result stays connected to its evidence.</h2>
+        </div>
+
+        <div class="arca-demo__panel">
+          <article class="arca-demo__decision">
+            <p class="arca-demo__decision-label">Scheduling change</p>
+            <div class="arca-demo__decision-status">APPROVED</div>
+
+            <p>
+              The requested Thursday morning visit can be scheduled
+              for four weeks.
+            </p>
+
+            <div class="arca-demo__reason-chain">
+              <span>Policy rule 1</span>
+              <span aria-hidden="true">↓</span>
+              <span>No conflicting activity</span>
+              <span aria-hidden="true">↓</span>
+              <strong>APPROVE</strong>
+            </div>
+
+            <div class="arca-demo__follow-up">
+              <span>Notify family contact</span>
+              <span>Update internal schedule</span>
+            </div>
+          </article>
+
+          <button class="cta arca-demo__next" type="button" data-next="4">
+            Verify evidence
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-demo__stage" data-stage="4" hidden>
+      <div class="container arca-demo__stage-grid">
+        <div class="arca-demo__stage-copy">
+          <div class="section-label">
+            <span class="section-number">04</span>
+            <span>Verification</span>
+          </div>
+
+          <h2>Verification makes silent changes visible.</h2>
+          <p class="lead">
+            First verify the recorded state. Then simulate a change to one source.
+          </p>
+        </div>
+
+        <div class="arca-demo__panel">
+          <div class="arca-demo__verification" data-verification>
+            <div class="arca-demo__verification-icon" aria-hidden="true">✓</div>
+            <p class="arca-demo__verification-label">Verification status</p>
+            <h3>VERIFIED</h3>
+            <p class="arca-demo__verification-copy">
+              The current evidence set matches the recorded state.
+            </p>
+
+            <div class="arca-demo__facts">
+              <div><span>Source records</span><strong>3</strong></div>
+              <div><span>Policy version</span><strong>1</strong></div>
+              <div><span>Staff assessment</span><strong>1</strong></div>
+              <div><span>Evidence set</span><strong data-evidence-state>Intact</strong></div>
+            </div>
+          </div>
+
+          <div class="arca-demo__source-change" data-change-box hidden>
+            <span class="arca-demo__change-label">Changed source</span>
+            <strong>staff-note.txt</strong>
+            <p>
+              “No conflicting care activity is recorded”
+              becomes
+              “A conflicting care activity is recorded”.
+            </p>
+          </div>
+
+          <div class="arca-demo__actions">
+            <button class="cta" type="button" data-simulate-change>
+              Simulate source change
+            </button>
+
+            <button class="cta secondary" type="button" data-restore hidden>
+              Restore recorded state
+            </button>
+          </div>
+
+          <button class="arca-demo__text-button" type="button" data-next="5">
+            Continue to reconstruction →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-demo__stage" data-stage="5" hidden>
+      <div class="container arca-demo__stage-grid">
+        <div class="arca-demo__stage-copy">
+          <div class="section-label">
+            <span class="section-number">05</span>
+            <span>Reconstruction</span>
+          </div>
+
+          <h2>Months later, the evidence trail is still understandable.</h2>
+          <p class="lead">
+            The organisation can see what information was used and how
+            the recorded result was produced.
+          </p>
+        </div>
+
+        <div class="arca-demo__panel">
+          <div class="arca-demo__timeline" aria-label="Reconstruction chain">
+            <div>
+              <span>01</span>
+              <strong>REQUEST</strong>
+              <small>resident-request.txt</small>
+            </div>
+            <i aria-hidden="true"></i>
+
+            <div>
+              <span>02</span>
+              <strong>POLICY</strong>
+              <small>policy.md · v1.0</small>
+            </div>
+            <i aria-hidden="true"></i>
+
+            <div>
+              <span>03</span>
+              <strong>STAFF NOTE</strong>
+              <small>staff-note.txt</small>
+            </div>
+            <i aria-hidden="true"></i>
+
+            <div>
+              <span>04</span>
+              <strong>RECORDED RESULT</strong>
+              <small>Scheduling change approved</small>
+            </div>
+          </div>
+
+          <blockquote class="arca-demo__statement">
+            “If someone asks later why this action was taken,
+            the organisation can reconstruct the evidence basis.”
+          </blockquote>
+
+          <div class="arca-demo__final-actions">
+            <a class="cta" href="mailto:contact@digiemu.ch">
+              Discuss an Arca Pilot
+            </a>
+
+            <button class="arca-demo__text-button" type="button" data-restart>
+              Replay walkthrough
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-demo__disclaimer">
+      <div class="container">
+        <p>
+          This is an explanatory simulation of Arca’s evidence, provenance,
+          verification and reconstruction concepts using fictional records.
+          It is not a live customer workflow and does not validate medical,
+          legal or policy correctness.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/cursor.js" defer></script>
+  <script src="/assets/js/arca-demo.js" defer></script>
+</body>
+</html>
