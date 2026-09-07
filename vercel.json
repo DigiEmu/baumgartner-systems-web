@@ -3,7 +3,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": "public",
   "trailingSlash": true,
-  "buildCommand": "go run ./cmd/sitebuild",
   "headers": [
     {
       "source": "/(.*)",

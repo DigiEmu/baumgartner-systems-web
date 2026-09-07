@@ -1,0 +1,51 @@
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    background-image: none !important;
+  }
+
+  section, .service, .rail li, .evidence-item, .evidence-diagram {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+
+  h1, h2, h3 {
+    color: #000 !important;
+    page-break-after: avoid;
+  }
+
+  .section-number {
+    color: #999 !important;
+    opacity: 1;
+  }
+
+  .cta {
+    background: #000 !important;
+    color: #fff !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+
+  .cta.secondary {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+  }
+
+  section, .service, .rail li, .evidence-item, .evidence-diagram, .cta-section, .actions {
+    page-break-inside: avoid;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+  }
+}

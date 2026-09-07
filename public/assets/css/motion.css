@@ -1,0 +1,63 @@
+@media (prefers-reduced-motion: no-preference) {
+  .cta {
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cta:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-m);
+  }
+
+  a {
+    transition: color 0.2s ease;
+  }
+
+  section {
+    transform-origin: top center;
+    animation: stack-shrink linear both;
+    animation-timeline: view();
+    animation-range: exit 0% exit 100%;
+  }
+
+  @keyframes stack-shrink {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.975);
+      opacity: 0.86;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .globe-rotation {
+    animation: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbital-spin-a,
+  .orbital-spin-b {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .site-header__inner,
+  .site-brand__logo,
+  .site-nav,
+  .site-nav a {
+    transition: none !important;
+  }
+}
