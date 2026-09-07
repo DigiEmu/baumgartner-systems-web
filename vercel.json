@@ -1,8 +1,9 @@
 {
+  {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "go run ./cmd/sitebuild",
   "outputDirectory": "public",
   "trailingSlash": true,
+  "buildCommand": "go run ./cmd/sitebuild",
   "headers": [
     {
       "source": "/(.*)",
