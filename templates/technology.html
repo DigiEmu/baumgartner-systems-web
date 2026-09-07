@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
 
@@ -8,12 +9,77 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <title>{{ .MetaTitle }}</title>
+
   <meta
     name="description"
-    content="{{ .Description }}"
+    content="{{ .MetaDescription }}"
   >
 
-  <title>{{ .Name }} — Baumgartner Systems</title>
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="{{ .SiteURL }}{{ .CanonicalPath }}"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Baumgartner Systems"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="{{ .MetaTitle }}"
+  >
+
+  <meta
+    property="og:description"
+    content="{{ .MetaDescription }}"
+  >
+
+  <meta
+    property="og:url"
+    content="{{ .SiteURL }}{{ .CanonicalPath }}"
+  >
+
+  <meta
+    property="og:image"
+    content="{{ .SiteURL }}{{ .Image }}"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="DigiEmu {{ .Name }}"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="{{ .MetaTitle }}"
+  >
+
+  <meta
+    name="twitter:description"
+    content="{{ .MetaDescription }}"
+  >
+
+  <meta
+    name="twitter:image"
+    content="{{ .SiteURL }}{{ .Image }}"
+  >
 
   <link
     rel="icon"
@@ -22,55 +88,137 @@
   >
 
   <script>
-  (() => {
-    const dark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+    (() => {
+      const dark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
 
-    document.documentElement.dataset.theme =
-      dark ? "dark" : "light";
-  })();
-</script>
+      document.documentElement.dataset.theme =
+        dark ? "dark" : "light";
+    })();
+  </script>
 
   <link
     rel="stylesheet"
     href="/assets/css/site.css"
   >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ .SiteURL }}/#organization",
+        "name": "Baumgartner Systems",
+        "url": "{{ .SiteURL }}/",
+        "email": "contact@baumgartner.systems",
+        "location": {
+          "@type": "Country",
+          "name": "Switzerland"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "{{ .SiteURL }}{{ .CanonicalPath }}#webpage",
+        "url": "{{ .SiteURL }}{{ .CanonicalPath }}",
+        "name": "{{ .MetaTitle }}",
+        "description": "{{ .MetaDescription }}",
+        "isPartOf": {
+          "@id": "{{ .SiteURL }}/#website"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "DigiEmu {{ .Name }}"
+        },
+        "publisher": {
+          "@id": "{{ .SiteURL }}/#organization"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ .SiteURL }}/#website",
+        "url": "{{ .SiteURL }}/",
+        "name": "Baumgartner Systems",
+        "publisher": {
+          "@id": "{{ .SiteURL }}/#organization"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
   <header class="site-header">
+
     <div class="container site-header__inner">
 
-     <a
-  class="site-brand"
-  href="/"
-  aria-label="Baumgartner Systems home"
->
-  <img
-    class="site-brand__logo site-brand__logo--light"
-    src="/assets/images/brand/logo-header.webp"
-    alt="Baumgartner Digital Infrastructure"
-  >
+      <a
+        class="site-brand"
+        href="/"
+        aria-label="Baumgartner Systems home"
+      >
 
-  <img
-    class="site-brand__logo site-brand__logo--dark"
-    src="/assets/images/brand/logo-header-dark.webp"
-    alt="Baumgartner Digital Infrastructure"
-  >
-</a>
+        <img
+          class="site-brand__logo site-brand__logo--light"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+        >
+
+        <img
+          class="site-brand__logo site-brand__logo--dark"
+          src="/assets/images/brand/logo-header-dark.webp"
+          alt="Baumgartner Digital Infrastructure"
+        >
+
+      </a>
 
 
       <nav
         class="site-nav"
-        aria-label="Primary navigation"
+        aria-label="Technology navigation"
       >
-        <a href="/#problem">Problem</a>
-        <a href="/#evidence">Evidence</a>
-        <a href="/#work">Work</a>
-        <a href="/#proof">Proof</a>
-        <a href="/#boundary">Boundary</a>
+
+        <a href="/">
+          Home
+        </a>
+
+        <a
+          href="/arca/"
+          {{ if eq .Slug "arca" }}aria-current="page"{{ end }}
+        >
+          Arca
+        </a>
+
+        <a
+          href="/core/"
+          {{ if eq .Slug "core" }}aria-current="page"{{ end }}
+        >
+          Core
+        </a>
+
+        <a
+          href="/skc/"
+          {{ if eq .Slug "skc" }}aria-current="page"{{ end }}
+        >
+          SKC
+        </a>
+
+        <a
+          href="/vsc/"
+          {{ if eq .Slug "vsc" }}aria-current="page"{{ end }}
+        >
+          VSC
+        </a>
+
+        <a
+          href="/foam/"
+          {{ if eq .Slug "foam" }}aria-current="page"{{ end }}
+        >
+          Foam
+        </a>
 
         <a
           class="site-nav__cta"
@@ -78,9 +226,11 @@
         >
           Discuss a Pilot
         </a>
+
       </nav>
 
     </div>
+
   </header>
 
 
@@ -133,10 +283,12 @@
           class="technology-hero__visual"
           aria-hidden="true"
         >
+
           <img
             src="{{ .Image }}"
             alt=""
           >
+
         </div>
 
       </div>
@@ -152,6 +304,7 @@
       <div class="container">
 
         <div class="section-label">
+
           <span class="section-number">
             01
           </span>
@@ -159,6 +312,7 @@
           <span>
             Overview
           </span>
+
         </div>
 
 
@@ -208,6 +362,7 @@
       <div class="container">
 
         <div class="section-label">
+
           <span class="section-number">
             02
           </span>
@@ -215,6 +370,7 @@
           <span>
             Architecture
           </span>
+
         </div>
 
         <h2>
@@ -235,6 +391,7 @@
       <div class="container">
 
         <div class="section-label">
+
           <span class="section-number">
             03
           </span>
@@ -242,6 +399,7 @@
           <span>
             Boundaries
           </span>
+
         </div>
 
         <h2>
@@ -292,22 +450,38 @@
 
           <div class="site-footer__brand">
 
-            <img
-              src="/assets/images/brand/logo.webp"
-              alt="Baumgartner Digital Infrastructure"
+            <a
+              href="/"
+              aria-label="Baumgartner Systems home"
             >
+
+              <img
+                class="site-footer__logo site-footer__logo--light"
+                src="/assets/images/brand/logo.webp"
+                alt="Baumgartner Digital Infrastructure"
+              >
+
+              <img
+                class="site-footer__logo site-footer__logo--dark"
+                src="/assets/images/brand/logo-header-dark.webp"
+                alt="Baumgartner Digital Infrastructure"
+              >
+
+            </a>
 
           </div>
 
 
           <nav
             class="site-footer__nav"
-            aria-label="Footer navigation"
+            aria-label="Technology footer navigation"
           >
-            <a href="/#work">Services</a>
-            <a href="/#proof">Technology</a>
-            <a href="/#boundary">Boundaries</a>
-            <a href="/">Baumgartner Systems</a>
+            <a href="/">Home</a>
+            <a href="/arca/">Arca</a>
+            <a href="/core/">Core</a>
+            <a href="/skc/">SKC</a>
+            <a href="/vsc/">VSC</a>
+            <a href="/foam/">Foam</a>
           </nav>
 
 
@@ -334,6 +508,11 @@
 
   <script
     src="/assets/js/header.js"
+    defer
+  ></script>
+
+  <script
+    src="/assets/js/theme.js"
     defer
   ></script>
 

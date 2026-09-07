@@ -11,12 +11,19 @@
   <title>Baumgartner Digital Infrastructure</title>
 <script>
   (() => {
-    const dark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+    const stored =
+      localStorage.getItem(
+        "baumgartner-theme"
+      );
+
+    const dark =
+      window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
 
     document.documentElement.dataset.theme =
-      dark ? "dark" : "light";
+      stored ||
+      (dark ? "dark" : "light");
   })();
 </script>
   <link
@@ -80,9 +87,47 @@
         Work
       </a>
 
-      <a href="#proof">
-        Proof
-      </a>
+      <div class="site-nav__dropdown">
+        <button
+          class="site-nav__dropdown-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Technology
+          <span aria-hidden="true">▾</span>
+        </button>
+
+        <div
+          class="site-nav__dropdown-menu"
+          aria-label="Technology"
+        >
+          <a href="/arca/">
+            <span>Arca</span>
+            <small>Evidence workflow</small>
+          </a>
+
+          <a href="/core/">
+            <span>Core</span>
+            <small>Verification foundation</small>
+          </a>
+
+          <a href="/skc/">
+            <span>SKC</span>
+            <small>Semantic state</small>
+          </a>
+
+          <a href="/vsc/">
+            <span>VSC</span>
+            <small>State optimisation</small>
+          </a>
+
+          <a href="/foam/">
+            <span>Foam</span>
+            <small>Memory optimisation</small>
+          </a>
+        </div>
+      </div>
 
       <a href="#boundary">
         Boundary
@@ -533,7 +578,7 @@
           class="proof-ecosystem"
           aria-label="DigiEmu technology ecosystem">
 
-          <article class="proof-tech">
+          <a class="proof-tech" href="/arca/">
 
             <img
               src="/assets/images/brand/arca.webp"
@@ -555,10 +600,10 @@
 
             </div>
 
-          </article>
+          </a>
 
 
-          <article class="proof-tech">
+          <a class="proof-tech" href="/core/">
 
             <img
               src="/assets/images/brand/core.webp"
@@ -580,10 +625,10 @@
 
             </div>
 
-          </article>
+          </a>
 
 
-          <article class="proof-tech">
+          <a class="proof-tech" href="/skc/">
 
             <img
               src="/assets/images/brand/skc.webp"
@@ -605,10 +650,10 @@
 
             </div>
 
-          </article>
+          </a>
 
 
-          <article class="proof-tech">
+          <a class="proof-tech" href="/vsc/">
 
             <img
               src="/assets/images/brand/vsc.webp"
@@ -630,10 +675,10 @@
 
             </div>
 
-          </article>
+          </a>
 
 
-          <article class="proof-tech">
+          <a class="proof-tech" href="/foam/">
 
             <img
               src="/assets/images/brand/foam.webp"
@@ -655,7 +700,7 @@
 
             </div>
 
-          </article>
+          </a>
 
         </div>
 
@@ -779,16 +824,26 @@
 
     <footer class="site-footer">
 
-      <div class="site-footer__brand">
+    <div class="site-footer__brand">
 
-        <img
-          src="/assets/images/brand/logo.webp"
-          alt="Baumgartner Digital Infrastructure"
-          width="1600"
-          height="1080">
+  <a
+    href="/"
+    aria-label="Baumgartner Systems home"
+  >
+    <img
+      class="site-footer__logo site-footer__logo--light"
+      src="/assets/images/brand/logo.webp"
+      alt="Baumgartner Digital Infrastructure"
+    >
 
-      </div>
+    <img
+      class="site-footer__logo site-footer__logo--dark"
+      src="/assets/images/brand/logo-header-dark.webp"
+      alt="Baumgartner Digital Infrastructure"
+    >
+  </a>
 
+</div>
 
       <nav
         class="site-footer__nav"
@@ -836,6 +891,40 @@
   <script src="/assets/js/header.js" defer></script>
   <script src="/assets/js/section-nav.js" defer></script>
   <script src="/assets/js/theme.js" defer></script>
+
+
+  <script>
+    (() => {
+      const dropdown = document.querySelector(".site-nav__dropdown");
+
+      if (!dropdown) return;
+
+      const toggle = dropdown.querySelector(".site-nav__dropdown-toggle");
+
+      const close = () => {
+        dropdown.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      };
+
+      toggle.addEventListener("click", () => {
+        const open = dropdown.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!dropdown.contains(event.target)) {
+          close();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          close();
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>

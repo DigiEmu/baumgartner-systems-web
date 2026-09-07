@@ -11,6 +11,7 @@ import (
 const (
 	publicDir = "public"
 	staticDir = "static"
+	siteURL   = "https://baumgartner.systems"
 )
 
 type page struct {
@@ -48,6 +49,11 @@ type technologyPage struct {
 	Layer       string
 	Status      string
 	Image       string
+
+	MetaTitle       string
+	MetaDescription string
+	CanonicalPath   string
+	SiteURL         string
 
 	Complete bool
 
@@ -91,9 +97,12 @@ var technologies = []technologyPage{
 	   ===================================================== */
 
 	{
-		Slug:    "arca",
-		Name:    "Arca",
-		Tagline: "Evidence workflow integrity.",
+		Slug: "arca",
+		Name: "Arca",
+
+		MetaTitle:       "Arca — AI Evidence Infrastructure | Baumgartner Systems",
+		MetaDescription: "Arca captures provenance, lineage and verification evidence across AI-assisted workflows so organisations can reconstruct what happened and why.",
+		Tagline:         "Evidence workflow integrity.",
 
 		Description: "Infrastructure for capturing, preserving and reconstructing " +
 			"evidence across AI-assisted workflows.",
@@ -278,9 +287,12 @@ var technologies = []technologyPage{
 	   ===================================================== */
 
 	{
-		Slug:    "core",
-		Name:    "Core",
-		Tagline: "Deterministic trust foundation.",
+		Slug: "core",
+		Name: "Core",
+
+		MetaTitle:       "Core — Deterministic Verification | Baumgartner Systems",
+		MetaDescription: "DigiEmu Core provides deterministic identity, state, admission and verification primitives for reproducible AI and knowledge infrastructure.",
+		Tagline:         "Deterministic trust foundation.",
 
 		Description: "A deterministic foundation for identity, provenance, lineage, " +
 			"admission and reproducible system state.",
@@ -465,9 +477,12 @@ var technologies = []technologyPage{
 	   ===================================================== */
 
 	{
-		Slug:    "skc",
-		Name:    "SKC",
-		Tagline: "Semantic knowledge compression.",
+		Slug: "skc",
+		Name: "SKC",
+
+		MetaTitle:       "SKC — Semantic Knowledge Compression | Baumgartner Systems",
+		MetaDescription: "SKC explores deterministic semantic compression with reconstructable state, measurable fidelity and graph-level verification.",
+		Tagline:         "Semantic knowledge compression.",
 
 		Description: "Reconstructable semantic state designed for deterministic " +
 			"compression, reconstruction and verification.",
@@ -635,9 +650,12 @@ var technologies = []technologyPage{
 	   ===================================================== */
 
 	{
-		Slug:    "vsc",
-		Name:    "VSC",
-		Tagline: "Verification state compression.",
+		Slug: "vsc",
+		Name: "VSC",
+
+		MetaTitle:       "VSC — Verification State Compression | Baumgartner Systems",
+		MetaDescription: "VSC reduces verification-relevant system state while preserving the evidence needed for reconstruction, comparison and reproducibility.",
+		Tagline:         "Verification state compression.",
 
 		Description: "A verification-oriented approach to reducing system state while " +
 			"preserving the information required for reconstruction and reproducibility.",
@@ -806,9 +824,12 @@ var technologies = []technologyPage{
 	   ===================================================== */
 
 	{
-		Slug:    "foam",
-		Name:    "Foam",
-		Tagline: "Memory state optimisation.",
+		Slug: "foam",
+		Name: "Foam",
+
+		MetaTitle:       "Foam — Memory State Optimisation | Baumgartner Systems",
+		MetaDescription: "Foam explores memory-state optimisation for efficient, reconstructable and verification-aware AI infrastructure.",
+		Tagline:         "Memory state optimisation.",
 
 		Description: "Experimental memory-state optimisation for efficient, reconstructable " +
 			"and verification-aware AI infrastructure.",
@@ -999,6 +1020,10 @@ func build() error {
 		return err
 	}
 
+	if err := buildSEOFiles(); err != nil {
+		return err
+	}
+
 	if err := copyDir(
 		staticDir,
 		filepath.Join(
@@ -1053,6 +1078,17 @@ func buildTechnologyPages() error {
 	}
 
 	for _, technology := range technologies {
+		technology.SiteURL = siteURL
+		technology.CanonicalPath = "/" + technology.Slug + "/"
+
+		if technology.MetaTitle == "" {
+			technology.MetaTitle = technology.Name + " — Baumgartner Systems"
+		}
+
+		if technology.MetaDescription == "" {
+			technology.MetaDescription = technology.Description
+		}
+
 		target :=
 			filepath.Join(
 				publicDir,
@@ -1076,6 +1112,73 @@ func buildTechnologyPages() error {
 	}
 
 	return nil
+}
+
+func buildSEOFiles() error {
+	robots := "User-agent: *\n" +
+		"Allow: /\n\n" +
+		"Sitemap: " + siteURL + "/sitemap.xml\n"
+
+	if err := writeTextFile(
+		filepath.Join(
+			publicDir,
+			"robots.txt",
+		),
+		robots,
+	); err != nil {
+		return fmt.Errorf(
+			"build robots.txt: %w",
+			err,
+		)
+	}
+
+	sitemap := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+		"<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" +
+		"  <url><loc>" + siteURL + "/</loc></url>\n"
+
+	for _, technology := range technologies {
+		sitemap +=
+			"  <url><loc>" +
+				siteURL +
+				"/" +
+				technology.Slug +
+				"/</loc></url>\n"
+	}
+
+	sitemap += "</urlset>\n"
+
+	if err := writeTextFile(
+		filepath.Join(
+			publicDir,
+			"sitemap.xml",
+		),
+		sitemap,
+	); err != nil {
+		return fmt.Errorf(
+			"build sitemap.xml: %w",
+			err,
+		)
+	}
+
+	return nil
+}
+
+func writeTextFile(
+	target string,
+	content string,
+) error {
+	if err := os.MkdirAll(
+		filepath.Dir(target),
+		0o755,
+	); err != nil {
+		return err
+	}
+
+	return os.WriteFile(
+		target,
+		[]byte(content),
+		0o644,
+	)
 }
 
 func renderTemplate(
