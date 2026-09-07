@@ -1,0 +1,15 @@
+Staff note
+Reference: NOTE-DEMO-001
+Date: 2026-09-07
+
+The requested Thursday morning slot has been checked against the fictional demo schedule.
+
+Result:
+- No conflicting care activity is recorded for the requested time.
+- The family contact should be notified.
+- The internal scheduling record should be updated before the first changed visit.
+
+Recommended disposition:
+APPROVE the scheduling change for four weeks.
+
+This is a fictional demonstration note.

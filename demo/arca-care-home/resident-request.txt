@@ -1,0 +1,12 @@
+Resident request
+Reference: DEMO-CH-001
+Date: 2026-09-07
+
+A resident asks whether a regular family visit can be moved from Wednesday afternoon to Thursday morning for the next four weeks.
+
+The resident would like confirmation of:
+- whether the change is allowed,
+- whether the family must be informed,
+- whether the care team needs to update any internal planning record.
+
+This is a fictional demonstration record. No real resident data is included.
