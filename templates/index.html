@@ -2,39 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Baumgartner Systems — Trust Infrastructure for AI-Assisted Decisions
+  </title>
 
   <meta
     name="description"
-    content="Trust infrastructure for AI-assisted decisions.">
+    content="Baumgartner Systems helps organisations make AI-assisted workflows traceable, verifiable and ready for audit through evidence, provenance and verification infrastructure."
+  >
 
-  <title>Baumgartner Digital Infrastructure</title>
-<script>
-  (() => {
-    const stored =
-      localStorage.getItem(
-        "baumgartner-theme"
-      );
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
 
-    const dark =
-      window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-
-    document.documentElement.dataset.theme =
-      stored ||
-      (dark ? "dark" : "light");
-  })();
-</script>
   <link
-    rel="stylesheet"
-    href="/assets/css/site.css">
+    rel="canonical"
+    href="https://baumgartner.systems/"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Baumgartner Systems"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="Baumgartner Systems — Trust Infrastructure for AI-Assisted Decisions"
+  >
+
+  <meta
+    property="og:description"
+    content="Traceable, verifiable and audit-ready infrastructure for AI-assisted workflows."
+  >
+
+  <meta
+    property="og:url"
+    content="https://baumgartner.systems/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://baumgartner.systems/assets/images/brand/logo.webp"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="Baumgartner Digital Infrastructure"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Baumgartner Systems — Trust Infrastructure for AI-Assisted Decisions"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Traceable, verifiable and audit-ready infrastructure for AI-assisted workflows."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://baumgartner.systems/assets/images/brand/logo.webp"
+  >
 
   <link
     rel="icon"
     type="image/webp"
-    href="/assets/images/brand/glyph.webp">
+    href="/assets/images/brand/glyph.webp"
+  >
 
+  <script>
+    (() => {
+      const stored =
+        localStorage.getItem(
+          "baumgartner-theme"
+        );
+
+      const dark =
+        window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+      document.documentElement.dataset.theme =
+        stored ||
+        (dark ? "dark" : "light");
+    })();
+  </script>
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/site.css"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://baumgartner.systems/#organization",
+        "name": "Baumgartner Systems",
+        "url": "https://baumgartner.systems/",
+        "email": "contact@baumgartner.systems",
+        "location": {
+          "@type": "Country",
+          "name": "Switzerland"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://baumgartner.systems/#website",
+        "url": "https://baumgartner.systems/",
+        "name": "Baumgartner Systems",
+        "publisher": {
+          "@id": "https://baumgartner.systems/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://baumgartner.systems/#webpage",
+        "url": "https://baumgartner.systems/",
+        "name": "Baumgartner Systems — Trust Infrastructure for AI-Assisted Decisions",
+        "description": "Baumgartner Systems helps organisations make AI-assisted workflows traceable, verifiable and ready for audit through evidence, provenance and verification infrastructure.",
+        "isPartOf": {
+          "@id": "https://baumgartner.systems/#website"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "AI evidence, provenance and verification infrastructure"
+        },
+        "publisher": {
+          "@id": "https://baumgartner.systems/#organization"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
