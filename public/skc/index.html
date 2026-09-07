@@ -153,95 +153,107 @@
 
   <header class="site-header">
 
-    <div class="container site-header__inner">
+  <div class="container site-header__inner">
 
-      <a
-        class="site-brand"
-        href="/"
-        aria-label="Baumgartner Systems home"
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+
+
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
       >
-        <picture class="site-brand__picture">
-          <source
-            srcset="/assets/images/brand/logo-header-dark.webp"
-            media="(prefers-color-scheme: dark)"
-          >
+        <span
+          class="mobile-nav-toggle__spark"
+        ></span>
+      </span>
 
-          <img
-            class="site-brand__logo"
-            src="/assets/images/brand/logo-header.webp"
-            alt="Baumgartner Digital Infrastructure"
-            decoding="async"
-          >
-        </picture>
+      <span class="sr-only">
+        Menu
+      </span>
+    </button>
+
+
+    <nav
+      class="site-nav"
+      id="site-nav"
+      aria-label="Technology navigation"
+    >
+
+      <a href="/">
+        Home
       </a>
 
-
-      <button
-        class="mobile-nav-toggle"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
+      <a
+        href="/arca/"
+        
       >
-        <span></span>
-        <span></span>
-      </button>
+        Arca
+      </a>
 
-      <nav
-        class="site-nav"
-        id="primary-navigation"
-        aria-label="Technology navigation"
+      <a
+        href="/core/"
+        
       >
+        Core
+      </a>
 
-        <a href="/">
-          Home
-        </a>
+      <a
+        href="/skc/"
+        aria-current="page"
+      >
+        SKC
+      </a>
 
-        <a
-          href="/arca/"
-          
-        >
-          Arca
-        </a>
+      <a
+        href="/vsc/"
+        
+      >
+        VSC
+      </a>
 
-        <a
-          href="/core/"
-          
-        >
-          Core
-        </a>
+      <a
+        href="/foam/"
+        
+      >
+        Foam
+      </a>
 
-        <a
-          href="/skc/"
-          aria-current="page"
-        >
-          SKC
-        </a>
+      <a
+        href="mailto:contact@baumgartner.systems"
+        class="site-nav__cta"
+      >
+        Discuss a Pilot
+      </a>
 
-        <a
-          href="/vsc/"
-          
-        >
-          VSC
-        </a>
+    </nav>
 
-        <a
-          href="/foam/"
-          
-        >
-          Foam
-        </a>
+  </div>
 
-        <a
-          class="site-nav__cta"
-          href="mailto:contact@baumgartner.systems"
-        >
-          Discuss a Pilot
-        </a>
-
-      </nav>
-
-    </div>
 
   </header>
 
