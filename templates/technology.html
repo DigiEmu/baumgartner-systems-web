@@ -21,6 +21,17 @@
     href="/assets/images/brand/glyph.webp"
   >
 
+  <script>
+  (() => {
+    const dark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    document.documentElement.dataset.theme =
+      dark ? "dark" : "light";
+  })();
+</script>
+
   <link
     rel="stylesheet"
     href="/assets/css/site.css"
@@ -32,17 +43,24 @@
   <header class="site-header">
     <div class="container site-header__inner">
 
-      <a
-        class="site-brand"
-        href="/"
-        aria-label="Baumgartner Systems home"
-      >
-        <img
-          class="site-brand__logo"
-          src="/assets/images/brand/logo-header.webp"
-          alt="Baumgartner Digital Infrastructure"
-        >
-      </a>
+     <a
+  class="site-brand"
+  href="/"
+  aria-label="Baumgartner Systems home"
+>
+  <img
+    class="site-brand__logo site-brand__logo--light"
+    src="/assets/images/brand/logo-header.webp"
+    alt="Baumgartner Digital Infrastructure"
+  >
+
+  <img
+    class="site-brand__logo site-brand__logo--dark"
+    src="/assets/images/brand/logo-header-dark.webp"
+    alt="Baumgartner Digital Infrastructure"
+  >
+</a>
+
 
       <nav
         class="site-nav"

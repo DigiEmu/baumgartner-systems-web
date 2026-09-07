@@ -9,20 +9,28 @@
     content="Trust infrastructure for AI-assisted decisions.">
 
   <title>Baumgartner Digital Infrastructure</title>
+<script>
+  (() => {
+    const dark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
 
+    document.documentElement.dataset.theme =
+      dark ? "dark" : "light";
+  })();
+</script>
   <link
     rel="stylesheet"
     href="/assets/css/site.css">
-    <link
-  rel="icon"
-  type="image/webp"
-  href="/assets/images/brand/glyph.webp">
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp">
 
 </head>
-<script src="/assets/js/header.js" defer></script>
-<script src="/assets/js/section-nav.js" defer></script>
 <body>
-<header class="site-header">
+
 <div class="scroll-rail" aria-hidden="true">
   <span class="scroll-rail__line"></span>
 
@@ -33,21 +41,27 @@
   <span class="scroll-rail__dot scroll-rail__dot--5"></span>
 </div>
 
+<header class="site-header">
+
   <div class="container site-header__inner">
 
-    <a
-      href="/"
-      class="site-brand"
-      aria-label="Baumgartner Systems home">
+   <a
+  class="site-brand"
+  href="/"
+  aria-label="Baumgartner Systems home"
+>
+  <img
+    class="site-brand__logo site-brand__logo--light"
+    src="/assets/images/brand/logo-header.webp"
+    alt="Baumgartner Digital Infrastructure"
+  >
 
-     <img
-  src="/assets/images/brand/logo-header.webp"
-  alt="Baumgartner Digital Infrastructure"
-  width="1200"
-  height="300"
-  class="site-brand__logo">
-
-    </a>
+  <img
+    class="site-brand__logo site-brand__logo--dark"
+    src="/assets/images/brand/logo-header-dark.webp"
+    alt="Baumgartner Digital Infrastructure"
+  >
+</a>
 
 
     <nav
@@ -818,6 +832,10 @@
 </section>
 
   </main>
+
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/section-nav.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
 
 </body>
 </html>
