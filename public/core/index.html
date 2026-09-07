@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
 
@@ -26,60 +25,18 @@
     href="https://baumgartner.systems/core/"
   >
 
-  <meta
-    property="og:site_name"
-    content="Baumgartner Systems"
-  >
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Core — Deterministic Verification | Baumgartner Systems">
+  <meta property="og:description" content="DigiEmu Core provides deterministic identity, state, admission and verification primitives for reproducible AI and knowledge infrastructure.">
+  <meta property="og:url" content="https://baumgartner.systems/core/">
+  <meta property="og:image" content="https://baumgartner.systems/assets/images/brand/core.webp">
+  <meta property="og:image:alt" content="DigiEmu Core">
 
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="Core — Deterministic Verification | Baumgartner Systems"
-  >
-
-  <meta
-    property="og:description"
-    content="DigiEmu Core provides deterministic identity, state, admission and verification primitives for reproducible AI and knowledge infrastructure."
-  >
-
-  <meta
-    property="og:url"
-    content="https://baumgartner.systems/core/"
-  >
-
-  <meta
-    property="og:image"
-    content="https://baumgartner.systems/assets/images/brand/core.webp"
-  >
-
-  <meta
-    property="og:image:alt"
-    content="DigiEmu Core"
-  >
-
-  <meta
-    name="twitter:card"
-    content="summary"
-  >
-
-  <meta
-    name="twitter:title"
-    content="Core — Deterministic Verification | Baumgartner Systems"
-  >
-
-  <meta
-    name="twitter:description"
-    content="DigiEmu Core provides deterministic identity, state, admission and verification primitives for reproducible AI and knowledge infrastructure."
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://baumgartner.systems/assets/images/brand/core.webp"
-  >
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Core — Deterministic Verification | Baumgartner Systems">
+  <meta name="twitter:description" content="DigiEmu Core provides deterministic identity, state, admission and verification primitives for reproducible AI and knowledge infrastructure.">
+  <meta name="twitter:image" content="https://baumgartner.systems/assets/images/brand/core.webp">
 
   <link
     rel="icon"
@@ -119,6 +76,15 @@
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "https:\/\/baumgartner.systems/#website",
+        "url": "https:\/\/baumgartner.systems/",
+        "name": "Baumgartner Systems",
+        "publisher": {
+          "@id": "https:\/\/baumgartner.systems/#organization"
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "https:\/\/baumgartner.systems\/core\/#webpage",
         "url": "https:\/\/baumgartner.systems\/core\/",
@@ -134,15 +100,6 @@
         "publisher": {
           "@id": "https:\/\/baumgartner.systems/#organization"
         }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https:\/\/baumgartner.systems/#website",
-        "url": "https:\/\/baumgartner.systems/",
-        "name": "Baumgartner Systems",
-        "publisher": {
-          "@id": "https:\/\/baumgartner.systems/#organization"
-        }
       }
     ]
   }
@@ -152,127 +109,110 @@
 <body>
 
   <header class="site-header">
+    <div class="container site-header__inner">
 
-  <div class="container site-header__inner">
+      <a
+        class="site-brand"
+        href="/"
+        aria-label="Baumgartner Systems home"
+      >
+        <picture class="site-brand__picture">
+          <source
+            srcset="/assets/images/brand/logo-header-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          >
 
-    <a
-      class="site-brand"
-      href="/"
-      aria-label="Baumgartner Systems home"
-    >
-      <picture class="site-brand__picture">
-        <source
-          srcset="/assets/images/brand/logo-header-dark.webp"
-          media="(prefers-color-scheme: dark)"
-        >
+          <img
+            class="site-brand__logo"
+            src="/assets/images/brand/logo-header.webp"
+            alt="Baumgartner Digital Infrastructure"
+            decoding="async"
+          >
+        </picture>
+      </a>
 
-        <img
-          class="site-brand__logo"
-          src="/assets/images/brand/logo-header.webp"
-          alt="Baumgartner Digital Infrastructure"
-          decoding="async"
-        >
-      </picture>
-    </a>
-
-
-    <button
-      class="mobile-nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="site-nav"
-      aria-label="Open navigation"
-    >
-      <span
-        class="mobile-nav-toggle__pearl"
-        aria-hidden="true"
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
       >
         <span
-          class="mobile-nav-toggle__spark"
-        ></span>
-      </span>
+          class="mobile-nav-toggle__pearl"
+          aria-hidden="true"
+        >
+          <span class="mobile-nav-toggle__spark"></span>
+        </span>
 
-      <span class="sr-only">
-        Menu
-      </span>
-    </button>
+        <span class="sr-only">Menu</span>
+      </button>
 
-
-    <nav
-      class="site-nav"
-      id="site-nav"
-      aria-label="Technology navigation"
-    >
-
-      <a href="/">
-        Home
-      </a>
-
-      <a
-        href="/arca/"
-        
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Technology navigation"
       >
-        Arca
-      </a>
+        <a href="/">Home</a>
 
-      <a
-        href="/core/"
-        aria-current="page"
-      >
-        Core
-      </a>
+        <a
+          href="/arca/"
+          
+        >
+          Arca
+        </a>
 
-      <a
-        href="/skc/"
-        
-      >
-        SKC
-      </a>
+        <a
+          href="/core/"
+          aria-current="page"
+        >
+          Core
+        </a>
 
-      <a
-        href="/vsc/"
-        
-      >
-        VSC
-      </a>
+        <a
+          href="/skc/"
+          
+        >
+          SKC
+        </a>
 
-      <a
-        href="/foam/"
-        
-      >
-        Foam
-      </a>
+        <a
+          href="/vsc/"
+          
+        >
+          VSC
+        </a>
 
-      <a
-        href="mailto:contact@baumgartner.systems"
-        class="site-nav__cta"
-      >
-        Discuss a Pilot
-      </a>
+        <a
+          href="/foam/"
+          
+        >
+          Foam
+        </a>
 
-    </nav>
+        <a
+          href="mailto:contact@baumgartner.systems"
+          class="site-nav__cta"
+        >
+          Discuss a Pilot
+        </a>
+      </nav>
 
-  </div>
-
-
+    </div>
   </header>
 
 
   <main class="technology-page">
 
     <section class="technology-hero">
-
       <div class="container technology-hero__layout">
 
         <div class="technology-hero__copy">
-
           <p class="eyebrow">
             DigiEmu Technology
           </p>
 
-          <h1>
-            Core
-          </h1>
+          <h1>Core</h1>
 
           <p class="technology-hero__tagline">
             Deterministic trust foundation.
@@ -283,7 +223,6 @@
           </p>
 
           <div class="technology-hero__actions">
-
             <a
               class="cta"
               href="#overview"
@@ -297,26 +236,20 @@
             >
               Back to technology ecosystem
             </a>
-
           </div>
-
         </div>
-
 
         <div
           class="technology-hero__visual"
           aria-hidden="true"
         >
-
           <img
             src="/assets/images/brand/core.webp"
             alt=""
           >
-
         </div>
 
       </div>
-
     </section>
 
 
@@ -324,39 +257,23 @@
       class="technology-overview"
       id="overview"
     >
-
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            01
-          </span>
-
-          <span>
-            Overview
-          </span>
-
+          <span class="section-number">01</span>
+          <span>Overview</span>
         </div>
 
-
         <div class="technology-overview__grid">
-
           <div>
-
-            <h2>
-              What it is
-            </h2>
+            <h2>What it is</h2>
 
             <p class="lead">
               DigiEmu Core provides the deterministic substrate beneath the wider verification architecture. It defines how relevant artifacts, states and admission decisions are represented so the same referentially closed inputs can be evaluated consistently.
             </p>
-
           </div>
 
-
           <div class="technology-meta">
-
             <div class="technology-meta__item">
               <span>Technology</span>
               <strong>Core</strong>
@@ -371,83 +288,415 @@
               <span>Status</span>
               <strong>Active</strong>
             </div>
-
           </div>
-
         </div>
 
       </div>
-
     </section>
 
 
-    <section class="technology-placeholder">
-
+    
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            02
-          </span>
-
-          <span>
-            Architecture
-          </span>
-
+          <span class="section-number">02</span>
+          <span>Architecture</span>
         </div>
 
-        <h2>
-          Architecture
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>Trust begins with explicit architecture.</h2>
 
-        <p class="lead">
-          Architecture detail will be added in the next milestone.
-        </p>
+          
+          <p class="lead">
+            Core is designed around explicit architecture boundaries. Identity, capability, ownership, admission and verification are represented as separate but connected parts of the system rather than implicit runtime behavior.
+          </p>
+          
+        </div>
+
+        <div class="technology-sequence">
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              01
+            </span>
+
+            <h3>Identity</h3>
+
+            <p>
+              Relevant entities and artifacts are represented with stable identities so state and evidence can refer to the same logical objects.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              02
+            </span>
+
+            <h3>Capability</h3>
+
+            <p>
+              The system records which capabilities are available and which components are allowed to provide them.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              03
+            </span>
+
+            <h3>Ownership</h3>
+
+            <p>
+              Aggregate ownership and responsibility boundaries are made explicit so architectural authority is not inferred implicitly.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              04
+            </span>
+
+            <h3>Admission</h3>
+
+            <p>
+              Inputs and candidate state transitions are evaluated against declared architectural conditions before they are accepted.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              05
+            </span>
+
+            <h3>Verification</h3>
+
+            <p>
+              The resulting canonical state and admission outcome can be checked against the same referentially closed input basis.
+            </p>
+          </article>
+          
+        </div>
 
       </div>
-
     </section>
+    
 
 
-    <section class="technology-placeholder">
-
+    
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            03
-          </span>
-
-          <span>
-            Boundaries
-          </span>
-
+          <span class="section-number">03</span>
+          <span>Workflow</span>
         </div>
 
-        <h2>
-          What Core does — and does not — prove.
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>Evaluate before consequence.</h2>
 
-        <p class="lead">
-          Verification boundaries and technical scope will be documented here.
-        </p>
+          
+          <p class="lead">
+            In practice, Core acts as an admission and verification layer. It evaluates whether a proposed state or transition belongs inside the declared architecture before downstream consequences are accepted.
+          </p>
+          
+        </div>
+
+        <div class="technology-workflow">
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              A
+            </div>
+
+            <div>
+              <h3>Receive</h3>
+
+              <p>
+                A referentially closed input set enters the verification boundary.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              B
+            </div>
+
+            <div>
+              <h3>Resolve</h3>
+
+              <p>
+                Relevant identities, capabilities, ownership and architectural constraints are resolved from the declared system state.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              C
+            </div>
+
+            <div>
+              <h3>Evaluate</h3>
+
+              <p>
+                The candidate state or transition is checked against admission rules before acceptance.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              D
+            </div>
+
+            <div>
+              <h3>Disposition</h3>
+
+              <p>
+                Core produces a structured outcome describing whether the candidate is admitted, rejected or otherwise classified.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              E
+            </div>
+
+            <div>
+              <h3>Record</h3>
+
+              <p>
+                The verification outcome and relevant state are preserved so the decision can later be inspected or replayed.
+              </p>
+            </div>
+          </article>
+          
+        </div>
 
       </div>
-
     </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">04</span>
+          <span>Evidence</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>What remains after admission.</h2>
+
+          
+          <p class="lead">
+            Core does not merely return a yes-or-no result. The value lies in preserving the deterministic basis and structured outcome around the admission decision.
+          </p>
+          
+        </div>
+
+        <div class="technology-evidence-grid">
+          
+          <article class="technology-evidence-item">
+            <h3>Canonical identity</h3>
+
+            <p>
+              Stable references to the entities and artifacts inside the verification boundary.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Capability state</h3>
+
+            <p>
+              Recorded information about which declared capabilities are present.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Ownership state</h3>
+
+            <p>
+              Explicit ownership and authority relationships relevant to the architecture.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Admission basis</h3>
+
+            <p>
+              The referentially closed input set used to evaluate the candidate state.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Disposition</h3>
+
+            <p>
+              A structured admission outcome rather than an implicit runtime side effect.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Replay surface</h3>
+
+            <p>
+              The preserved basis required to evaluate the same canonical verification question again.
+            </p>
+          </article>
+          
+        </div>
+
+      </div>
+    </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">05</span>
+          <span>Boundaries</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Determinism has a boundary.</h2>
+
+          
+          <p class="lead">
+            Core provides deterministic verification of declared architecture and recorded state. That does not mean it can establish truth outside the system boundary or replace governance authority.
+          </p>
+          
+        </div>
+
+        <ul class="technology-boundary-list">
+          
+          <li>Core does not prove that an external real-world fact is true.</li>
+          
+          <li>Core does not decide whether a governance policy is ethically or legally correct.</li>
+          
+          <li>Core does not infer authority that has not been explicitly represented.</li>
+          
+          <li>Core does not make undocumented runtime behavior part of the verification boundary.</li>
+          
+          <li>Determinism applies to the canonical verification result for the same referentially closed inputs, not to byte-identical binaries across different toolchains.</li>
+          
+        </ul>
+
+      </div>
+    </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">06</span>
+          <span>Pilot</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Start with one architecture boundary.</h2>
+
+          
+          <p class="lead">
+            A useful Core pilot starts with one architecture boundary where admission, state integrity or reproducibility matters. The goal is to make one verification decision explicit, deterministic and reviewable.
+          </p>
+          
+        </div>
+
+        <div class="technology-pilot-grid">
+          
+          <article class="technology-pilot-step">
+            <span>01</span>
+
+            <h3>Choose one boundary</h3>
+
+            <p>
+              Select one architecture decision where acceptance or rejection should be explicit and independently reviewable.
+            </p>
+          </article>
+          
+          <article class="technology-pilot-step">
+            <span>02</span>
+
+            <h3>Declare the state basis</h3>
+
+            <p>
+              Define identities, capabilities, ownership and other inputs required to make the verification question referentially closed.
+            </p>
+          </article>
+          
+          <article class="technology-pilot-step">
+            <span>03</span>
+
+            <h3>Verify and replay</h3>
+
+            <p>
+              Run the admission decision, preserve the structured result and confirm that the same canonical verification outcome can be reproduced.
+            </p>
+          </article>
+          
+        </div>
+
+        <div class="technology-pilot__action">
+          <a
+            href="mailto:contact@baumgartner.systems"
+            class="cta"
+          >
+            Discuss a Core Pilot
+          </a>
+        </div>
+
+
+        <aside
+          class="technology-repository"
+          aria-label="Source and technical reference"
+        >
+          <p class="technology-repository__label">
+            Source &amp; technical reference
+          </p>
+
+          
+          <p>
+            Public source, architecture records and verification material
+            for DigiEmu Core are maintained on GitHub.
+          </p>
+
+          <a
+            class="technology-repository__link"
+            href="https://github.com/DigiEmu/core"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Core repository
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          
+        </aside>
+
+      </div>
+    </section>
+    
 
 
     <section
       class="closing-scene"
       id="contact"
     >
-
       <div class="container closing-scene__inner">
 
         <div class="closing-scene__cta">
-
           <p class="eyebrow">
             Baumgartner Systems
           </p>
@@ -466,34 +715,32 @@
           >
             Discuss a Pilot
           </a>
-
         </div>
 
 
         <footer class="site-footer">
 
           <div class="site-footer__brand">
-          <a
-            href="/"
-            aria-label="Baumgartner Systems home"
-          >
-            <picture class="site-footer__picture">
-              <source
-                srcset="/assets/images/brand/logo-header-dark.webp"
-                media="(prefers-color-scheme: dark)"
-              >
+            <a
+              href="/"
+              aria-label="Baumgartner Systems home"
+            >
+              <picture class="site-footer__picture">
+                <source
+                  srcset="/assets/images/brand/logo-header-dark.webp"
+                  media="(prefers-color-scheme: dark)"
+                >
 
-              <img
-                class="site-footer__logo"
-                src="/assets/images/brand/logo.webp"
-                alt="Baumgartner Digital Infrastructure"
-                loading="lazy"
-                decoding="async"
-              >
-            </picture>
-          </a>
-        </div>
-
+                <img
+                  class="site-footer__logo"
+                  src="/assets/images/brand/logo.webp"
+                  alt="Baumgartner Digital Infrastructure"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
+            </a>
+          </div>
 
           <nav
             class="site-footer__nav"
@@ -507,37 +754,23 @@
             <a href="/foam/">Foam</a>
           </nav>
 
-
           <div class="site-footer__meta">
-
-            <span>
-              Switzerland
-            </span>
+            <span>Switzerland</span>
 
             <span>
               © 2026 Baumgartner Digital Infrastructure
             </span>
-
           </div>
 
         </footer>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <script
-    src="/assets/js/header.js"
-    defer
-  ></script>
-
-  <script
-    src="/assets/js/theme.js"
-    defer
-  ></script>
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
 
 </body>
 </html>

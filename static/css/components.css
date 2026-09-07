@@ -3544,3 +3544,33 @@ main section[id] {
     line-height: 1.35 !important;
   }
 }
+/* =========================================================
+   TECHNOLOGY CONTENT SPACING
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .technology-page .container {
+    padding-left: 1.4rem !important;
+    padding-right: 1.4rem !important;
+  }
+
+  .technology-hero__copy,
+  .technology-overview__grid,
+  .technology-detail__intro,
+  .technology-sequence,
+  .technology-workflow,
+  .technology-evidence-grid,
+  .technology-boundary-list,
+  .technology-pilot-grid {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .technology-page .container {
+    padding-left: 1.55rem !important;
+    padding-right: 1.55rem !important;
+  }
+}

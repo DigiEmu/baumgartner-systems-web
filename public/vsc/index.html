@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
 
@@ -26,60 +25,18 @@
     href="https://baumgartner.systems/vsc/"
   >
 
-  <meta
-    property="og:site_name"
-    content="Baumgartner Systems"
-  >
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VSC — Verification State Compression | Baumgartner Systems">
+  <meta property="og:description" content="VSC reduces verification-relevant system state while preserving the evidence needed for reconstruction, comparison and reproducibility.">
+  <meta property="og:url" content="https://baumgartner.systems/vsc/">
+  <meta property="og:image" content="https://baumgartner.systems/assets/images/brand/vsc.webp">
+  <meta property="og:image:alt" content="DigiEmu VSC">
 
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="VSC — Verification State Compression | Baumgartner Systems"
-  >
-
-  <meta
-    property="og:description"
-    content="VSC reduces verification-relevant system state while preserving the evidence needed for reconstruction, comparison and reproducibility."
-  >
-
-  <meta
-    property="og:url"
-    content="https://baumgartner.systems/vsc/"
-  >
-
-  <meta
-    property="og:image"
-    content="https://baumgartner.systems/assets/images/brand/vsc.webp"
-  >
-
-  <meta
-    property="og:image:alt"
-    content="DigiEmu VSC"
-  >
-
-  <meta
-    name="twitter:card"
-    content="summary"
-  >
-
-  <meta
-    name="twitter:title"
-    content="VSC — Verification State Compression | Baumgartner Systems"
-  >
-
-  <meta
-    name="twitter:description"
-    content="VSC reduces verification-relevant system state while preserving the evidence needed for reconstruction, comparison and reproducibility."
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://baumgartner.systems/assets/images/brand/vsc.webp"
-  >
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="VSC — Verification State Compression | Baumgartner Systems">
+  <meta name="twitter:description" content="VSC reduces verification-relevant system state while preserving the evidence needed for reconstruction, comparison and reproducibility.">
+  <meta name="twitter:image" content="https://baumgartner.systems/assets/images/brand/vsc.webp">
 
   <link
     rel="icon"
@@ -119,6 +76,15 @@
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "https:\/\/baumgartner.systems/#website",
+        "url": "https:\/\/baumgartner.systems/",
+        "name": "Baumgartner Systems",
+        "publisher": {
+          "@id": "https:\/\/baumgartner.systems/#organization"
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "https:\/\/baumgartner.systems\/vsc\/#webpage",
         "url": "https:\/\/baumgartner.systems\/vsc\/",
@@ -134,15 +100,6 @@
         "publisher": {
           "@id": "https:\/\/baumgartner.systems/#organization"
         }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https:\/\/baumgartner.systems/#website",
-        "url": "https:\/\/baumgartner.systems/",
-        "name": "Baumgartner Systems",
-        "publisher": {
-          "@id": "https:\/\/baumgartner.systems/#organization"
-        }
       }
     ]
   }
@@ -152,127 +109,110 @@
 <body>
 
   <header class="site-header">
+    <div class="container site-header__inner">
 
-  <div class="container site-header__inner">
+      <a
+        class="site-brand"
+        href="/"
+        aria-label="Baumgartner Systems home"
+      >
+        <picture class="site-brand__picture">
+          <source
+            srcset="/assets/images/brand/logo-header-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          >
 
-    <a
-      class="site-brand"
-      href="/"
-      aria-label="Baumgartner Systems home"
-    >
-      <picture class="site-brand__picture">
-        <source
-          srcset="/assets/images/brand/logo-header-dark.webp"
-          media="(prefers-color-scheme: dark)"
-        >
+          <img
+            class="site-brand__logo"
+            src="/assets/images/brand/logo-header.webp"
+            alt="Baumgartner Digital Infrastructure"
+            decoding="async"
+          >
+        </picture>
+      </a>
 
-        <img
-          class="site-brand__logo"
-          src="/assets/images/brand/logo-header.webp"
-          alt="Baumgartner Digital Infrastructure"
-          decoding="async"
-        >
-      </picture>
-    </a>
-
-
-    <button
-      class="mobile-nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="site-nav"
-      aria-label="Open navigation"
-    >
-      <span
-        class="mobile-nav-toggle__pearl"
-        aria-hidden="true"
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
       >
         <span
-          class="mobile-nav-toggle__spark"
-        ></span>
-      </span>
+          class="mobile-nav-toggle__pearl"
+          aria-hidden="true"
+        >
+          <span class="mobile-nav-toggle__spark"></span>
+        </span>
 
-      <span class="sr-only">
-        Menu
-      </span>
-    </button>
+        <span class="sr-only">Menu</span>
+      </button>
 
-
-    <nav
-      class="site-nav"
-      id="site-nav"
-      aria-label="Technology navigation"
-    >
-
-      <a href="/">
-        Home
-      </a>
-
-      <a
-        href="/arca/"
-        
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Technology navigation"
       >
-        Arca
-      </a>
+        <a href="/">Home</a>
 
-      <a
-        href="/core/"
-        
-      >
-        Core
-      </a>
+        <a
+          href="/arca/"
+          
+        >
+          Arca
+        </a>
 
-      <a
-        href="/skc/"
-        
-      >
-        SKC
-      </a>
+        <a
+          href="/core/"
+          
+        >
+          Core
+        </a>
 
-      <a
-        href="/vsc/"
-        aria-current="page"
-      >
-        VSC
-      </a>
+        <a
+          href="/skc/"
+          
+        >
+          SKC
+        </a>
 
-      <a
-        href="/foam/"
-        
-      >
-        Foam
-      </a>
+        <a
+          href="/vsc/"
+          aria-current="page"
+        >
+          VSC
+        </a>
 
-      <a
-        href="mailto:contact@baumgartner.systems"
-        class="site-nav__cta"
-      >
-        Discuss a Pilot
-      </a>
+        <a
+          href="/foam/"
+          
+        >
+          Foam
+        </a>
 
-    </nav>
+        <a
+          href="mailto:contact@baumgartner.systems"
+          class="site-nav__cta"
+        >
+          Discuss a Pilot
+        </a>
+      </nav>
 
-  </div>
-
-
+    </div>
   </header>
 
 
   <main class="technology-page">
 
     <section class="technology-hero">
-
       <div class="container technology-hero__layout">
 
         <div class="technology-hero__copy">
-
           <p class="eyebrow">
             DigiEmu Technology
           </p>
 
-          <h1>
-            VSC
-          </h1>
+          <h1>VSC</h1>
 
           <p class="technology-hero__tagline">
             Verification state compression.
@@ -283,7 +223,6 @@
           </p>
 
           <div class="technology-hero__actions">
-
             <a
               class="cta"
               href="#overview"
@@ -297,26 +236,20 @@
             >
               Back to technology ecosystem
             </a>
-
           </div>
-
         </div>
-
 
         <div
           class="technology-hero__visual"
           aria-hidden="true"
         >
-
           <img
             src="/assets/images/brand/vsc.webp"
             alt=""
           >
-
         </div>
 
       </div>
-
     </section>
 
 
@@ -324,39 +257,23 @@
       class="technology-overview"
       id="overview"
     >
-
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            01
-          </span>
-
-          <span>
-            Overview
-          </span>
-
+          <span class="section-number">01</span>
+          <span>Overview</span>
         </div>
 
-
         <div class="technology-overview__grid">
-
           <div>
-
-            <h2>
-              What it is
-            </h2>
+            <h2>What it is</h2>
 
             <p class="lead">
               VSC investigates how operational or model-related state can be reduced without discarding the information needed to verify what state was used, how it changed and whether an equivalent verification question can be replayed.
             </p>
-
           </div>
 
-
           <div class="technology-meta">
-
             <div class="technology-meta__item">
               <span>Technology</span>
               <strong>VSC</strong>
@@ -371,83 +288,415 @@
               <span>Status</span>
               <strong>Research</strong>
             </div>
-
           </div>
-
         </div>
 
       </div>
-
     </section>
 
 
-    <section class="technology-placeholder">
-
+    
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            02
-          </span>
-
-          <span>
-            Architecture
-          </span>
-
+          <span class="section-number">02</span>
+          <span>Architecture</span>
         </div>
 
-        <h2>
-          Architecture
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>Optimisation should not erase the verification surface.</h2>
 
-        <p class="lead">
-          Architecture detail will be added in the next milestone.
-        </p>
+          
+          <p class="lead">
+            VSC treats state reduction as a verification problem. Compression is valuable only when the retained state still supports the reconstruction, comparison and reproducibility requirements of the workflow.
+          </p>
+          
+        </div>
+
+        <div class="technology-sequence">
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              01
+            </span>
+
+            <h3>Observe</h3>
+
+            <p>
+              Establish the original system state and the verification information it contains.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              02
+            </span>
+
+            <h3>Classify</h3>
+
+            <p>
+              Separate verification-relevant state from redundant or replaceable representation.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              03
+            </span>
+
+            <h3>Compress</h3>
+
+            <p>
+              Reduce state representation within the declared optimisation boundary.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              04
+            </span>
+
+            <h3>Restore</h3>
+
+            <p>
+              Reconstruct the state required for the intended verification operation.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              05
+            </span>
+
+            <h3>Compare</h3>
+
+            <p>
+              Evaluate whether the retained and restored state supports the expected verification outcome.
+            </p>
+          </article>
+          
+        </div>
 
       </div>
-
     </section>
+    
 
 
-    <section class="technology-placeholder">
-
+    
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            03
-          </span>
-
-          <span>
-            Boundaries
-          </span>
-
+          <span class="section-number">03</span>
+          <span>Workflow</span>
         </div>
 
-        <h2>
-          What VSC does — and does not — prove.
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>Preserve what verification actually needs.</h2>
 
-        <p class="lead">
-          Verification boundaries and technical scope will be documented here.
-        </p>
+          
+          <p class="lead">
+            VSC is intended to sit between expensive state representation and verification-sensitive execution. It asks which information must remain available for reproducibility instead of assuming all state must remain unchanged.
+          </p>
+          
+        </div>
+
+        <div class="technology-workflow">
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              A
+            </div>
+
+            <div>
+              <h3>Baseline</h3>
+
+              <p>
+                Record the original state, parameters and verification target.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              B
+            </div>
+
+            <div>
+              <h3>Reduce</h3>
+
+              <p>
+                Apply state reduction while keeping the defined verification requirements explicit.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              C
+            </div>
+
+            <div>
+              <h3>Execute</h3>
+
+              <p>
+                Use the reduced state inside the intended workload or verification path.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              D
+            </div>
+
+            <div>
+              <h3>Recover</h3>
+
+              <p>
+                Restore or reconstruct the state needed for comparison.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              E
+            </div>
+
+            <div>
+              <h3>Verify</h3>
+
+              <p>
+                Compare the resulting verification surface against the baseline requirements.
+              </p>
+            </div>
+          </article>
+          
+        </div>
 
       </div>
-
     </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">04</span>
+          <span>Evidence</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Optimisation needs a reproducible comparison basis.</h2>
+
+          
+          <p class="lead">
+            A VSC result should make it possible to distinguish resource reduction from loss of verification-relevant state.
+          </p>
+          
+        </div>
+
+        <div class="technology-evidence-grid">
+          
+          <article class="technology-evidence-item">
+            <h3>Baseline state</h3>
+
+            <p>
+              The recorded state before optimisation.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Compression boundary</h3>
+
+            <p>
+              A definition of which state may be reduced and which state must remain available.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Resource delta</h3>
+
+            <p>
+              Measured change in the relevant memory or state footprint.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Restored state</h3>
+
+            <p>
+              The state reconstructed for verification or comparison.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Verification outcome</h3>
+
+            <p>
+              The observed result after reduction and reconstruction.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Replay basis</h3>
+
+            <p>
+              The parameters and retained evidence required to repeat the comparison.
+            </p>
+          </article>
+          
+        </div>
+
+      </div>
+    </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">05</span>
+          <span>Boundaries</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Lower resource use is not automatically equivalent state.</h2>
+
+          
+          <p class="lead">
+            VSC does not treat resource reduction itself as evidence of correctness. Any equivalence claim is limited to the defined verification surface and experiment boundary.
+          </p>
+          
+        </div>
+
+        <ul class="technology-boundary-list">
+          
+          <li>VSC does not prove that every internal model state is unchanged.</li>
+          
+          <li>VSC does not claim semantic equivalence outside the verification criteria defined for the experiment.</li>
+          
+          <li>Resource reduction does not by itself demonstrate correctness or reproducibility.</li>
+          
+          <li>Results depend on the declared model, runtime, parameters and state boundary.</li>
+          
+          <li>Verification claims must remain scoped to the evidence captured by the experiment.</li>
+          
+        </ul>
+
+      </div>
+    </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">06</span>
+          <span>Pilot</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Start with one constrained workload.</h2>
+
+          
+          <p class="lead">
+            A VSC pilot should begin with one reproducible workload where the baseline resource footprint and verification requirements can both be measured precisely.
+          </p>
+          
+        </div>
+
+        <div class="technology-pilot-grid">
+          
+          <article class="technology-pilot-step">
+            <span>01</span>
+
+            <h3>Establish baseline</h3>
+
+            <p>
+              Record the workload, parameters, state footprint and expected verification surface.
+            </p>
+          </article>
+          
+          <article class="technology-pilot-step">
+            <span>02</span>
+
+            <h3>Apply reduction</h3>
+
+            <p>
+              Introduce VSC within a clearly defined and isolated optimisation boundary.
+            </p>
+          </article>
+          
+          <article class="technology-pilot-step">
+            <span>03</span>
+
+            <h3>Compare results</h3>
+
+            <p>
+              Measure resource reduction and verify whether the defined reconstruction and replay criteria remain satisfied.
+            </p>
+          </article>
+          
+        </div>
+
+        <div class="technology-pilot__action">
+          <a
+            href="mailto:contact@baumgartner.systems"
+            class="cta"
+          >
+            Discuss a VSC Pilot
+          </a>
+        </div>
+
+
+        <aside
+          class="technology-repository"
+          aria-label="Source and technical reference"
+        >
+          <p class="technology-repository__label">
+            Source &amp; technical reference
+          </p>
+
+          
+          <p>
+            Public architecture, benchmark and verification material
+            for VSC is maintained on GitHub.
+          </p>
+
+          <a
+            class="technology-repository__link"
+            href="https://github.com/DigiEmu/vsc-core"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View VSC repository
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          
+        </aside>
+
+      </div>
+    </section>
+    
 
 
     <section
       class="closing-scene"
       id="contact"
     >
-
       <div class="container closing-scene__inner">
 
         <div class="closing-scene__cta">
-
           <p class="eyebrow">
             Baumgartner Systems
           </p>
@@ -466,34 +715,32 @@
           >
             Discuss a Pilot
           </a>
-
         </div>
 
 
         <footer class="site-footer">
 
           <div class="site-footer__brand">
-          <a
-            href="/"
-            aria-label="Baumgartner Systems home"
-          >
-            <picture class="site-footer__picture">
-              <source
-                srcset="/assets/images/brand/logo-header-dark.webp"
-                media="(prefers-color-scheme: dark)"
-              >
+            <a
+              href="/"
+              aria-label="Baumgartner Systems home"
+            >
+              <picture class="site-footer__picture">
+                <source
+                  srcset="/assets/images/brand/logo-header-dark.webp"
+                  media="(prefers-color-scheme: dark)"
+                >
 
-              <img
-                class="site-footer__logo"
-                src="/assets/images/brand/logo.webp"
-                alt="Baumgartner Digital Infrastructure"
-                loading="lazy"
-                decoding="async"
-              >
-            </picture>
-          </a>
-        </div>
-
+                <img
+                  class="site-footer__logo"
+                  src="/assets/images/brand/logo.webp"
+                  alt="Baumgartner Digital Infrastructure"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
+            </a>
+          </div>
 
           <nav
             class="site-footer__nav"
@@ -507,37 +754,23 @@
             <a href="/foam/">Foam</a>
           </nav>
 
-
           <div class="site-footer__meta">
-
-            <span>
-              Switzerland
-            </span>
+            <span>Switzerland</span>
 
             <span>
               © 2026 Baumgartner Digital Infrastructure
             </span>
-
           </div>
 
         </footer>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <script
-    src="/assets/js/header.js"
-    defer
-  ></script>
-
-  <script
-    src="/assets/js/theme.js"
-    defer
-  ></script>
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
 
 </body>
 </html>

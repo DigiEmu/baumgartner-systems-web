@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
 
@@ -26,60 +25,18 @@
     href="https://baumgartner.systems/arca/"
   >
 
-  <meta
-    property="og:site_name"
-    content="Baumgartner Systems"
-  >
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arca — AI Evidence Infrastructure | Baumgartner Systems">
+  <meta property="og:description" content="Arca captures provenance, lineage and verification evidence across AI-assisted workflows so organisations can reconstruct what happened and why.">
+  <meta property="og:url" content="https://baumgartner.systems/arca/">
+  <meta property="og:image" content="https://baumgartner.systems/assets/images/brand/arca.webp">
+  <meta property="og:image:alt" content="DigiEmu Arca">
 
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="Arca — AI Evidence Infrastructure | Baumgartner Systems"
-  >
-
-  <meta
-    property="og:description"
-    content="Arca captures provenance, lineage and verification evidence across AI-assisted workflows so organisations can reconstruct what happened and why."
-  >
-
-  <meta
-    property="og:url"
-    content="https://baumgartner.systems/arca/"
-  >
-
-  <meta
-    property="og:image"
-    content="https://baumgartner.systems/assets/images/brand/arca.webp"
-  >
-
-  <meta
-    property="og:image:alt"
-    content="DigiEmu Arca"
-  >
-
-  <meta
-    name="twitter:card"
-    content="summary"
-  >
-
-  <meta
-    name="twitter:title"
-    content="Arca — AI Evidence Infrastructure | Baumgartner Systems"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Arca captures provenance, lineage and verification evidence across AI-assisted workflows so organisations can reconstruct what happened and why."
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://baumgartner.systems/assets/images/brand/arca.webp"
-  >
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Arca — AI Evidence Infrastructure | Baumgartner Systems">
+  <meta name="twitter:description" content="Arca captures provenance, lineage and verification evidence across AI-assisted workflows so organisations can reconstruct what happened and why.">
+  <meta name="twitter:image" content="https://baumgartner.systems/assets/images/brand/arca.webp">
 
   <link
     rel="icon"
@@ -119,6 +76,15 @@
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "https:\/\/baumgartner.systems/#website",
+        "url": "https:\/\/baumgartner.systems/",
+        "name": "Baumgartner Systems",
+        "publisher": {
+          "@id": "https:\/\/baumgartner.systems/#organization"
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "https:\/\/baumgartner.systems\/arca\/#webpage",
         "url": "https:\/\/baumgartner.systems\/arca\/",
@@ -134,15 +100,6 @@
         "publisher": {
           "@id": "https:\/\/baumgartner.systems/#organization"
         }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https:\/\/baumgartner.systems/#website",
-        "url": "https:\/\/baumgartner.systems/",
-        "name": "Baumgartner Systems",
-        "publisher": {
-          "@id": "https:\/\/baumgartner.systems/#organization"
-        }
       }
     ]
   }
@@ -152,127 +109,110 @@
 <body>
 
   <header class="site-header">
+    <div class="container site-header__inner">
 
-  <div class="container site-header__inner">
+      <a
+        class="site-brand"
+        href="/"
+        aria-label="Baumgartner Systems home"
+      >
+        <picture class="site-brand__picture">
+          <source
+            srcset="/assets/images/brand/logo-header-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          >
 
-    <a
-      class="site-brand"
-      href="/"
-      aria-label="Baumgartner Systems home"
-    >
-      <picture class="site-brand__picture">
-        <source
-          srcset="/assets/images/brand/logo-header-dark.webp"
-          media="(prefers-color-scheme: dark)"
-        >
+          <img
+            class="site-brand__logo"
+            src="/assets/images/brand/logo-header.webp"
+            alt="Baumgartner Digital Infrastructure"
+            decoding="async"
+          >
+        </picture>
+      </a>
 
-        <img
-          class="site-brand__logo"
-          src="/assets/images/brand/logo-header.webp"
-          alt="Baumgartner Digital Infrastructure"
-          decoding="async"
-        >
-      </picture>
-    </a>
-
-
-    <button
-      class="mobile-nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="site-nav"
-      aria-label="Open navigation"
-    >
-      <span
-        class="mobile-nav-toggle__pearl"
-        aria-hidden="true"
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
       >
         <span
-          class="mobile-nav-toggle__spark"
-        ></span>
-      </span>
+          class="mobile-nav-toggle__pearl"
+          aria-hidden="true"
+        >
+          <span class="mobile-nav-toggle__spark"></span>
+        </span>
 
-      <span class="sr-only">
-        Menu
-      </span>
-    </button>
+        <span class="sr-only">Menu</span>
+      </button>
 
-
-    <nav
-      class="site-nav"
-      id="site-nav"
-      aria-label="Technology navigation"
-    >
-
-      <a href="/">
-        Home
-      </a>
-
-      <a
-        href="/arca/"
-        aria-current="page"
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Technology navigation"
       >
-        Arca
-      </a>
+        <a href="/">Home</a>
 
-      <a
-        href="/core/"
-        
-      >
-        Core
-      </a>
+        <a
+          href="/arca/"
+          aria-current="page"
+        >
+          Arca
+        </a>
 
-      <a
-        href="/skc/"
-        
-      >
-        SKC
-      </a>
+        <a
+          href="/core/"
+          
+        >
+          Core
+        </a>
 
-      <a
-        href="/vsc/"
-        
-      >
-        VSC
-      </a>
+        <a
+          href="/skc/"
+          
+        >
+          SKC
+        </a>
 
-      <a
-        href="/foam/"
-        
-      >
-        Foam
-      </a>
+        <a
+          href="/vsc/"
+          
+        >
+          VSC
+        </a>
 
-      <a
-        href="mailto:contact@baumgartner.systems"
-        class="site-nav__cta"
-      >
-        Discuss a Pilot
-      </a>
+        <a
+          href="/foam/"
+          
+        >
+          Foam
+        </a>
 
-    </nav>
+        <a
+          href="mailto:contact@baumgartner.systems"
+          class="site-nav__cta"
+        >
+          Discuss a Pilot
+        </a>
+      </nav>
 
-  </div>
-
-
+    </div>
   </header>
 
 
   <main class="technology-page">
 
     <section class="technology-hero">
-
       <div class="container technology-hero__layout">
 
         <div class="technology-hero__copy">
-
           <p class="eyebrow">
             DigiEmu Technology
           </p>
 
-          <h1>
-            Arca
-          </h1>
+          <h1>Arca</h1>
 
           <p class="technology-hero__tagline">
             Evidence workflow integrity.
@@ -283,7 +223,6 @@
           </p>
 
           <div class="technology-hero__actions">
-
             <a
               class="cta"
               href="#overview"
@@ -297,26 +236,20 @@
             >
               Back to technology ecosystem
             </a>
-
           </div>
-
         </div>
-
 
         <div
           class="technology-hero__visual"
           aria-hidden="true"
         >
-
           <img
             src="/assets/images/brand/arca.webp"
             alt=""
           >
-
         </div>
 
       </div>
-
     </section>
 
 
@@ -324,39 +257,23 @@
       class="technology-overview"
       id="overview"
     >
-
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            01
-          </span>
-
-          <span>
-            Overview
-          </span>
-
+          <span class="section-number">01</span>
+          <span>Overview</span>
         </div>
 
-
         <div class="technology-overview__grid">
-
           <div>
-
-            <h2>
-              What it is
-            </h2>
+            <h2>What it is</h2>
 
             <p class="lead">
               Arca creates a verifiable evidence trail around an AI-assisted workflow. It preserves the information needed to understand what was available, what changed and how a recorded process can later be reconstructed.
             </p>
-
           </div>
 
-
           <div class="technology-meta">
-
             <div class="technology-meta__item">
               <span>Technology</span>
               <strong>Arca</strong>
@@ -371,83 +288,414 @@
               <span>Status</span>
               <strong>Enterprise readiness</strong>
             </div>
-
           </div>
-
         </div>
 
       </div>
-
     </section>
 
 
-    <section class="technology-placeholder">
-
+    
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            02
-          </span>
-
-          <span>
-            Architecture
-          </span>
-
+          <span class="section-number">02</span>
+          <span>Architecture</span>
         </div>
 
-        <h2>
-          Architecture
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>Evidence is a system, not a screenshot.</h2>
 
-        <p class="lead">
-          Architecture detail will be added in the next milestone.
-        </p>
+          
+          <p class="lead">
+            Arca separates source material, transformations, provenance and verification into explicit stages rather than treating an AI-assisted result as an isolated output.
+          </p>
+          
+        </div>
+
+        <div class="technology-sequence">
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              01
+            </span>
+
+            <h3>Source intake</h3>
+
+            <p>
+              Documents, repository material and other permitted inputs enter the workflow as identifiable source material.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              02
+            </span>
+
+            <h3>Identity</h3>
+
+            <p>
+              Relevant artifacts receive stable identities so later evidence can refer to the same recorded objects.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              03
+            </span>
+
+            <h3>Provenance</h3>
+
+            <p>
+              Relationships between sources, transformations and generated artifacts are preserved as part of the evidence trail.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              04
+            </span>
+
+            <h3>Build</h3>
+
+            <p>
+              Arca produces controlled outputs from the recorded source basis while retaining the information needed for reconstruction.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              05
+            </span>
+
+            <h3>Verification</h3>
+
+            <p>
+              Recorded evidence can be checked against expected state, lineage and integrity information.
+            </p>
+          </article>
+          
+        </div>
 
       </div>
-
     </section>
+    
 
 
-    <section class="technology-placeholder">
-
+    
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            03
-          </span>
-
-          <span>
-            Boundaries
-          </span>
-
+          <span class="section-number">03</span>
+          <span>Workflow</span>
         </div>
 
-        <h2>
-          What Arca does — and does not — prove.
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>From source material to reconstructable evidence.</h2>
 
-        <p class="lead">
-          Verification boundaries and technical scope will be documented here.
-        </p>
+          
+          <p class="lead">
+            In practice, Arca sits around an existing workflow. It does not need to replace the organisation&#39;s business process in order to make that process more traceable.
+          </p>
+          
+        </div>
+
+        <div class="technology-workflow">
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              A
+            </div>
+
+            <div>
+              <h3>Collect</h3>
+
+              <p>
+                Bring together the source material relevant to one defined decision or documentation workflow.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              B
+            </div>
+
+            <div>
+              <h3>Record</h3>
+
+              <p>
+                Capture the evidence basis, source identities and relevant relationships before publication or handoff.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              C
+            </div>
+
+            <div>
+              <h3>Produce</h3>
+
+              <p>
+                Generate the required document, package or evidence output from the recorded source basis.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              D
+            </div>
+
+            <div>
+              <h3>Verify</h3>
+
+              <p>
+                Check whether the resulting evidence package still corresponds to the recorded source and provenance state.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              E
+            </div>
+
+            <div>
+              <h3>Reconstruct</h3>
+
+              <p>
+                Return later to the evidence trail and understand what the workflow contained at the relevant point in time.
+              </p>
+            </div>
+          </article>
+          
+        </div>
 
       </div>
-
     </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">04</span>
+          <span>Evidence</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>What remains after the workflow.</h2>
+
+          
+          <p class="lead">
+            The purpose of Arca is not simply to generate another document. It is to preserve the evidence required to inspect and reconstruct how that document or workflow came into existence.
+          </p>
+          
+        </div>
+
+        <div class="technology-evidence-grid">
+          
+          <article class="technology-evidence-item">
+            <h3>Source basis</h3>
+
+            <p>
+              The material that was actually available to the workflow.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Artifact identity</h3>
+
+            <p>
+              Stable identification of relevant recorded artifacts.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Lineage</h3>
+
+            <p>
+              Relationships between source material and resulting outputs.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Provenance</h3>
+
+            <p>
+              Recorded information about where evidence came from and how it moved.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Build state</h3>
+
+            <p>
+              The recorded state associated with a generated evidence package.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Verification result</h3>
+
+            <p>
+              A structured result describing what was checked and what was observed.
+            </p>
+          </article>
+          
+        </div>
+
+      </div>
+    </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">05</span>
+          <span>Boundaries</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Verification is not omniscience.</h2>
+
+          
+          <p class="lead">
+            Arca makes recorded evidence inspectable. That is deliberately different from claiming that a software system can prove every aspect of truth, reasoning or governance.
+          </p>
+          
+        </div>
+
+        <ul class="technology-boundary-list">
+          
+          <li>Arca does not prove the objective truth of an AI-generated statement.</li>
+          
+          <li>Arca does not prove the correctness of a model&#39;s internal reasoning.</li>
+          
+          <li>Arca does not determine whether a governance decision is ethically correct.</li>
+          
+          <li>Arca cannot reconstruct evidence that was never recorded.</li>
+          
+          <li>Verification applies to the recorded evidence boundary and the claims that boundary supports.</li>
+          
+        </ul>
+
+      </div>
+    </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">06</span>
+          <span>Pilot</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Start with one workflow.</h2>
+
+          
+          <p class="lead">
+            The smallest useful Arca engagement is one real workflow with a clear evidence problem. We define the boundary first, then verify whether Arca can make that process materially more reconstructable.
+          </p>
+          
+        </div>
+
+        <div class="technology-pilot-grid">
+          
+          <article class="technology-pilot-step">
+            <span>01</span>
+
+            <h3>Choose one workflow</h3>
+
+            <p>
+              Select a process where AI-assisted work, documentation or decision support creates a genuine traceability requirement.
+            </p>
+          </article>
+          
+          <article class="technology-pilot-step">
+            <span>02</span>
+
+            <h3>Define the evidence boundary</h3>
+
+            <p>
+              Agree what must be captured, what must remain outside scope and what a successful verification result should demonstrate.
+            </p>
+          </article>
+          
+          <article class="technology-pilot-step">
+            <span>03</span>
+
+            <h3>Run the pilot</h3>
+
+            <p>
+              Apply Arca to the workflow and produce a concrete evidence package that can be reviewed with the organisation.
+            </p>
+          </article>
+          
+        </div>
+
+        <div class="technology-pilot__action">
+          <a
+            href="mailto:contact@baumgartner.systems"
+            class="cta"
+          >
+            Discuss an Arca Pilot
+          </a>
+        </div>
+
+
+        <aside
+          class="technology-repository"
+          aria-label="Source and technical reference"
+        >
+          <p class="technology-repository__label">
+            Source &amp; technical reference
+          </p>
+
+          
+          <p>
+            DigiEmu publishes selected source code, technical specifications
+            and research material through its GitHub organisation.
+          </p>
+
+          <a
+            class="technology-repository__link"
+            href="https://github.com/DigiEmu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore DigiEmu on GitHub
+            <span aria-hidden="true">↗</span>
+          </a>
+          
+        </aside>
+
+      </div>
+    </section>
+    
 
 
     <section
       class="closing-scene"
       id="contact"
     >
-
       <div class="container closing-scene__inner">
 
         <div class="closing-scene__cta">
-
           <p class="eyebrow">
             Baumgartner Systems
           </p>
@@ -466,34 +714,32 @@
           >
             Discuss a Pilot
           </a>
-
         </div>
 
 
         <footer class="site-footer">
 
           <div class="site-footer__brand">
-          <a
-            href="/"
-            aria-label="Baumgartner Systems home"
-          >
-            <picture class="site-footer__picture">
-              <source
-                srcset="/assets/images/brand/logo-header-dark.webp"
-                media="(prefers-color-scheme: dark)"
-              >
+            <a
+              href="/"
+              aria-label="Baumgartner Systems home"
+            >
+              <picture class="site-footer__picture">
+                <source
+                  srcset="/assets/images/brand/logo-header-dark.webp"
+                  media="(prefers-color-scheme: dark)"
+                >
 
-              <img
-                class="site-footer__logo"
-                src="/assets/images/brand/logo.webp"
-                alt="Baumgartner Digital Infrastructure"
-                loading="lazy"
-                decoding="async"
-              >
-            </picture>
-          </a>
-        </div>
-
+                <img
+                  class="site-footer__logo"
+                  src="/assets/images/brand/logo.webp"
+                  alt="Baumgartner Digital Infrastructure"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
+            </a>
+          </div>
 
           <nav
             class="site-footer__nav"
@@ -507,37 +753,23 @@
             <a href="/foam/">Foam</a>
           </nav>
 
-
           <div class="site-footer__meta">
-
-            <span>
-              Switzerland
-            </span>
+            <span>Switzerland</span>
 
             <span>
               © 2026 Baumgartner Digital Infrastructure
             </span>
-
           </div>
 
         </footer>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <script
-    src="/assets/js/header.js"
-    defer
-  ></script>
-
-  <script
-    src="/assets/js/theme.js"
-    defer
-  ></script>
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
 
 </body>
 </html>

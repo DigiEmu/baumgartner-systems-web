@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
 
@@ -26,60 +25,18 @@
     href="https://baumgartner.systems/foam/"
   >
 
-  <meta
-    property="og:site_name"
-    content="Baumgartner Systems"
-  >
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Foam — Memory State Optimisation | Baumgartner Systems">
+  <meta property="og:description" content="Foam explores memory-state optimisation for efficient, reconstructable and verification-aware AI infrastructure.">
+  <meta property="og:url" content="https://baumgartner.systems/foam/">
+  <meta property="og:image" content="https://baumgartner.systems/assets/images/brand/foam.webp">
+  <meta property="og:image:alt" content="DigiEmu Foam">
 
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="Foam — Memory State Optimisation | Baumgartner Systems"
-  >
-
-  <meta
-    property="og:description"
-    content="Foam explores memory-state optimisation for efficient, reconstructable and verification-aware AI infrastructure."
-  >
-
-  <meta
-    property="og:url"
-    content="https://baumgartner.systems/foam/"
-  >
-
-  <meta
-    property="og:image"
-    content="https://baumgartner.systems/assets/images/brand/foam.webp"
-  >
-
-  <meta
-    property="og:image:alt"
-    content="DigiEmu Foam"
-  >
-
-  <meta
-    name="twitter:card"
-    content="summary"
-  >
-
-  <meta
-    name="twitter:title"
-    content="Foam — Memory State Optimisation | Baumgartner Systems"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Foam explores memory-state optimisation for efficient, reconstructable and verification-aware AI infrastructure."
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://baumgartner.systems/assets/images/brand/foam.webp"
-  >
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Foam — Memory State Optimisation | Baumgartner Systems">
+  <meta name="twitter:description" content="Foam explores memory-state optimisation for efficient, reconstructable and verification-aware AI infrastructure.">
+  <meta name="twitter:image" content="https://baumgartner.systems/assets/images/brand/foam.webp">
 
   <link
     rel="icon"
@@ -119,6 +76,15 @@
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "https:\/\/baumgartner.systems/#website",
+        "url": "https:\/\/baumgartner.systems/",
+        "name": "Baumgartner Systems",
+        "publisher": {
+          "@id": "https:\/\/baumgartner.systems/#organization"
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "https:\/\/baumgartner.systems\/foam\/#webpage",
         "url": "https:\/\/baumgartner.systems\/foam\/",
@@ -134,15 +100,6 @@
         "publisher": {
           "@id": "https:\/\/baumgartner.systems/#organization"
         }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https:\/\/baumgartner.systems/#website",
-        "url": "https:\/\/baumgartner.systems/",
-        "name": "Baumgartner Systems",
-        "publisher": {
-          "@id": "https:\/\/baumgartner.systems/#organization"
-        }
       }
     ]
   }
@@ -152,127 +109,110 @@
 <body>
 
   <header class="site-header">
+    <div class="container site-header__inner">
 
-  <div class="container site-header__inner">
+      <a
+        class="site-brand"
+        href="/"
+        aria-label="Baumgartner Systems home"
+      >
+        <picture class="site-brand__picture">
+          <source
+            srcset="/assets/images/brand/logo-header-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          >
 
-    <a
-      class="site-brand"
-      href="/"
-      aria-label="Baumgartner Systems home"
-    >
-      <picture class="site-brand__picture">
-        <source
-          srcset="/assets/images/brand/logo-header-dark.webp"
-          media="(prefers-color-scheme: dark)"
-        >
+          <img
+            class="site-brand__logo"
+            src="/assets/images/brand/logo-header.webp"
+            alt="Baumgartner Digital Infrastructure"
+            decoding="async"
+          >
+        </picture>
+      </a>
 
-        <img
-          class="site-brand__logo"
-          src="/assets/images/brand/logo-header.webp"
-          alt="Baumgartner Digital Infrastructure"
-          decoding="async"
-        >
-      </picture>
-    </a>
-
-
-    <button
-      class="mobile-nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="site-nav"
-      aria-label="Open navigation"
-    >
-      <span
-        class="mobile-nav-toggle__pearl"
-        aria-hidden="true"
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
       >
         <span
-          class="mobile-nav-toggle__spark"
-        ></span>
-      </span>
+          class="mobile-nav-toggle__pearl"
+          aria-hidden="true"
+        >
+          <span class="mobile-nav-toggle__spark"></span>
+        </span>
 
-      <span class="sr-only">
-        Menu
-      </span>
-    </button>
+        <span class="sr-only">Menu</span>
+      </button>
 
-
-    <nav
-      class="site-nav"
-      id="site-nav"
-      aria-label="Technology navigation"
-    >
-
-      <a href="/">
-        Home
-      </a>
-
-      <a
-        href="/arca/"
-        
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Technology navigation"
       >
-        Arca
-      </a>
+        <a href="/">Home</a>
 
-      <a
-        href="/core/"
-        
-      >
-        Core
-      </a>
+        <a
+          href="/arca/"
+          
+        >
+          Arca
+        </a>
 
-      <a
-        href="/skc/"
-        
-      >
-        SKC
-      </a>
+        <a
+          href="/core/"
+          
+        >
+          Core
+        </a>
 
-      <a
-        href="/vsc/"
-        
-      >
-        VSC
-      </a>
+        <a
+          href="/skc/"
+          
+        >
+          SKC
+        </a>
 
-      <a
-        href="/foam/"
-        aria-current="page"
-      >
-        Foam
-      </a>
+        <a
+          href="/vsc/"
+          
+        >
+          VSC
+        </a>
 
-      <a
-        href="mailto:contact@baumgartner.systems"
-        class="site-nav__cta"
-      >
-        Discuss a Pilot
-      </a>
+        <a
+          href="/foam/"
+          aria-current="page"
+        >
+          Foam
+        </a>
 
-    </nav>
+        <a
+          href="mailto:contact@baumgartner.systems"
+          class="site-nav__cta"
+        >
+          Discuss a Pilot
+        </a>
+      </nav>
 
-  </div>
-
-
+    </div>
   </header>
 
 
   <main class="technology-page">
 
     <section class="technology-hero">
-
       <div class="container technology-hero__layout">
 
         <div class="technology-hero__copy">
-
           <p class="eyebrow">
             DigiEmu Technology
           </p>
 
-          <h1>
-            Foam
-          </h1>
+          <h1>Foam</h1>
 
           <p class="technology-hero__tagline">
             Memory state optimisation.
@@ -283,7 +223,6 @@
           </p>
 
           <div class="technology-hero__actions">
-
             <a
               class="cta"
               href="#overview"
@@ -297,26 +236,20 @@
             >
               Back to technology ecosystem
             </a>
-
           </div>
-
         </div>
-
 
         <div
           class="technology-hero__visual"
           aria-hidden="true"
         >
-
           <img
             src="/assets/images/brand/foam.webp"
             alt=""
           >
-
         </div>
 
       </div>
-
     </section>
 
 
@@ -324,39 +257,23 @@
       class="technology-overview"
       id="overview"
     >
-
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            01
-          </span>
-
-          <span>
-            Overview
-          </span>
-
+          <span class="section-number">01</span>
+          <span>Overview</span>
         </div>
 
-
         <div class="technology-overview__grid">
-
           <div>
-
-            <h2>
-              What it is
-            </h2>
+            <h2>What it is</h2>
 
             <p class="lead">
               Foam explores how memory state can be represented more efficiently while preserving the information needed by higher-level reconstruction and verification processes.
             </p>
-
           </div>
 
-
           <div class="technology-meta">
-
             <div class="technology-meta__item">
               <span>Technology</span>
               <strong>Foam</strong>
@@ -371,83 +288,414 @@
               <span>Status</span>
               <strong>Research</strong>
             </div>
-
           </div>
-
         </div>
 
       </div>
-
     </section>
 
 
-    <section class="technology-placeholder">
-
+    
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            02
-          </span>
-
-          <span>
-            Architecture
-          </span>
-
+          <span class="section-number">02</span>
+          <span>Architecture</span>
         </div>
 
-        <h2>
-          Architecture
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>Memory is infrastructure, not an unlimited resource.</h2>
 
-        <p class="lead">
-          Architecture detail will be added in the next milestone.
-        </p>
+          
+          <p class="lead">
+            Foam investigates memory optimisation as a structured state problem. Instead of treating memory reduction as an opaque runtime trick, relevant state transitions and recovery requirements remain explicit.
+          </p>
+          
+        </div>
+
+        <div class="technology-sequence">
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              01
+            </span>
+
+            <h3>Profile</h3>
+
+            <p>
+              Observe the memory state and identify the structures responsible for the active footprint.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              02
+            </span>
+
+            <h3>Separate</h3>
+
+            <p>
+              Distinguish active, reconstructable and redundant memory representation.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              03
+            </span>
+
+            <h3>Optimise</h3>
+
+            <p>
+              Reduce or reorganise the memory representation within the defined boundary.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              04
+            </span>
+
+            <h3>Recover</h3>
+
+            <p>
+              Restore required state when downstream computation or verification needs it.
+            </p>
+          </article>
+          
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              05
+            </span>
+
+            <h3>Measure</h3>
+
+            <p>
+              Compare footprint, recoverability and verification-relevant behavior against the baseline.
+            </p>
+          </article>
+          
+        </div>
 
       </div>
-
     </section>
+    
 
 
-    <section class="technology-placeholder">
-
+    
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            03
-          </span>
-
-          <span>
-            Boundaries
-          </span>
-
+          <span class="section-number">03</span>
+          <span>Workflow</span>
         </div>
 
-        <h2>
-          What Foam does — and does not — prove.
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>Use less memory without making state invisible.</h2>
 
-        <p class="lead">
-          Verification boundaries and technical scope will be documented here.
-        </p>
+          
+          <p class="lead">
+            Foam is intended for controlled environments where memory pressure matters but state must remain understandable enough to support reconstruction and higher-level verification.
+          </p>
+          
+        </div>
+
+        <div class="technology-workflow">
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              A
+            </div>
+
+            <div>
+              <h3>Profile</h3>
+
+              <p>
+                Capture a reproducible baseline of the workload and its memory behavior.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              B
+            </div>
+
+            <div>
+              <h3>Map</h3>
+
+              <p>
+                Identify which memory structures are essential, reconstructable or redundant.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              C
+            </div>
+
+            <div>
+              <h3>Optimise</h3>
+
+              <p>
+                Apply the selected memory-state optimisation strategy.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              D
+            </div>
+
+            <div>
+              <h3>Restore</h3>
+
+              <p>
+                Recover state when the workload requires information that is no longer fully resident.
+              </p>
+            </div>
+          </article>
+          
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              E
+            </div>
+
+            <div>
+              <h3>Evaluate</h3>
+
+              <p>
+                Measure memory reduction together with recovery and verification behavior.
+              </p>
+            </div>
+          </article>
+          
+        </div>
 
       </div>
-
     </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">04</span>
+          <span>Evidence</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Memory reduction should remain measurable.</h2>
+
+          
+          <p class="lead">
+            Foam experiments should preserve enough evidence to show what memory was reduced, what was recoverable and what trade-offs were introduced.
+          </p>
+          
+        </div>
+
+        <div class="technology-evidence-grid">
+          
+          <article class="technology-evidence-item">
+            <h3>Baseline footprint</h3>
+
+            <p>
+              Memory use measured before optimisation.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>State map</h3>
+
+            <p>
+              Classification of relevant memory structures inside the experiment boundary.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Optimised footprint</h3>
+
+            <p>
+              Memory use measured after the optimisation step.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Recovery behavior</h3>
+
+            <p>
+              Evidence describing whether required state can be reconstructed when needed.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Resource delta</h3>
+
+            <p>
+              Measured reduction or redistribution of the active memory footprint.
+            </p>
+          </article>
+          
+          <article class="technology-evidence-item">
+            <h3>Verification basis</h3>
+
+            <p>
+              The baseline and retained evidence needed to compare experiment outcomes.
+            </p>
+          </article>
+          
+        </div>
+
+      </div>
+    </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">05</span>
+          <span>Boundaries</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Memory efficiency is not proof of behavioral equivalence.</h2>
+
+          
+          <p class="lead">
+            Foam is experimental memory infrastructure. Any claim about preservation or equivalence must remain limited to the state and measurements actually evaluated.
+          </p>
+          
+        </div>
+
+        <ul class="technology-boundary-list">
+          
+          <li>Foam does not prove that every internal runtime state remains identical.</li>
+          
+          <li>Reduced memory use does not automatically imply equivalent model behavior.</li>
+          
+          <li>Recoverability applies only to state represented inside the defined optimisation boundary.</li>
+          
+          <li>Performance results depend on workload, runtime, model and system configuration.</li>
+          
+          <li>Experimental results must not be generalized beyond the measured evidence.</li>
+          
+        </ul>
+
+      </div>
+    </section>
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">06</span>
+          <span>Pilot</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>Start with one measurable memory problem.</h2>
+
+          
+          <p class="lead">
+            A Foam experiment should begin with a reproducible workload whose memory footprint can be measured before and after optimisation without changing the verification question midway through the experiment.
+          </p>
+          
+        </div>
+
+        <div class="technology-pilot-grid">
+          
+          <article class="technology-pilot-step">
+            <span>01</span>
+
+            <h3>Measure baseline</h3>
+
+            <p>
+              Record the workload, memory footprint and state requirements before optimisation.
+            </p>
+          </article>
+          
+          <article class="technology-pilot-step">
+            <span>02</span>
+
+            <h3>Define recovery boundary</h3>
+
+            <p>
+              Identify which state must remain resident, reconstructable or independently verifiable.
+            </p>
+          </article>
+          
+          <article class="technology-pilot-step">
+            <span>03</span>
+
+            <h3>Optimise and compare</h3>
+
+            <p>
+              Apply the experiment, measure resource change and evaluate recovery against the baseline.
+            </p>
+          </article>
+          
+        </div>
+
+        <div class="technology-pilot__action">
+          <a
+            href="mailto:contact@baumgartner.systems"
+            class="cta"
+          >
+            Discuss a Foam Experiment
+          </a>
+        </div>
+
+
+        <aside
+          class="technology-repository"
+          aria-label="Source and technical reference"
+        >
+          <p class="technology-repository__label">
+            Source &amp; technical reference
+          </p>
+
+          
+          <p>
+            DigiEmu publishes selected source code, technical specifications
+            and research material through its GitHub organisation.
+          </p>
+
+          <a
+            class="technology-repository__link"
+            href="https://github.com/DigiEmu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore DigiEmu on GitHub
+            <span aria-hidden="true">↗</span>
+          </a>
+          
+        </aside>
+
+      </div>
+    </section>
+    
 
 
     <section
       class="closing-scene"
       id="contact"
     >
-
       <div class="container closing-scene__inner">
 
         <div class="closing-scene__cta">
-
           <p class="eyebrow">
             Baumgartner Systems
           </p>
@@ -466,34 +714,32 @@
           >
             Discuss a Pilot
           </a>
-
         </div>
 
 
         <footer class="site-footer">
 
           <div class="site-footer__brand">
-          <a
-            href="/"
-            aria-label="Baumgartner Systems home"
-          >
-            <picture class="site-footer__picture">
-              <source
-                srcset="/assets/images/brand/logo-header-dark.webp"
-                media="(prefers-color-scheme: dark)"
-              >
+            <a
+              href="/"
+              aria-label="Baumgartner Systems home"
+            >
+              <picture class="site-footer__picture">
+                <source
+                  srcset="/assets/images/brand/logo-header-dark.webp"
+                  media="(prefers-color-scheme: dark)"
+                >
 
-              <img
-                class="site-footer__logo"
-                src="/assets/images/brand/logo.webp"
-                alt="Baumgartner Digital Infrastructure"
-                loading="lazy"
-                decoding="async"
-              >
-            </picture>
-          </a>
-        </div>
-
+                <img
+                  class="site-footer__logo"
+                  src="/assets/images/brand/logo.webp"
+                  alt="Baumgartner Digital Infrastructure"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
+            </a>
+          </div>
 
           <nav
             class="site-footer__nav"
@@ -507,37 +753,23 @@
             <a href="/foam/">Foam</a>
           </nav>
 
-
           <div class="site-footer__meta">
-
-            <span>
-              Switzerland
-            </span>
+            <span>Switzerland</span>
 
             <span>
               © 2026 Baumgartner Digital Infrastructure
             </span>
-
           </div>
 
         </footer>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <script
-    src="/assets/js/header.js"
-    defer
-  ></script>
-
-  <script
-    src="/assets/js/theme.js"
-    defer
-  ></script>
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
 
 </body>
 </html>

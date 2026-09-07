@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
 
@@ -26,60 +25,18 @@
     href="{{ .SiteURL }}{{ .CanonicalPath }}"
   >
 
-  <meta
-    property="og:site_name"
-    content="Baumgartner Systems"
-  >
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ .MetaTitle }}">
+  <meta property="og:description" content="{{ .MetaDescription }}">
+  <meta property="og:url" content="{{ .SiteURL }}{{ .CanonicalPath }}">
+  <meta property="og:image" content="{{ .SiteURL }}{{ .Image }}">
+  <meta property="og:image:alt" content="DigiEmu {{ .Name }}">
 
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="{{ .MetaTitle }}"
-  >
-
-  <meta
-    property="og:description"
-    content="{{ .MetaDescription }}"
-  >
-
-  <meta
-    property="og:url"
-    content="{{ .SiteURL }}{{ .CanonicalPath }}"
-  >
-
-  <meta
-    property="og:image"
-    content="{{ .SiteURL }}{{ .Image }}"
-  >
-
-  <meta
-    property="og:image:alt"
-    content="DigiEmu {{ .Name }}"
-  >
-
-  <meta
-    name="twitter:card"
-    content="summary"
-  >
-
-  <meta
-    name="twitter:title"
-    content="{{ .MetaTitle }}"
-  >
-
-  <meta
-    name="twitter:description"
-    content="{{ .MetaDescription }}"
-  >
-
-  <meta
-    name="twitter:image"
-    content="{{ .SiteURL }}{{ .Image }}"
-  >
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ .MetaTitle }}">
+  <meta name="twitter:description" content="{{ .MetaDescription }}">
+  <meta name="twitter:image" content="{{ .SiteURL }}{{ .Image }}">
 
   <link
     rel="icon"
@@ -119,6 +76,15 @@
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "{{ .SiteURL }}/#website",
+        "url": "{{ .SiteURL }}/",
+        "name": "Baumgartner Systems",
+        "publisher": {
+          "@id": "{{ .SiteURL }}/#organization"
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "{{ .SiteURL }}{{ .CanonicalPath }}#webpage",
         "url": "{{ .SiteURL }}{{ .CanonicalPath }}",
@@ -134,15 +100,6 @@
         "publisher": {
           "@id": "{{ .SiteURL }}/#organization"
         }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "{{ .SiteURL }}/#website",
-        "url": "{{ .SiteURL }}/",
-        "name": "Baumgartner Systems",
-        "publisher": {
-          "@id": "{{ .SiteURL }}/#organization"
-        }
       }
     ]
   }
@@ -152,7 +109,6 @@
 <body>
 
   <header class="site-header">
-
     <div class="container site-header__inner">
 
       <a
@@ -175,27 +131,29 @@
         </picture>
       </a>
 
-
       <button
         class="mobile-nav-toggle"
         type="button"
-        aria-label="Open navigation"
         aria-expanded="false"
-        aria-controls="primary-navigation"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
       >
-        <span></span>
-        <span></span>
+        <span
+          class="mobile-nav-toggle__pearl"
+          aria-hidden="true"
+        >
+          <span class="mobile-nav-toggle__spark"></span>
+        </span>
+
+        <span class="sr-only">Menu</span>
       </button>
 
       <nav
         class="site-nav"
-        id="primary-navigation"
+        id="site-nav"
         aria-label="Technology navigation"
       >
-
-        <a href="/">
-          Home
-        </a>
+        <a href="/">Home</a>
 
         <a
           href="/arca/"
@@ -233,34 +191,28 @@
         </a>
 
         <a
-          class="site-nav__cta"
           href="mailto:contact@baumgartner.systems"
+          class="site-nav__cta"
         >
           Discuss a Pilot
         </a>
-
       </nav>
 
     </div>
-
   </header>
 
 
   <main class="technology-page">
 
     <section class="technology-hero">
-
       <div class="container technology-hero__layout">
 
         <div class="technology-hero__copy">
-
           <p class="eyebrow">
             DigiEmu Technology
           </p>
 
-          <h1>
-            {{ .Name }}
-          </h1>
+          <h1>{{ .Name }}</h1>
 
           <p class="technology-hero__tagline">
             {{ .Tagline }}
@@ -271,7 +223,6 @@
           </p>
 
           <div class="technology-hero__actions">
-
             <a
               class="cta"
               href="#overview"
@@ -285,26 +236,20 @@
             >
               Back to technology ecosystem
             </a>
-
           </div>
-
         </div>
-
 
         <div
           class="technology-hero__visual"
           aria-hidden="true"
         >
-
           <img
             src="{{ .Image }}"
             alt=""
           >
-
         </div>
 
       </div>
-
     </section>
 
 
@@ -312,39 +257,23 @@
       class="technology-overview"
       id="overview"
     >
-
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            01
-          </span>
-
-          <span>
-            Overview
-          </span>
-
+          <span class="section-number">01</span>
+          <span>Overview</span>
         </div>
 
-
         <div class="technology-overview__grid">
-
           <div>
-
-            <h2>
-              What it is
-            </h2>
+            <h2>What it is</h2>
 
             <p class="lead">
               {{ .Overview }}
             </p>
-
           </div>
 
-
           <div class="technology-meta">
-
             <div class="technology-meta__item">
               <span>Technology</span>
               <strong>{{ .Name }}</strong>
@@ -359,83 +288,274 @@
               <span>Status</span>
               <strong>{{ .Status }}</strong>
             </div>
-
           </div>
-
         </div>
 
       </div>
-
     </section>
 
 
-    <section class="technology-placeholder">
-
+    {{ if .Architecture }}
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            02
-          </span>
-
-          <span>
-            Architecture
-          </span>
-
+          <span class="section-number">02</span>
+          <span>Architecture</span>
         </div>
 
-        <h2>
-          Architecture
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>{{ .ArchitectureTitle }}</h2>
 
-        <p class="lead">
-          Architecture detail will be added in the next milestone.
-        </p>
+          {{ if .ArchitectureIntro }}
+          <p class="lead">
+            {{ .ArchitectureIntro }}
+          </p>
+          {{ end }}
+        </div>
+
+        <div class="technology-sequence">
+          {{ range .Architecture }}
+          <article class="technology-sequence__item">
+            <span class="technology-sequence__number">
+              {{ .Number }}
+            </span>
+
+            <h3>{{ .Name }}</h3>
+
+            <p>
+              {{ .Description }}
+            </p>
+          </article>
+          {{ end }}
+        </div>
 
       </div>
-
     </section>
+    {{ end }}
 
 
-    <section class="technology-placeholder">
-
+    {{ if .Workflow }}
+    <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-
-          <span class="section-number">
-            03
-          </span>
-
-          <span>
-            Boundaries
-          </span>
-
+          <span class="section-number">03</span>
+          <span>Workflow</span>
         </div>
 
-        <h2>
-          What {{ .Name }} does — and does not — prove.
-        </h2>
+        <div class="technology-detail__intro">
+          <h2>{{ .WorkflowTitle }}</h2>
 
-        <p class="lead">
-          Verification boundaries and technical scope will be documented here.
-        </p>
+          {{ if .WorkflowIntro }}
+          <p class="lead">
+            {{ .WorkflowIntro }}
+          </p>
+          {{ end }}
+        </div>
+
+        <div class="technology-workflow">
+          {{ range .Workflow }}
+          <article class="technology-workflow__item">
+            <div class="technology-workflow__marker">
+              {{ .Number }}
+            </div>
+
+            <div>
+              <h3>{{ .Name }}</h3>
+
+              <p>
+                {{ .Description }}
+              </p>
+            </div>
+          </article>
+          {{ end }}
+        </div>
 
       </div>
-
     </section>
+    {{ end }}
+
+
+    {{ if .Evidence }}
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">04</span>
+          <span>Evidence</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>{{ .EvidenceTitle }}</h2>
+
+          {{ if .EvidenceIntro }}
+          <p class="lead">
+            {{ .EvidenceIntro }}
+          </p>
+          {{ end }}
+        </div>
+
+        <div class="technology-evidence-grid">
+          {{ range .Evidence }}
+          <article class="technology-evidence-item">
+            <h3>{{ .Name }}</h3>
+
+            <p>
+              {{ .Description }}
+            </p>
+          </article>
+          {{ end }}
+        </div>
+
+      </div>
+    </section>
+    {{ end }}
+
+
+    {{ if .Boundaries }}
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">05</span>
+          <span>Boundaries</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>{{ .BoundaryTitle }}</h2>
+
+          {{ if .BoundaryIntro }}
+          <p class="lead">
+            {{ .BoundaryIntro }}
+          </p>
+          {{ end }}
+        </div>
+
+        <ul class="technology-boundary-list">
+          {{ range .Boundaries }}
+          <li>{{ .Text }}</li>
+          {{ end }}
+        </ul>
+
+      </div>
+    </section>
+    {{ end }}
+
+
+    {{ if .Pilot }}
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">06</span>
+          <span>Pilot</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>{{ .PilotTitle }}</h2>
+
+          {{ if .PilotIntro }}
+          <p class="lead">
+            {{ .PilotIntro }}
+          </p>
+          {{ end }}
+        </div>
+
+        <div class="technology-pilot-grid">
+          {{ range .Pilot }}
+          <article class="technology-pilot-step">
+            <span>{{ .Number }}</span>
+
+            <h3>{{ .Name }}</h3>
+
+            <p>
+              {{ .Description }}
+            </p>
+          </article>
+          {{ end }}
+        </div>
+
+        <div class="technology-pilot__action">
+          <a
+            href="mailto:contact@baumgartner.systems"
+            class="cta"
+          >
+            {{ .PilotCTA }}
+          </a>
+        </div>
+
+
+        <aside
+          class="technology-repository"
+          aria-label="Source and technical reference"
+        >
+          <p class="technology-repository__label">
+            Source &amp; technical reference
+          </p>
+
+          {{ if eq .Slug "core" }}
+          <p>
+            Public source, architecture records and verification material
+            for DigiEmu Core are maintained on GitHub.
+          </p>
+
+          <a
+            class="technology-repository__link"
+            href="https://github.com/DigiEmu/core"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Core repository
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          {{ else if eq .Slug "vsc" }}
+          <p>
+            Public architecture, benchmark and verification material
+            for VSC is maintained on GitHub.
+          </p>
+
+          <a
+            class="technology-repository__link"
+            href="https://github.com/DigiEmu/vsc-core"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View VSC repository
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          {{ else }}
+          <p>
+            DigiEmu publishes selected source code, technical specifications
+            and research material through its GitHub organisation.
+          </p>
+
+          <a
+            class="technology-repository__link"
+            href="https://github.com/DigiEmu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore DigiEmu on GitHub
+            <span aria-hidden="true">↗</span>
+          </a>
+          {{ end }}
+        </aside>
+
+      </div>
+    </section>
+    {{ end }}
 
 
     <section
       class="closing-scene"
       id="contact"
     >
-
       <div class="container closing-scene__inner">
 
         <div class="closing-scene__cta">
-
           <p class="eyebrow">
             Baumgartner Systems
           </p>
@@ -454,34 +574,32 @@
           >
             Discuss a Pilot
           </a>
-
         </div>
 
 
         <footer class="site-footer">
 
           <div class="site-footer__brand">
-          <a
-            href="/"
-            aria-label="Baumgartner Systems home"
-          >
-            <picture class="site-footer__picture">
-              <source
-                srcset="/assets/images/brand/logo-header-dark.webp"
-                media="(prefers-color-scheme: dark)"
-              >
+            <a
+              href="/"
+              aria-label="Baumgartner Systems home"
+            >
+              <picture class="site-footer__picture">
+                <source
+                  srcset="/assets/images/brand/logo-header-dark.webp"
+                  media="(prefers-color-scheme: dark)"
+                >
 
-              <img
-                class="site-footer__logo"
-                src="/assets/images/brand/logo.webp"
-                alt="Baumgartner Digital Infrastructure"
-                loading="lazy"
-                decoding="async"
-              >
-            </picture>
-          </a>
-        </div>
-
+                <img
+                  class="site-footer__logo"
+                  src="/assets/images/brand/logo.webp"
+                  alt="Baumgartner Digital Infrastructure"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
+            </a>
+          </div>
 
           <nav
             class="site-footer__nav"
@@ -495,37 +613,23 @@
             <a href="/foam/">Foam</a>
           </nav>
 
-
           <div class="site-footer__meta">
-
-            <span>
-              Switzerland
-            </span>
+            <span>Switzerland</span>
 
             <span>
               © 2026 Baumgartner Digital Infrastructure
             </span>
-
           </div>
 
         </footer>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <script
-    src="/assets/js/header.js"
-    defer
-  ></script>
-
-  <script
-    src="/assets/js/theme.js"
-    defer
-  ></script>
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
 
 </body>
 </html>
