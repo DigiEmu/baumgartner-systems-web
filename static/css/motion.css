@@ -11,6 +11,24 @@
   a {
     transition: color 0.2s ease;
   }
+
+  section {
+    transform-origin: top center;
+    animation: stack-shrink linear both;
+    animation-timeline: view();
+    animation-range: exit 0% exit 100%;
+  }
+
+  @keyframes stack-shrink {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.975);
+      opacity: 0.86;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
