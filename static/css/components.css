@@ -3574,3 +3574,264 @@ main section[id] {
     padding-right: 1.55rem !important;
   }
 }
+
+/* =========================================================
+   FINAL TECHNOLOGY STACK + HEADER FIX
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Header must always stay above stacked technology sections
+   --------------------------------------------------------- */
+
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+
+  z-index: 5000 !important;
+}
+
+.site-header .site-nav {
+  z-index: 5100 !important;
+}
+
+.mobile-nav-toggle {
+  z-index: 5200 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Desktop technology stacking
+   --------------------------------------------------------- */
+
+@media (min-width: 761px) {
+
+  .technology-page {
+    position: relative;
+
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+  }
+
+  .technology-page > section {
+    position: sticky !important;
+
+    top: 3.9rem !important;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-height:
+      calc(100svh - 3.9rem) !important;
+
+    overflow: clip;
+
+    background: var(--bg);
+  }
+
+  .technology-page > section:nth-child(1) {
+    z-index: 10;
+  }
+
+  .technology-page > section:nth-child(2) {
+    z-index: 20;
+  }
+
+  .technology-page > section:nth-child(3) {
+    z-index: 30;
+  }
+
+  .technology-page > section:nth-child(4) {
+    z-index: 40;
+  }
+
+  .technology-page > section:nth-child(5) {
+    z-index: 50;
+  }
+
+  .technology-page > section:nth-child(6) {
+    z-index: 60;
+  }
+
+  .technology-page > section:nth-child(7) {
+    z-index: 70;
+  }
+
+  .technology-page > section:nth-child(8) {
+    z-index: 80;
+  }
+
+  .technology-page > section:nth-child(9) {
+    z-index: 90;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   Mobile:
+   no sticky clipping — every section may grow naturally
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .technology-page {
+    position: relative;
+
+    overflow: visible !important;
+  }
+
+  .technology-page > section {
+    position: relative !important;
+
+    top: auto !important;
+
+    width: 100%;
+
+    min-height: auto !important;
+    height: auto !important;
+
+    overflow: visible !important;
+
+    z-index: auto !important;
+  }
+
+
+  .technology-hero,
+  .technology-overview,
+  .technology-placeholder,
+  .technology-detail,
+  .technology-page .closing-scene {
+    position: relative !important;
+
+    top: auto !important;
+
+    min-height: auto !important;
+    height: auto !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* Hero still gets sufficient presence */
+
+  .technology-hero {
+    min-height:
+      calc(100svh - 4.25rem) !important;
+  }
+
+
+  /* Content needs breathing room */
+
+  .technology-page .container {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    padding-left:
+      1.6rem !important;
+
+    padding-right:
+      1.6rem !important;
+  }
+
+
+  /* Long architecture / evidence content must not clip */
+
+  .technology-sequence,
+  .technology-workflow,
+  .technology-evidence-grid,
+  .technology-boundary-list,
+  .technology-pilot-grid,
+  .technology-repository {
+    overflow: visible !important;
+
+    max-height: none !important;
+
+    height: auto !important;
+  }
+
+
+  /* Closing section */
+
+  .technology-page .closing-scene {
+    min-height: auto !important;
+  }
+
+  .technology-page
+  .closing-scene__inner {
+    min-height: auto !important;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   Reduced motion must not override desktop stack
+   --------------------------------------------------------- */
+
+@media
+  (prefers-reduced-motion: reduce)
+  and
+  (min-width: 761px) {
+
+  .technology-page > section {
+    position: sticky !important;
+
+    top: 3.9rem !important;
+
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   TECHNOLOGY CONTENT — MORE BREATHING ROOM
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .technology-page .container {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .technology-detail__intro,
+  .technology-overview__grid,
+  .technology-pilot-grid,
+  .technology-sequence,
+  .technology-workflow,
+  .technology-evidence-grid,
+  .technology-boundary-list,
+  .technology-repository {
+    max-width: 100%;
+  }
+
+  .technology-detail__intro {
+    gap: 2rem;
+  }
+
+  .technology-pilot-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 760px) {
+
+  .technology-page .container {
+    padding-left: 1.8rem !important;
+    padding-right: 1.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .technology-page .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
