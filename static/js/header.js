@@ -4,6 +4,11 @@ const header =
 if (header) {
   let scrolled = false;
 
+
+  /* =========================================================
+     HEADER SCROLL STATE
+     ========================================================= */
+
   const updateHeader = () => {
     const y = window.scrollY;
 
@@ -27,7 +32,114 @@ if (header) {
   );
 
 
-  /* mobile navigation */
+  /* =========================================================
+     ACTIVE SECTION
+     ========================================================= */
+
+  const sectionLinks =
+    [
+      ...header.querySelectorAll(
+        '.site-nav a[href^="#"]'
+      )
+    ];
+
+  const sections =
+    sectionLinks
+      .map((link) => {
+        const selector =
+          link.getAttribute("href");
+
+        if (
+          !selector ||
+          selector === "#"
+        ) {
+          return null;
+        }
+
+        const section =
+          document.querySelector(
+            selector
+          );
+
+        if (!section) {
+          return null;
+        }
+
+        return {
+          link,
+          section
+        };
+      })
+      .filter(Boolean);
+
+
+  const updateActiveSection = () => {
+    if (!sections.length) {
+      return;
+    }
+
+    const viewportMarker =
+      window.scrollY + 160;
+
+    let active =
+      sections[0];
+
+    for (const item of sections) {
+      if (
+        item.section.offsetTop <=
+        viewportMarker
+      ) {
+        active = item;
+      }
+    }
+
+
+    /*
+     * Force final contact section active
+     * when page bottom is reached.
+     */
+
+    const atBottom =
+      window.innerHeight +
+      window.scrollY >=
+      document.documentElement.scrollHeight -
+      8;
+
+    if (atBottom) {
+      active =
+        sections[
+          sections.length - 1
+        ];
+    }
+
+
+    sectionLinks.forEach(
+      (link) => {
+        link.classList.remove(
+          "is-active"
+        );
+      }
+    );
+
+    if (active?.link) {
+      active.link.classList.add(
+        "is-active"
+      );
+    }
+  };
+
+  updateActiveSection();
+
+  window.addEventListener(
+    "scroll",
+    updateActiveSection,
+    { passive: true }
+  );
+
+
+  /* =========================================================
+     MOBILE NAVIGATION
+     ========================================================= */
 
   const toggle =
     header.querySelector(
@@ -92,6 +204,10 @@ if (header) {
 
   if (toggle && nav) {
 
+    /*
+     * Main hamburger
+     */
+
     toggle.addEventListener(
       "click",
       (event) => {
@@ -121,6 +237,10 @@ if (header) {
     );
 
 
+    /*
+     * Technology submenu
+     */
+
     if (
       technologyDropdown &&
       technologyToggle
@@ -129,7 +249,14 @@ if (header) {
         "click",
         (event) => {
 
-          if (window.innerWidth > 900) {
+          /*
+           * Desktop dropdown behaviour
+           * remains CSS / existing behaviour.
+           */
+
+          if (
+            window.innerWidth > 900
+          ) {
             return;
           }
 
@@ -150,18 +277,37 @@ if (header) {
     }
 
 
+    /*
+     * Close after selecting a link
+     */
+
     nav.addEventListener(
       "click",
       (event) => {
         const link =
           event.target.closest("a");
 
-        if (link) {
-          closeNavigation();
+        if (!link) {
+          return;
         }
+
+        closeNavigation();
+
+        /*
+         * Update marker immediately
+         * after anchor navigation.
+         */
+
+        window.requestAnimationFrame(
+          updateActiveSection
+        );
       }
     );
 
+
+    /*
+     * Click outside
+     */
 
     document.addEventListener(
       "click",
@@ -170,7 +316,9 @@ if (header) {
           header.classList.contains(
             "is-nav-open"
           ) &&
-          !header.contains(event.target)
+          !header.contains(
+            event.target
+          )
         ) {
           closeNavigation();
         }
@@ -178,22 +326,41 @@ if (header) {
     );
 
 
+    /*
+     * Escape
+     */
+
     document.addEventListener(
       "keydown",
       (event) => {
-        if (event.key === "Escape") {
+        if (
+          event.key === "Escape"
+        ) {
           closeNavigation();
+
+          if (toggle) {
+            toggle.focus();
+          }
         }
       }
     );
 
 
+    /*
+     * Reset when returning
+     * to desktop layout
+     */
+
     window.addEventListener(
       "resize",
       () => {
-        if (window.innerWidth > 900) {
+        if (
+          window.innerWidth > 900
+        ) {
           closeNavigation();
         }
+
+        updateActiveSection();
       }
     );
   }
