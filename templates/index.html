@@ -3,141 +3,821 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Trust infrastructure for AI-assisted decisions.">
+
+  <meta
+    name="description"
+    content="Trust infrastructure for AI-assisted decisions.">
+
   <title>Baumgartner Systems</title>
-  <link rel="stylesheet" href="assets/css/site.css">
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/site.css">
+    <link
+  rel="icon"
+  type="image/webp"
+  href="/assets/images/brand/glyph.webp">
+
 </head>
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/section-nav.js" defer></script>
 <body>
+<header class="site-header">
+<div class="scroll-rail" aria-hidden="true">
+  <span class="scroll-rail__line"></span>
+
+  <span class="scroll-rail__dot scroll-rail__dot--1"></span>
+  <span class="scroll-rail__dot scroll-rail__dot--2"></span>
+  <span class="scroll-rail__dot scroll-rail__dot--3"></span>
+  <span class="scroll-rail__dot scroll-rail__dot--4"></span>
+  <span class="scroll-rail__dot scroll-rail__dot--5"></span>
+</div>
+
+  <div class="container site-header__inner">
+
+    <a
+      href="/"
+      class="site-brand"
+      aria-label="Baumgartner Systems home">
+
+      <img
+        src="/assets/images/brand/logo.webp"
+        alt="Baumgartner Digital Infrastructure"
+        width="1600"
+        height="1080"
+        class="site-brand__logo">
+
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Primary navigation">
+
+      <a href="#problem">
+        Problem
+      </a>
+
+      <a href="#evidence">
+        Evidence
+      </a>
+
+      <a href="#work">
+        Work
+      </a>
+
+      <a href="#proof">
+        Proof
+      </a>
+
+      <a href="#boundary">
+        Boundary
+      </a>
+
+      <a
+        href="#contact"
+        class="site-nav__cta">
+        Discuss a Pilot
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
   <main class="home">
-    <section class="hero" id="hero">
-      <div class="container">
-        <p class="eyebrow">Baumgartner Systems</p>
-        <h1>Trust infrastructure for AI-assisted decisions.</h1>
-        <p class="intro">We help organisations make AI-assisted workflows traceable, verifiable and ready for audit.</p>
-        <a href="#contact" class="cta">Discuss a Pilot</a>
-        <a href="#problem" class="scroll-hint">Scroll to verify ↓</a>
-      </div>
-    </section>
 
-    <section id="problem" aria-labelledby="problem-label">
+    <!-- HERO -->
+
+    <section
+  class="hero"
+  id="hero">
+
+  <div class="container hero-layout">
+
+    <div class="hero-copy">
+
+      <p class="eyebrow">
+        Baumgartner Systems
+      </p>
+
+      <h1>
+        Trust infrastructure for AI-assisted decisions.
+      </h1>
+
+      <p class="intro">
+        We help organisations make AI-assisted workflows
+        traceable, verifiable and ready for audit.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          href="#contact"
+          class="cta">
+          Discuss a Pilot
+        </a>
+
+        <a
+          href="#problem"
+          class="scroll-hint">
+          Scroll to verify ↓
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="hero-orbital"
+      aria-hidden="true">
+
+      <svg
+        class="orbital-field"
+        viewBox="0 0 900 900"
+        role="presentation">
+
+        <g class="orbital-base">
+          <ellipse cx="450" cy="450" rx="340" ry="340" class="orbital-line" />
+          <ellipse cx="450" cy="450" rx="390" ry="250" class="orbital-line orbital-soft" />
+          <ellipse cx="450" cy="450" rx="390" ry="150" class="orbital-line orbital-soft" />
+          <ellipse cx="450" cy="450" rx="170" ry="390" class="orbital-line orbital-soft" />
+          <ellipse cx="450" cy="450" rx="255" ry="390" class="orbital-line orbital-soft" />
+        </g>
+
+        <g class="orbital-spin orbital-spin-a">
+          <ellipse cx="450" cy="450" rx="400" ry="260" class="orbital-line" transform="rotate(22 450 450)" />
+          <ellipse cx="450" cy="450" rx="400" ry="260" class="orbital-line orbital-soft" transform="rotate(58 450 450)" />
+          <ellipse cx="450" cy="450" rx="400" ry="260" class="orbital-line orbital-soft" transform="rotate(96 450 450)" />
+          <ellipse cx="450" cy="450" rx="400" ry="260" class="orbital-line" transform="rotate(132 450 450)" />
+        </g>
+
+        <g class="orbital-spin orbital-spin-b">
+          <ellipse cx="450" cy="450" rx="410" ry="210" class="orbital-line orbital-faint" transform="rotate(12 450 450)" />
+          <ellipse cx="450" cy="450" rx="410" ry="210" class="orbital-line orbital-faint" transform="rotate(74 450 450)" />
+          <ellipse cx="450" cy="450" rx="410" ry="210" class="orbital-line orbital-faint" transform="rotate(118 450 450)" />
+        </g>
+
+      </svg>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- 01 / PROBLEM -->
+
+    <section
+      id="problem"
+      aria-labelledby="problem-label">
+
       <div class="container">
-        <p class="section-label" id="problem-label"><span class="section-number">01</span> / Problem</p>
-        <h2>The problem is not whether AI can make a decision.<br>The problem is whether you can later explain what happened.</h2>
+
+        <p
+          class="section-label"
+          id="problem-label">
+
+          <span class="section-number">
+            01
+          </span>
+
+          / Problem
+
+        </p>
+
+        <h2>
+          The problem is not whether AI can make a decision.
+          <br>
+          The problem is whether you can later explain what happened.
+        </h2>
+
         <ul class="questions">
-          <li>What information was available?</li>
-          <li>What changed?</li>
-          <li>Can the decision trail be reconstructed?</li>
+          <li>
+            What information was available?
+          </li>
+
+          <li>
+            What changed?
+          </li>
+
+          <li>
+            Can the decision trail be reconstructed?
+          </li>
         </ul>
-        <p class="closing">Evidence. Provenance. Verification.</p>
+
+        <p class="closing">
+          Evidence. Provenance. Verification.
+        </p>
+
       </div>
+
     </section>
 
-    <section id="evidence" aria-labelledby="evidence-label">
+
+    <!-- 02 / EVIDENCE -->
+
+    <section
+      id="evidence"
+      aria-labelledby="evidence-label">
+
       <div class="container">
-        <p class="section-label" id="evidence-label"><span class="section-number">02</span> / Evidence</p>
-        <h2>Make the decision trail reconstructable.</h2>
-        <div class="evidence-grid">
-          <article class="evidence-item">
-            <h3>Identity</h3>
-            <p>Know which agents, models, data sources and human reviewers participated in a decision.</p>
+
+        <p
+          class="section-label"
+          id="evidence-label">
+
+          <span class="section-number">
+            02
+          </span>
+
+          / Evidence
+
+        </p>
+
+        <h2>
+          Make the decision trail reconstructable.
+        </h2>
+
+
+        <div
+          class="evidence-system"
+          aria-label="Evidence reconstruction model">
+
+          <article class="evidence-step">
+
+            <div
+              class="evidence-step__marker"
+              aria-hidden="true">
+              <span>01</span>
+            </div>
+
+            <div class="evidence-step__content">
+
+              <h3>
+                Identity
+              </h3>
+
+              <p>
+                Know which agents, models, data sources and human reviewers
+                participated in a decision.
+              </p>
+
+            </div>
+
           </article>
-          <article class="evidence-item">
-            <h3>Lineage</h3>
-            <p>Record how inputs, versions, parameters and context flowed into each step.</p>
+
+
+          <article class="evidence-step">
+
+            <div
+              class="evidence-step__marker"
+              aria-hidden="true">
+              <span>02</span>
+            </div>
+
+            <div class="evidence-step__content">
+
+              <h3>
+                Lineage
+              </h3>
+
+              <p>
+                Record how inputs, versions, parameters and context flowed
+                into each step.
+              </p>
+
+            </div>
+
           </article>
-          <article class="evidence-item">
-            <h3>State</h3>
-            <p>Capture the system state, configuration and environment at the point of decision.</p>
+
+
+          <article class="evidence-step">
+
+            <div
+              class="evidence-step__marker"
+              aria-hidden="true">
+              <span>03</span>
+            </div>
+
+            <div class="evidence-step__content">
+
+              <h3>
+                State
+              </h3>
+
+              <p>
+                Capture the relevant system state, configuration and environment
+                at the point of decision.
+              </p>
+
+            </div>
+
           </article>
-          <article class="evidence-item">
-            <h3>Provenance</h3>
-            <p>Preserve the origin, chain of custody and transformations applied to every artefact.</p>
+
+
+          <article class="evidence-step">
+
+            <div
+              class="evidence-step__marker"
+              aria-hidden="true">
+              <span>04</span>
+            </div>
+
+            <div class="evidence-step__content">
+
+              <h3>
+                Provenance
+              </h3>
+
+              <p>
+                Preserve origin, chain of custody and transformations
+                applied to every recorded artefact.
+              </p>
+
+            </div>
+
           </article>
-          <article class="evidence-item">
-            <h3>Verification</h3>
-            <p>Enable independent reconstruction and cross-checking of the recorded decision trail.</p>
+
+
+          <article class="evidence-step">
+
+            <div
+              class="evidence-step__marker"
+              aria-hidden="true">
+              <span>05</span>
+            </div>
+
+            <div class="evidence-step__content">
+
+              <h3>
+                Verification
+              </h3>
+
+              <p>
+                Enable independent reconstruction and cross-checking
+                of the recorded decision trail.
+              </p>
+
+            </div>
+
           </article>
+
         </div>
-        <figure class="evidence-diagram" aria-label="Evidence system flow">
-          <ol class="diagram-flow">
-            <li class="diagram-node">Event</li>
-            <li class="diagram-connector" aria-hidden="true">→</li>
-            <li class="diagram-node">Identity</li>
-            <li class="diagram-connector" aria-hidden="true">→</li>
-            <li class="diagram-node">Lineage</li>
-            <li class="diagram-connector" aria-hidden="true">→</li>
-            <li class="diagram-node">State</li>
-            <li class="diagram-connector" aria-hidden="true">→</li>
-            <li class="diagram-node">Provenance</li>
-            <li class="diagram-connector" aria-hidden="true">→</li>
-            <li class="diagram-node">Verification</li>
-          </ol>
-        </figure>
+
+
+        <div
+          class="evidence-flow"
+          aria-label="Evidence flow">
+
+          <span>Event</span>
+
+          <i aria-hidden="true"></i>
+
+          <span>Identity</span>
+
+          <i aria-hidden="true"></i>
+
+          <span>Lineage</span>
+
+          <i aria-hidden="true"></i>
+
+          <span>State</span>
+
+          <i aria-hidden="true"></i>
+
+          <span>Provenance</span>
+
+          <i aria-hidden="true"></i>
+
+          <span>Verification</span>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section id="work" aria-labelledby="work-label">
+
+    <!-- 03 / WORK -->
+
+    <section
+      id="work"
+      aria-labelledby="work-label">
+
       <div class="container">
-        <p class="section-label" id="work-label"><span class="section-number">03</span> / Work</p>
-        <h2>Start with the verification problem you actually have.</h2>
+
+        <p
+          class="section-label"
+          id="work-label">
+
+          <span class="section-number">
+            03
+          </span>
+
+          / Work
+
+        </p>
+
+        <h2>
+          Start with the verification problem you actually have.
+        </h2>
+
+
         <div class="services">
+
           <article class="service">
-            <h3>AI Evidence Readiness Assessment</h3>
-            <p>Understand where an AI-assisted workflow loses evidence, provenance or reconstructability.</p>
+
+            <h3>
+              AI Evidence Readiness Assessment
+            </h3>
+
+            <p>
+              Understand where an AI-assisted workflow loses evidence,
+              provenance or reconstructability.
+            </p>
+
           </article>
+
+
           <article class="service">
-            <h3>Verification Pilot</h3>
-            <p>Choose one meaningful workflow and make its decision trail reconstructable.</p>
+
+            <h3>
+              Verification Pilot
+            </h3>
+
+            <p>
+              Choose one meaningful workflow and make its decision trail
+              reconstructable.
+            </p>
+
           </article>
+
+
           <article class="service">
-            <h3>Enterprise Verification Infrastructure</h3>
-            <p>Integrate durable evidence, provenance and verification capabilities into operational systems.</p>
+
+            <h3>
+              Enterprise Verification Infrastructure
+            </h3>
+
+            <p>
+              Integrate durable evidence, provenance and verification
+              capabilities into operational systems.
+            </p>
+
           </article>
+
+
           <article class="service">
-            <h3>Architecture & Trust Consulting</h3>
-            <p>Design system boundaries, verification architecture and evidence strategies before implementation.</p>
+
+            <h3>
+              Architecture &amp; Trust Consulting
+            </h3>
+
+            <p>
+              Design system boundaries, verification architecture
+              and evidence strategies before implementation.
+            </p>
+
           </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="proof" aria-labelledby="proof-label">
+
+    <!-- 04 / PROOF -->
+
+    <section
+      id="proof"
+      aria-labelledby="proof-label">
+
       <div class="container">
-        <p class="section-label" id="proof-label"><span class="section-number">04</span> / Proof</p>
-        <h2>Built on infrastructure we develop ourselves.</h2>
-        <ul class="rail">
-          <li><span class="rail-name">ARCA</span><p class="rail-desc">Audit-ready context archives for long-term reconstructability.</p></li>
-          <li><span class="rail-name">CORE</span><p class="rail-desc">Canonical evidence objects and provenance records.</p></li>
-          <li><span class="rail-name">SKC</span><p class="rail-desc">Self-certifying key chains for identity and lineage binding.</p></li>
-          <li><span class="rail-name">VSC</span><p class="rail-desc">Verifiable state commitments for system snapshots.</p></li>
-          <li><span class="rail-name">GAZACARE</span><p class="rail-desc">Governance, authorisation and access control evidence.</p></li>
-          <li><span class="rail-name">NCC-001</span><p class="rail-desc">Neutral custody connector for cross-system evidence handoff.</p></li>
-        </ul>
+
+        <p
+          class="section-label"
+          id="proof-label">
+
+          <span class="section-number">
+            04
+          </span>
+
+          / Proof
+
+        </p>
+
+        <h2>
+          Built on infrastructure we develop ourselves.
+        </h2>
+
+
+        <div
+          class="proof-ecosystem"
+          aria-label="DigiEmu technology ecosystem">
+
+          <article class="proof-tech">
+
+            <img
+              src="/assets/images/brand/arca.webp"
+              alt="DigiEmu Arca"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async">
+
+            <div class="proof-tech__meta">
+
+              <h3>
+                Arca
+              </h3>
+
+              <p>
+                Evidence workflow infrastructure
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="proof-tech">
+
+            <img
+              src="/assets/images/brand/core.webp"
+              alt="DigiEmu Core"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async">
+
+            <div class="proof-tech__meta">
+
+              <h3>
+                Core
+              </h3>
+
+              <p>
+                Deterministic knowledge substrate
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="proof-tech">
+
+            <img
+              src="/assets/images/brand/skc.webp"
+              alt="DigiEmu SKC"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async">
+
+            <div class="proof-tech__meta">
+
+              <h3>
+                SKC
+              </h3>
+
+              <p>
+                Reconstructable semantic state
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="proof-tech">
+
+            <img
+              src="/assets/images/brand/vsc.webp"
+              alt="DigiEmu VSC"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async">
+
+            <div class="proof-tech__meta">
+
+              <h3>
+                VSC
+              </h3>
+
+              <p>
+                Verifiable state compression
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="proof-tech">
+
+            <img
+              src="/assets/images/brand/foam.webp"
+              alt="DigiEmu Foam"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async">
+
+            <div class="proof-tech__meta">
+
+              <h3>
+                Foam
+              </h3>
+
+              <p>
+                Memory state optimisation
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <div
+          class="proof-evidence"
+          aria-label="Applied evidence">
+
+          <p class="proof-evidence__label">
+            Applied evidence
+          </p>
+
+          <div class="proof-evidence__items">
+
+            <span>
+              GAZACARE
+            </span>
+
+            <span>
+              NCC-001
+            </span>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section id="boundary" aria-labelledby="boundary-label">
+
+    <!-- 05 / BOUNDARY -->
+
+    <section
+      id="boundary"
+      aria-labelledby="boundary-label">
+
       <div class="container">
-        <p class="section-label" id="boundary-label"><span class="section-number">05</span> / Boundary</p>
-        <h2>Verification is not omniscience.</h2>
-        <p>We can verify recorded evidence, lineage, transformations and system state. We do not claim to prove:</p>
+
+        <p
+          class="section-label"
+          id="boundary-label">
+
+          <span class="section-number">
+            05
+          </span>
+
+          / Boundary
+
+        </p>
+
+        <h2>
+          Verification is not omniscience.
+        </h2>
+
+        <p>
+          We can verify recorded evidence, lineage, transformations
+          and system state. We do not claim to prove:
+        </p>
+
         <ul class="not-proven">
-          <li>objective truth of an AI output</li>
-          <li>correctness of model internal reasoning</li>
-          <li>ethical correctness of a governance decision</li>
-          <li>existence of evidence that was never recorded</li>
+
+          <li>
+            objective truth of an AI output
+          </li>
+
+          <li>
+            correctness of model internal reasoning
+          </li>
+
+          <li>
+            ethical correctness of a governance decision
+          </li>
+
+          <li>
+            existence of evidence that was never recorded
+          </li>
+
         </ul>
-        <p class="closing">Trust starts by knowing exactly what has — and has not — been proven.</p>
+
+        <p class="closing">
+          Trust starts by knowing exactly what has — and has not — been proven.
+        </p>
+
       </div>
+
     </section>
 
-    <section class="cta-section" id="contact" aria-labelledby="cta-label">
-      <div class="container">
-        <h2 id="cta-label">Start with one workflow.</h2>
-        <p>Give us one AI-assisted process worth verifying.</p>
-        <a href="#contact" class="cta">Discuss a Pilot</a>
+
+    <!-- FINAL CTA -->
+
+  <section
+  class="closing-scene"
+  id="contact"
+  aria-labelledby="cta-label">
+
+  <div class="container closing-scene__inner">
+
+    <div class="closing-scene__cta">
+
+      <p class="eyebrow">
+        Baumgartner Systems
+      </p>
+
+      <h2 id="cta-label">
+        Start with one workflow.
+      </h2>
+
+      <p>
+        Give us one AI-assisted process worth verifying.
+      </p>
+
+      <a
+        href="mailto:contact@baumgartner.systems"
+        class="cta">
+        Discuss a Pilot
+      </a>
+
+    </div>
+
+
+    <footer class="site-footer">
+
+      <div class="site-footer__brand">
+
+        <img
+          src="/assets/images/brand/logo.webp"
+          alt="Baumgartner Digital Infrastructure"
+          width="1600"
+          height="1080">
+
       </div>
-    </section>
+
+
+      <nav
+        class="site-footer__nav"
+        aria-label="Footer navigation">
+
+        <a href="#work">
+          Services
+        </a>
+
+        <a href="#proof">
+          Technology
+        </a>
+
+        <a href="#boundary">
+          Boundaries
+        </a>
+
+        <a href="/">
+          Baumgartner Systems
+        </a>
+
+      </nav>
+
+
+      <div class="site-footer__meta">
+
+        <span>
+          Switzerland
+        </span>
+
+        <span>
+          © 2026 Baumgartner Digital Infrastructure
+        </span>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+</section>
+
   </main>
+
 </body>
 </html>

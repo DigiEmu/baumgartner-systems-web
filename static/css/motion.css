@@ -39,3 +39,25 @@
     scroll-behavior: auto !important;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .globe-rotation {
+    animation: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbital-spin-a,
+  .orbital-spin-b {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .site-header__inner,
+  .site-brand__logo,
+  .site-nav,
+  .site-nav a {
+    transition: none !important;
+  }
+}
