@@ -1,0 +1,617 @@
+<main class="technology-page">
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <section class="technology-hero">
+
+    <div class="container technology-hero__layout">
+
+      <div class="technology-hero__copy">
+
+        <p class="eyebrow">
+          DigiEmu Technology
+        </p>
+
+        <h1>
+          {{ .Name }}
+        </h1>
+
+        <p class="technology-hero__tagline">
+          {{ .Tagline }}
+        </p>
+
+        <p class="lead">
+          {{ .Description }}
+        </p>
+
+        <div class="technology-hero__actions">
+
+          <a
+            class="cta"
+            href="#overview"
+          >
+            Explore {{ .Name }}
+          </a>
+
+          <a
+            class="scroll-hint"
+            href="/#proof"
+          >
+            Back to technology ecosystem
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="technology-hero__visual"
+        aria-hidden="true"
+      >
+        <img
+          src="{{ .Image }}"
+          alt=""
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       01 OVERVIEW
+       ===================================================== -->
+
+  <section
+    class="technology-overview"
+    id="overview"
+  >
+
+    <div class="container">
+
+      <div class="section-label">
+
+        <span class="section-number">
+          01
+        </span>
+
+        <span>
+          Overview
+        </span>
+
+      </div>
+
+
+      <div class="technology-overview__grid">
+
+        <div>
+
+          <h2>
+            What it is
+          </h2>
+
+          <p class="lead">
+            {{ .Overview }}
+          </p>
+
+        </div>
+
+
+        <div class="technology-meta">
+
+          <div class="technology-meta__item">
+            <span>Technology</span>
+            <strong>{{ .Name }}</strong>
+          </div>
+
+          <div class="technology-meta__item">
+            <span>Layer</span>
+            <strong>{{ .Layer }}</strong>
+          </div>
+
+          <div class="technology-meta__item">
+            <span>Status</span>
+            <strong>{{ .Status }}</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  {{ if .Complete }}
+
+  <!-- =====================================================
+       02 ARCHITECTURE
+       ===================================================== -->
+
+  <section
+    class="technology-detail"
+    id="architecture"
+  >
+
+    <div class="container">
+
+      <div class="section-label">
+
+        <span class="section-number">
+          02
+        </span>
+
+        <span>
+          Architecture
+        </span>
+
+      </div>
+
+
+      <div class="technology-detail__intro">
+
+        <h2>
+          Evidence is a system, not a screenshot.
+        </h2>
+
+        <p class="lead">
+          {{ .ArchitectureIntro }}
+        </p>
+
+      </div>
+
+
+      <div class="technology-sequence">
+
+        {{ range .Architecture }}
+
+        <article class="technology-sequence__item">
+
+          <span class="technology-sequence__number">
+            {{ .Number }}
+          </span>
+
+          <h3>
+            {{ .Name }}
+          </h3>
+
+          <p>
+            {{ .Description }}
+          </p>
+
+        </article>
+
+        {{ end }}
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       03 WORKFLOW
+       ===================================================== -->
+
+  <section
+    class="technology-detail"
+    id="workflow"
+  >
+
+    <div class="container">
+
+      <div class="section-label">
+
+        <span class="section-number">
+          03
+        </span>
+
+        <span>
+          Workflow
+        </span>
+
+      </div>
+
+
+      <div class="technology-detail__intro">
+
+        <h2>
+          From source material to reconstructable evidence.
+        </h2>
+
+        <p class="lead">
+          {{ .WorkflowIntro }}
+        </p>
+
+      </div>
+
+
+      <div class="technology-workflow">
+
+        {{ range .Workflow }}
+
+        <article class="technology-workflow__item">
+
+          <div class="technology-workflow__marker">
+            {{ .Number }}
+          </div>
+
+          <div>
+
+            <h3>
+              {{ .Name }}
+            </h3>
+
+            <p>
+              {{ .Description }}
+            </p>
+
+          </div>
+
+        </article>
+
+        {{ end }}
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       04 EVIDENCE
+       ===================================================== -->
+
+  <section
+    class="technology-detail"
+    id="evidence-output"
+  >
+
+    <div class="container">
+
+      <div class="section-label">
+
+        <span class="section-number">
+          04
+        </span>
+
+        <span>
+          Evidence
+        </span>
+
+      </div>
+
+
+      <div class="technology-detail__intro">
+
+        <h2>
+          What remains after the workflow.
+        </h2>
+
+        <p class="lead">
+          {{ .EvidenceIntro }}
+        </p>
+
+      </div>
+
+
+      <div class="technology-evidence-grid">
+
+        {{ range .Evidence }}
+
+        <article class="technology-evidence-item">
+
+          <h3>
+            {{ .Name }}
+          </h3>
+
+          <p>
+            {{ .Description }}
+          </p>
+
+        </article>
+
+        {{ end }}
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       05 BOUNDARIES
+       ===================================================== -->
+
+  <section
+    class="technology-detail technology-boundaries"
+    id="boundaries"
+  >
+
+    <div class="container">
+
+      <div class="section-label">
+
+        <span class="section-number">
+          05
+        </span>
+
+        <span>
+          Boundaries
+        </span>
+
+      </div>
+
+
+      <div class="technology-detail__intro">
+
+        <h2>
+          Verification is not omniscience.
+        </h2>
+
+        <p class="lead">
+          {{ .BoundaryIntro }}
+        </p>
+
+      </div>
+
+
+      <ul class="technology-boundary-list">
+
+        {{ range .Boundaries }}
+
+        <li>
+          {{ .Text }}
+        </li>
+
+        {{ end }}
+
+      </ul>
+
+      <p class="closing">
+        Trust starts by knowing exactly what has — and has not — been proven.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       06 PILOT
+       ===================================================== -->
+
+  <section
+    class="technology-detail technology-pilot"
+    id="pilot"
+  >
+
+    <div class="container">
+
+      <div class="section-label">
+
+        <span class="section-number">
+          06
+        </span>
+
+        <span>
+          Pilot
+        </span>
+
+      </div>
+
+
+      <div class="technology-detail__intro">
+
+        <h2>
+          Start with one workflow.
+        </h2>
+
+        <p class="lead">
+          {{ .PilotIntro }}
+        </p>
+
+      </div>
+
+
+      <div class="technology-pilot-grid">
+
+        {{ range .Pilot }}
+
+        <article class="technology-pilot-step">
+
+          <span>
+            {{ .Number }}
+          </span>
+
+          <h3>
+            {{ .Name }}
+          </h3>
+
+          <p>
+            {{ .Description }}
+          </p>
+
+        </article>
+
+        {{ end }}
+
+      </div>
+
+
+      <div class="technology-pilot__action">
+
+        <a
+          href="mailto:contact@baumgartner.systems"
+          class="cta"
+        >
+          Discuss an Arca Pilot
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  {{ else }}
+
+  <!-- =====================================================
+       PLACEHOLDER FOR OTHER TECHNOLOGIES
+       ===================================================== -->
+
+  <section class="technology-placeholder">
+
+    <div class="container">
+
+      <div class="section-label">
+
+        <span class="section-number">
+          02
+        </span>
+
+        <span>
+          Architecture
+        </span>
+
+      </div>
+
+      <h2>
+        Architecture
+      </h2>
+
+      <p class="lead">
+        Architecture detail will be added in a later milestone.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="technology-placeholder">
+
+    <div class="container">
+
+      <div class="section-label">
+
+        <span class="section-number">
+          03
+        </span>
+
+        <span>
+          Boundaries
+        </span>
+
+      </div>
+
+      <h2>
+        What {{ .Name }} does — and does not — prove.
+      </h2>
+
+    </div>
+
+  </section>
+
+  {{ end }}
+
+
+  <!-- =====================================================
+       CLOSING
+       ===================================================== -->
+
+  <section
+    class="closing-scene"
+    id="contact"
+  >
+
+    <div class="container closing-scene__inner">
+
+      <div class="closing-scene__cta">
+
+        <p class="eyebrow">
+          Baumgartner Systems
+        </p>
+
+        <h2>
+          Start with one workflow.
+        </h2>
+
+        <p>
+          Give us one AI-assisted process worth verifying.
+        </p>
+
+        <a
+          href="mailto:contact@baumgartner.systems"
+          class="cta"
+        >
+          Discuss a Pilot
+        </a>
+
+      </div>
+
+
+      <footer class="site-footer">
+
+        <div class="site-footer__brand">
+
+          <img
+            src="/assets/images/brand/logo.webp"
+            alt="Baumgartner Digital Infrastructure"
+          >
+
+        </div>
+
+
+        <nav
+          class="site-footer__nav"
+          aria-label="Footer navigation"
+        >
+
+          <a href="/#work">
+            Services
+          </a>
+
+          <a href="/#proof">
+            Technology
+          </a>
+
+          <a href="/#boundary">
+            Boundaries
+          </a>
+
+          <a href="/">
+            Baumgartner Systems
+          </a>
+
+        </nav>
+
+
+        <div class="site-footer__meta">
+
+          <span>
+            Switzerland
+          </span>
+
+          <span>
+            © 2026 Baumgartner Digital Infrastructure
+          </span>
+
+        </div>
+
+      </footer>
+
+    </div>
+
+  </section>
+
+</main>

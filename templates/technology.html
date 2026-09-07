@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="{{ .Description }}"
+  >
+
+  <title>{{ .Name }} — Baumgartner Systems</title>
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/site.css"
+  >
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a
+        class="site-brand"
+        href="/"
+        aria-label="Baumgartner Systems home"
+      >
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+        >
+      </a>
+
+      <nav
+        class="site-nav"
+        aria-label="Primary navigation"
+      >
+        <a href="/#problem">Problem</a>
+        <a href="/#evidence">Evidence</a>
+        <a href="/#work">Work</a>
+        <a href="/#proof">Proof</a>
+        <a href="/#boundary">Boundary</a>
+
+        <a
+          class="site-nav__cta"
+          href="mailto:contact@baumgartner.systems"
+        >
+          Discuss a Pilot
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main class="technology-page">
+
+    <section class="technology-hero">
+
+      <div class="container technology-hero__layout">
+
+        <div class="technology-hero__copy">
+
+          <p class="eyebrow">
+            DigiEmu Technology
+          </p>
+
+          <h1>
+            {{ .Name }}
+          </h1>
+
+          <p class="technology-hero__tagline">
+            {{ .Tagline }}
+          </p>
+
+          <p class="lead">
+            {{ .Description }}
+          </p>
+
+          <div class="technology-hero__actions">
+
+            <a
+              class="cta"
+              href="#overview"
+            >
+              Explore {{ .Name }}
+            </a>
+
+            <a
+              class="scroll-hint"
+              href="/#proof"
+            >
+              Back to technology ecosystem
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="technology-hero__visual"
+          aria-hidden="true"
+        >
+          <img
+            src="{{ .Image }}"
+            alt=""
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section
+      class="technology-overview"
+      id="overview"
+    >
+
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">
+            01
+          </span>
+
+          <span>
+            Overview
+          </span>
+        </div>
+
+
+        <div class="technology-overview__grid">
+
+          <div>
+
+            <h2>
+              What it is
+            </h2>
+
+            <p class="lead">
+              {{ .Overview }}
+            </p>
+
+          </div>
+
+
+          <div class="technology-meta">
+
+            <div class="technology-meta__item">
+              <span>Technology</span>
+              <strong>{{ .Name }}</strong>
+            </div>
+
+            <div class="technology-meta__item">
+              <span>Layer</span>
+              <strong>{{ .Layer }}</strong>
+            </div>
+
+            <div class="technology-meta__item">
+              <span>Status</span>
+              <strong>{{ .Status }}</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="technology-placeholder">
+
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">
+            02
+          </span>
+
+          <span>
+            Architecture
+          </span>
+        </div>
+
+        <h2>
+          Architecture
+        </h2>
+
+        <p class="lead">
+          Architecture detail will be added in the next milestone.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="technology-placeholder">
+
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">
+            03
+          </span>
+
+          <span>
+            Boundaries
+          </span>
+        </div>
+
+        <h2>
+          What {{ .Name }} does — and does not — prove.
+        </h2>
+
+        <p class="lead">
+          Verification boundaries and technical scope will be documented here.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section
+      class="closing-scene"
+      id="contact"
+    >
+
+      <div class="container closing-scene__inner">
+
+        <div class="closing-scene__cta">
+
+          <p class="eyebrow">
+            Baumgartner Systems
+          </p>
+
+          <h2>
+            Start with one workflow.
+          </h2>
+
+          <p>
+            Give us one AI-assisted process worth verifying.
+          </p>
+
+          <a
+            href="mailto:contact@baumgartner.systems"
+            class="cta"
+          >
+            Discuss a Pilot
+          </a>
+
+        </div>
+
+
+        <footer class="site-footer">
+
+          <div class="site-footer__brand">
+
+            <img
+              src="/assets/images/brand/logo.webp"
+              alt="Baumgartner Digital Infrastructure"
+            >
+
+          </div>
+
+
+          <nav
+            class="site-footer__nav"
+            aria-label="Footer navigation"
+          >
+            <a href="/#work">Services</a>
+            <a href="/#proof">Technology</a>
+            <a href="/#boundary">Boundaries</a>
+            <a href="/">Baumgartner Systems</a>
+          </nav>
+
+
+          <div class="site-footer__meta">
+
+            <span>
+              Switzerland
+            </span>
+
+            <span>
+              © 2026 Baumgartner Digital Infrastructure
+            </span>
+
+          </div>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script
+    src="/assets/js/header.js"
+    defer
+  ></script>
+
+</body>
+</html>
