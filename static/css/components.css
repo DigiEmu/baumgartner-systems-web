@@ -4107,3 +4107,82 @@ html {
 ::-webkit-scrollbar-corner {
   background: var(--bg);
 }
+
+/* =========================================================
+   GLOBAL CTA DIMENSIONS
+   ========================================================= */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 10.5rem;
+  min-height: 3.1rem;
+
+  padding: 0.8rem 1.25rem;
+
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cta.secondary {
+  min-width: 10.5rem;
+}
+
+
+/* groups of buttons */
+
+.actions,
+.technology-hero__actions,
+.arca-demo__actions,
+.arca-demo__final-actions,
+.pilot-hero__actions,
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.85rem;
+
+  align-items: center;
+}
+
+
+/* no double margins inside button groups */
+
+.actions .cta,
+.technology-hero__actions .cta,
+.arca-demo__actions .cta,
+.arca-demo__final-actions .cta,
+.pilot-hero__actions .cta,
+.error-actions .cta {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 520px) {
+
+  .cta,
+  .cta.secondary {
+    min-width: 0;
+
+    width: 100%;
+
+    white-space: normal;
+  }
+
+  .actions,
+  .technology-hero__actions,
+  .arca-demo__actions,
+  .arca-demo__final-actions,
+  .pilot-hero__actions,
+  .error-actions {
+    width: 100%;
+  }
+}
