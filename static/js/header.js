@@ -39,13 +39,42 @@ if (header) {
       ".site-nav"
     );
 
-  if (toggle && nav) {
+  const technologyDropdown =
+    header.querySelector(
+      ".site-nav__dropdown"
+    );
 
-    const closeNavigation = () => {
-      header.classList.remove(
-        "is-nav-open"
-      );
+  const technologyToggle =
+    technologyDropdown?.querySelector(
+      ".site-nav__dropdown-toggle"
+    );
 
+
+  const closeTechnologyDropdown = () => {
+    if (
+      !technologyDropdown ||
+      !technologyToggle
+    ) {
+      return;
+    }
+
+    technologyDropdown.classList.remove(
+      "is-open"
+    );
+
+    technologyToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+  };
+
+
+  const closeNavigation = () => {
+    header.classList.remove(
+      "is-nav-open"
+    );
+
+    if (toggle) {
       toggle.setAttribute(
         "aria-expanded",
         "false"
@@ -55,11 +84,19 @@ if (header) {
         "aria-label",
         "Open navigation"
       );
-    };
+    }
+
+    closeTechnologyDropdown();
+  };
+
+
+  if (toggle && nav) {
 
     toggle.addEventListener(
       "click",
-      () => {
+      (event) => {
+        event.stopPropagation();
+
         const open =
           header.classList.toggle(
             "is-nav-open"
@@ -76,8 +113,42 @@ if (header) {
             ? "Close navigation"
             : "Open navigation"
         );
+
+        if (!open) {
+          closeTechnologyDropdown();
+        }
       }
     );
+
+
+    if (
+      technologyDropdown &&
+      technologyToggle
+    ) {
+      technologyToggle.addEventListener(
+        "click",
+        (event) => {
+
+          if (window.innerWidth > 900) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          const open =
+            technologyDropdown.classList.toggle(
+              "is-open"
+            );
+
+          technologyToggle.setAttribute(
+            "aria-expanded",
+            String(open)
+          );
+        }
+      );
+    }
+
 
     nav.addEventListener(
       "click",
@@ -85,16 +156,27 @@ if (header) {
         const link =
           event.target.closest("a");
 
+        if (link) {
+          closeNavigation();
+        }
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      (event) => {
         if (
-          link &&
-          !link.closest(
-            ".site-nav__dropdown-menu"
-          )
+          header.classList.contains(
+            "is-nav-open"
+          ) &&
+          !header.contains(event.target)
         ) {
           closeNavigation();
         }
       }
     );
+
 
     document.addEventListener(
       "keydown",
@@ -104,6 +186,7 @@ if (header) {
         }
       }
     );
+
 
     window.addEventListener(
       "resize",

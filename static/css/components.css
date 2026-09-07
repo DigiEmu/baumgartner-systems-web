@@ -2741,19 +2741,19 @@ main section[id] {
 
 
 /* =========================================================
-   HEADER LOGO THEME VISIBILITY
-   ========================================================= */
-
-:root[data-theme="dark"] :root[data-theme="dark"] 
-/* =========================================================
    MOBILE NAVIGATION
    ========================================================= */
 
 .mobile-nav-toggle {
   display: none;
 
+  position: relative;
+  z-index: 120;
+
   width: 2.75rem;
   height: 2.75rem;
+
+  flex: 0 0 auto;
 
   padding: 0;
 
@@ -2762,69 +2762,106 @@ main section[id] {
   border: 1px solid var(--line);
   border-radius: var(--radius-s);
 
+  color: var(--text);
+
   cursor: pointer;
 }
 
 .mobile-nav-toggle span {
+  position: absolute;
+
+  left: 50%;
+
   display: block;
 
   width: 1.15rem;
   height: 1px;
 
-  margin: 0.28rem auto;
+  background: currentColor;
 
-  background: var(--text);
+  transform: translateX(-50%);
 
   transition:
+    top 180ms ease,
     transform 180ms ease,
     opacity 180ms ease;
 }
 
+.mobile-nav-toggle span:first-child {
+  top: calc(50% - 0.23rem);
+}
+
+.mobile-nav-toggle span:last-child {
+  top: calc(50% + 0.23rem);
+}
+
 @media (max-width: 900px) {
+
+  .site-header {
+    overflow: visible;
+  }
 
   .site-header__inner {
     position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0.75rem;
+  }
+
+  .site-brand {
+    flex: 0 1 auto;
+    min-width: 0;
   }
 
   .mobile-nav-toggle {
     display: block;
-    flex-shrink: 0;
-    order: 3;
   }
 
   .site-nav {
     position: absolute;
 
-    top: 100%;
+    top: calc(100% + 1px);
     left: 0;
     right: 0;
 
-    z-index: 90;
+    z-index: 110;
 
     display: none;
 
     width: 100%;
 
+    margin: 0;
+
     padding:
+      0.85rem
       1rem
-      1.25rem
-      1.4rem;
+      1.2rem;
 
     background:
       color-mix(
         in srgb,
-        var(--bg) 97%,
+        var(--bg) 98%,
         transparent
       );
 
-    border-bottom:
+    border:
       1px solid var(--line);
 
-    backdrop-filter:
-      blur(16px);
+    border-top: 0;
+
+    border-radius:
+      0
+      0
+      var(--radius-s)
+      var(--radius-s);
+
+    backdrop-filter: blur(16px);
 
     box-shadow:
-      0 18px 40px rgba(0, 0, 0, 0.08);
+      0 18px 40px rgba(0, 0, 0, 0.1);
   }
 
   .site-header.is-nav-open .site-nav {
@@ -2832,19 +2869,21 @@ main section[id] {
     gap: 0;
   }
 
-  .site-nav a:not(.site-nav__cta) {
-    display: block;
-  }
-
   .site-nav > a,
   .site-nav__dropdown {
     width: 100%;
   }
 
+  .site-nav a:not(.site-nav__cta) {
+    display: block;
+  }
+
   .site-nav > a:not(.site-nav__cta),
   .site-nav__dropdown-toggle {
+    width: 100%;
+
     padding:
-      0.95rem
+      0.9rem
       0;
 
     border-bottom:
@@ -2852,14 +2891,21 @@ main section[id] {
   }
 
   .site-nav__dropdown-toggle {
-    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+
+    text-align: left;
   }
 
   .site-nav__cta {
     width: 100%;
+
     margin-top: 1rem;
   }
+
+
+  /* Technology submenu */
 
   .site-nav__dropdown-menu {
     position: static;
@@ -2868,6 +2914,7 @@ main section[id] {
 
     width: 100%;
 
+    margin: 0;
     padding:
       0.35rem
       0
@@ -2876,6 +2923,8 @@ main section[id] {
     background: transparent;
 
     border: 0;
+    border-radius: 0;
+
     box-shadow: none;
 
     opacity: 1;
@@ -2895,31 +2944,40 @@ main section[id] {
 
   .site-nav__dropdown.is-open .site-nav__dropdown-menu {
     display: grid;
-
-    transform: none;
   }
 
   .site-nav__dropdown-menu a {
-    padding:
-      0.75rem
-      0.5rem;
+    display: grid;
 
     grid-template-columns:
       4.5rem
       minmax(0, 1fr);
+
+    gap: 0.75rem;
+
+    padding:
+      0.72rem
+      0.5rem;
   }
+
+
+  /* Hamburger -> close */
 
   .site-header.is-nav-open
   .mobile-nav-toggle span:first-child {
+    top: 50%;
+
     transform:
-      translateY(0.29rem)
+      translateX(-50%)
       rotate(45deg);
   }
 
   .site-header.is-nav-open
   .mobile-nav-toggle span:last-child {
+    top: 50%;
+
     transform:
-      translateY(-0.29rem)
+      translateX(-50%)
       rotate(-45deg);
   }
 }
@@ -2933,9 +2991,9 @@ main section[id] {
 
   .site-nav {
     padding:
+      0.75rem
       0.85rem
-      1rem
-      1.2rem;
+      1rem;
   }
 }
 
