@@ -317,6 +317,23 @@ main section[id] {
   font-weight: 600;
 }
 
+/* ---------------------------------------------------------
+   Theme-aware logo pictures
+   --------------------------------------------------------- */
+
+.site-brand__picture,
+.site-footer__picture {
+  display: block;
+  line-height: 0;
+}
+
+.site-brand__picture img,
+.site-footer__picture img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* =========================================================
    HEADER
    ========================================================= */
@@ -1290,7 +1307,7 @@ main section[id] {
   overflow: visible;
 }
 
-.site-footer__logo img {
+.site-footer__brand img {
   display: block;
 
   width:
@@ -2727,23 +2744,7 @@ main section[id] {
    HEADER LOGO THEME VISIBILITY
    ========================================================= */
 
-.site-brand__logo--light {
-  display: block !important;
-}
-
-.site-brand__logo--dark {
-  display: none !important;
-}
-
-:root[data-theme="dark"] .site-brand__logo--light {
-  display: none !important;
-}
-
-:root[data-theme="dark"] .site-brand__logo--dark {
-  display: block !important;
-}
-
-/* =========================================================
+:root[data-theme="dark"] :root[data-theme="dark"] /* =========================================================
    REDUCED MOTION
    ========================================================= */
 
@@ -2768,52 +2769,5 @@ main section[id] {
     top: auto;
     min-height: auto;
     transform: none;
-  }
-}
-/* =========================================================
-   FOOTER LOGO THEME VARIANTS
-   ========================================================= */
-
-.site-footer__logo {
-  display: block;
-
-  width:
-    clamp(11rem, 18vw, 16rem);
-
-  max-width: 100%;
-  height: auto;
-
-  object-fit: contain;
-}
-
-.site-footer__logo--light {
-  display: block !important;
-}
-
-.site-footer__logo--dark {
-  display: none !important;
-}
-
-:root[data-theme="dark"] .site-footer__logo--light {
-  display: none !important;
-}
-
-:root[data-theme="dark"] .site-footer__logo--dark {
-  display: block !important;
-}
-
-@media (max-width: 760px) {
-
-  .site-footer__logo {
-    width:
-      min(15rem, 72vw);
-  }
-}
-
-@media (max-width: 480px) {
-
-  .site-footer__logo {
-    width:
-      min(13rem, 78vw);
   }
 }

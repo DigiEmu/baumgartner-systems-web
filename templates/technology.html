@@ -160,19 +160,19 @@
         href="/"
         aria-label="Baumgartner Systems home"
       >
+        <picture class="site-brand__picture">
+          <source
+            srcset="/assets/images/brand/logo-header-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          >
 
-        <img
-          class="site-brand__logo site-brand__logo--light"
-          src="/assets/images/brand/logo-header.webp"
-          alt="Baumgartner Digital Infrastructure"
-        >
-
-        <img
-          class="site-brand__logo site-brand__logo--dark"
-          src="/assets/images/brand/logo-header-dark.webp"
-          alt="Baumgartner Digital Infrastructure"
-        >
-
+          <img
+            class="site-brand__logo"
+            src="/assets/images/brand/logo-header.webp"
+            alt="Baumgartner Digital Infrastructure"
+            decoding="async"
+          >
+        </picture>
       </a>
 
 
@@ -449,27 +449,26 @@
         <footer class="site-footer">
 
           <div class="site-footer__brand">
-
-            <a
-              href="/"
-              aria-label="Baumgartner Systems home"
-            >
+          <a
+            href="/"
+            aria-label="Baumgartner Systems home"
+          >
+            <picture class="site-footer__picture">
+              <source
+                srcset="/assets/images/brand/logo-header-dark.webp"
+                media="(prefers-color-scheme: dark)"
+              >
 
               <img
-                class="site-footer__logo site-footer__logo--light"
+                class="site-footer__logo"
                 src="/assets/images/brand/logo.webp"
                 alt="Baumgartner Digital Infrastructure"
+                loading="lazy"
+                decoding="async"
               >
-
-              <img
-                class="site-footer__logo site-footer__logo--dark"
-                src="/assets/images/brand/logo-header-dark.webp"
-                alt="Baumgartner Digital Infrastructure"
-              >
-
-            </a>
-
-          </div>
+            </picture>
+          </a>
+        </div>
 
 
           <nav

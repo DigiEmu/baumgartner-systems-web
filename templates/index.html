@@ -172,22 +172,24 @@
 
   <div class="container site-header__inner">
 
-   <a
+  <a
   class="site-brand"
   href="/"
   aria-label="Baumgartner Systems home"
 >
-  <img
-    class="site-brand__logo site-brand__logo--light"
-    src="/assets/images/brand/logo-header.webp"
-    alt="Baumgartner Digital Infrastructure"
-  >
+  <picture class="site-brand__picture">
+    <source
+      srcset="/assets/images/brand/logo-header-dark.webp"
+      media="(prefers-color-scheme: dark)"
+    >
 
-  <img
-    class="site-brand__logo site-brand__logo--dark"
-    src="/assets/images/brand/logo-header-dark.webp"
-    alt="Baumgartner Digital Infrastructure"
-  >
+    <img
+      class="site-brand__logo"
+      src="/assets/images/brand/logo-header.webp"
+      alt="Baumgartner Digital Infrastructure"
+      decoding="async"
+    >
+  </picture>
 </a>
 
 
@@ -944,61 +946,27 @@
 
     <footer class="site-footer">
 
-    <div class="site-footer__brand">
-
+   <div class="site-footer__brand">
   <a
     href="/"
     aria-label="Baumgartner Systems home"
   >
-    <img
-      class="site-footer__logo site-footer__logo--light"
-      src="/assets/images/brand/logo.webp"
-      alt="Baumgartner Digital Infrastructure"
-    >
+    <picture class="site-footer__picture">
+      <source
+        srcset="/assets/images/brand/logo-header-dark.webp"
+        media="(prefers-color-scheme: dark)"
+      >
 
-    <img
-      class="site-footer__logo site-footer__logo--dark"
-      src="/assets/images/brand/logo-header-dark.webp"
-      alt="Baumgartner Digital Infrastructure"
-    >
+      <img
+        class="site-footer__logo"
+        src="/assets/images/brand/logo.webp"
+        alt="Baumgartner Digital Infrastructure"
+        loading="lazy"
+        decoding="async"
+      >
+    </picture>
   </a>
-
 </div>
-
-      <nav
-        class="site-footer__nav"
-        aria-label="Footer navigation">
-
-        <a href="#work">
-          Services
-        </a>
-
-        <a href="#proof">
-          Technology
-        </a>
-
-        <a href="#boundary">
-          Boundaries
-        </a>
-
-        <a href="/">
-          Baumgartner Systems
-        </a>
-
-      </nav>
-
-
-      <div class="site-footer__meta">
-
-        <span>
-          Switzerland
-        </span>
-
-        <span>
-          © 2026 Baumgartner Digital Infrastructure
-        </span>
-
-      </div>
 
     </footer>
 
