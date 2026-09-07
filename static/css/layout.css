@@ -1,0 +1,25 @@
+body {
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-l);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+header, main {
+  width: 100%;
+  max-width: var(--content-width);
+  text-align: left;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--section-width);
+  margin: 0 auto;
+  padding: 0 var(--space-l);
+}

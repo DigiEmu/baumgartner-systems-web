@@ -17,6 +17,9 @@ func main() {
 	if err := copyFile("templates/index.html", "public/index.html"); err != nil {
 		fail("copy index.html: %v", err)
 	}
+	if err := copyFile("templates/404.html", "public/404.html"); err != nil {
+		fail("copy 404.html: %v", err)
+	}
 	if err := copyDir("static", "public/assets"); err != nil {
 		fail("copy static: %v", err)
 	}

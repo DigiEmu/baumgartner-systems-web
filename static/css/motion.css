@@ -1,0 +1,23 @@
+@media (prefers-reduced-motion: no-preference) {
+  .cta {
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cta:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-m);
+  }
+
+  a {
+    transition: color 0.2s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
