@@ -88,6 +88,11 @@ var staticPages = []page{
 		Source: "templates/404.html",
 		Target: "404.html",
 	},
+
+	{
+		Source: "templates/pilot.html",
+		Target: "pilot/index.html",
+	},
 }
 
 var technologies = []technologyPage{
@@ -1366,4 +1371,3 @@ func copyFile(
 
 	return out.Close()
 }
-
