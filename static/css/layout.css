@@ -56,3 +56,9 @@ section.hero {
 .prose {
   max-width: var(--content-width);
 }
+
+@media (max-width: 760px) {
+  body {
+    background-attachment: scroll;
+  }
+}
