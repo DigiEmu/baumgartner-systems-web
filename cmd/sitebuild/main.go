@@ -93,6 +93,11 @@ var staticPages = []page{
 		Source: "templates/pilot.html",
 		Target: "pilot/index.html",
 	},
+
+	{
+		Source: "templates/museum.html",
+		Target: "museum/index.html",
+	},
 }
 
 var technologies = []technologyPage{

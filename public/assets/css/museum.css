@@ -1,0 +1,522 @@
+/* =========================================================
+   VIRTUAL MUSEUM — FINAL LAYOUT
+   Keeps the museum in normal document flow and prevents
+   global stacked-section rules from overlapping its content.
+   ========================================================= */
+
+html body main.museum-page {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
+html body main.museum-page > section {
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+
+  transform: none !important;
+  translate: none !important;
+
+  z-index: auto !important;
+
+  background: var(--bg);
+  border-top: 0;
+  border-bottom: 1px solid var(--line);
+
+  box-shadow: none !important;
+}
+
+html body main.museum-page > section > .container {
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+html body main.museum-page > .museum-hero {
+  display: grid !important;
+  align-items: center !important;
+
+  min-height: calc(100svh - 5rem) !important;
+
+  padding:
+    clamp(5rem, 8vw, 8rem)
+    0 !important;
+}
+
+.museum-hero__layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(18rem, 0.95fr);
+
+  gap:
+    clamp(3rem, 8vw, 8rem);
+
+  align-items: center;
+}
+
+.museum-hero__copy {
+  min-width: 0;
+}
+
+.museum-hero__copy h1 {
+  margin:
+    0.6rem
+    0
+    1rem;
+}
+
+.museum-hero__tagline {
+  max-width: 18ch;
+
+  margin:
+    0
+    0
+    1.5rem;
+
+  font-size:
+    clamp(1.4rem, 2.8vw, 2.4rem);
+
+  line-height: 1.1;
+  font-weight: 650;
+}
+
+.museum-hero__copy .lead {
+  max-width: 46rem;
+}
+
+.museum-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+  align-items: center;
+
+  margin-top: 2rem;
+}
+
+
+/* =========================================================
+   ORBIT
+   ========================================================= */
+
+.museum-orbit {
+  position: relative;
+
+  width:
+    min(100%, 30rem);
+
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+}
+
+.museum-orbit__ring,
+.museum-orbit__core {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.museum-orbit__ring {
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--accent) 48%,
+      var(--line)
+    );
+}
+
+.museum-orbit__ring--outer {
+  inset: 4%;
+}
+
+.museum-orbit__ring--middle {
+  inset: 20%;
+}
+
+.museum-orbit__ring--inner {
+  inset: 36%;
+}
+
+.museum-orbit__core {
+  inset: 44%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fff4b7 0%,
+      #d8aa37 42%,
+      #9f7411 72%,
+      #4d3504 100%
+    );
+
+  box-shadow:
+    0 0 3rem
+    color-mix(
+      in srgb,
+      var(--accent) 34%,
+      transparent
+    );
+}
+
+.museum-orbit__label {
+  position: absolute;
+
+  padding:
+    0.45rem
+    0.65rem;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    var(--bg);
+
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.museum-orbit__label--one {
+  top: 11%;
+  left: 2%;
+}
+
+.museum-orbit__label--two {
+  right: 0;
+  top: 43%;
+}
+
+.museum-orbit__label--three {
+  bottom: 8%;
+  left: 18%;
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+   ========================================================= */
+
+html body main.museum-page > .museum-section {
+  padding:
+    clamp(5rem, 8vw, 8rem)
+    0 !important;
+}
+
+.museum-section__intro {
+  display: grid;
+
+  grid-template-columns:
+    minmax(16rem, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap:
+    clamp(2rem, 6vw, 6rem);
+
+  align-items: start;
+
+  margin-top: 2rem;
+}
+
+.museum-section__intro h2 {
+  max-width: 14ch;
+  margin: 0;
+}
+
+.museum-section__intro .lead {
+  max-width: 48rem;
+  margin: 0;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.museum-grid {
+  display: grid;
+
+  gap: 1px;
+
+  margin-top:
+    clamp(3rem, 6vw, 6rem);
+
+  background:
+    var(--line);
+
+  border:
+    1px solid
+    var(--line);
+}
+
+.museum-grid--three {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+.museum-card {
+  min-width: 0;
+
+  padding:
+    clamp(1.5rem, 3vw, 2.5rem);
+
+  background:
+    var(--bg);
+}
+
+.museum-card__number {
+  display: block;
+
+  margin-bottom: 2.5rem;
+
+  color:
+    var(--accent);
+
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.museum-card h3 {
+  margin:
+    0
+    0
+    0.85rem;
+}
+
+.museum-card p {
+  max-width: 26rem;
+
+  margin: 0;
+
+  color:
+    var(--text-muted);
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TECHNOLOGY CONCEPTS
+   ========================================================= */
+
+.museum-concepts {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 1px;
+
+  margin-top:
+    clamp(3rem, 6vw, 6rem);
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    var(--line);
+}
+
+.museum-concept {
+  display: block;
+
+  min-width: 0;
+
+  padding:
+    1.5rem;
+
+  background:
+    var(--bg);
+
+  color:
+    var(--text);
+
+  text-decoration: none;
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.museum-concept:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--accent) 5%,
+      var(--bg)
+    );
+}
+
+.museum-concept > span {
+  display: block;
+
+  margin-bottom: 2.5rem;
+
+  color:
+    var(--accent);
+
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.museum-concept strong {
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  line-height: 1.35;
+}
+
+.museum-concept p {
+  margin: 0;
+
+  color:
+    var(--text-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   VISIT
+   ========================================================= */
+
+html body main.museum-page > .museum-visit {
+  display: grid !important;
+  align-items: center !important;
+
+  min-height: 70svh !important;
+}
+
+.museum-visit__inner {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap:
+    clamp(3rem, 8vw, 8rem);
+
+  align-items: end;
+}
+
+.museum-visit__inner h2 {
+  max-width: 16ch;
+
+  margin:
+    2rem
+    0
+    1rem;
+}
+
+.museum-visit__inner .lead {
+  max-width: 42rem;
+}
+
+.museum-visit__action {
+  min-width: 15rem;
+}
+
+.museum-visit__action p {
+  margin:
+    0.8rem
+    0
+    0;
+
+  color:
+    var(--text-muted);
+
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   CLOSING SCENE
+   ========================================================= */
+
+html body main.museum-page > .closing-scene {
+  position: relative !important;
+  min-height: 100svh !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .museum-concepts {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  html body main.museum-page > .museum-hero,
+  html body main.museum-page > .museum-section {
+    min-height: 0 !important;
+  }
+
+  .museum-hero__layout,
+  .museum-section__intro,
+  .museum-visit__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .museum-orbit {
+    width:
+      min(78vw, 24rem);
+
+    margin-top: 1rem;
+  }
+
+  .museum-grid--three {
+    grid-template-columns: 1fr;
+  }
+
+  .museum-concepts {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .museum-concepts {
+    grid-template-columns: 1fr;
+  }
+
+  .museum-hero__actions,
+  .museum-hero__actions .cta {
+    width: 100%;
+  }
+}

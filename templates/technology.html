@@ -37,17 +37,19 @@
   <meta name="twitter:title" content="{{ .MetaTitle }}">
   <meta name="twitter:description" content="{{ .MetaDescription }}">
   <meta name="twitter:image" content="{{ .SiteURL }}{{ .Image }}">
-<meta
-  name="theme-color"
-  content="#b8912b"
-  media="(prefers-color-scheme: light)"
->
 
-<meta
-  name="theme-color"
-  content="#151619"
-  media="(prefers-color-scheme: dark)"
->
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    media="(prefers-color-scheme: light)"
+  >
+
+  <meta
+    name="theme-color"
+    content="#151619"
+    media="(prefers-color-scheme: dark)"
+  >
+
   <link
     rel="icon"
     type="image/webp"
@@ -69,6 +71,13 @@
     rel="stylesheet"
     href="/assets/css/site.css"
   >
+
+  {{ if eq .Slug "arca" }}
+  <link
+    rel="stylesheet"
+    href="/assets/css/arca-gallery.css"
+  >
+  {{ end }}
 
   <script type="application/ld+json">
   {
@@ -114,10 +123,6 @@
     ]
   }
   </script>
-  <script src="/assets/js/header.js" defer></script>
-<script src="/assets/js/section-nav.js" defer></script>
-<script src="/assets/js/theme.js" defer></script>
-<script src="/assets/js/cursor.js" defer></script>
 </head>
 
 <body>
@@ -204,6 +209,10 @@
           Foam
         </a>
 
+        <a href="/museum/">
+          Museum
+        </a>
+
         <a
           href="/pilot/"
           class="site-nav__cta"
@@ -243,14 +252,16 @@
             >
               Explore {{ .Name }}
             </a>
-{{ if eq .Slug "arca" }}
-<a
-  class="cta secondary"
-  href="/arca/demo/"
->
-  See Arca in action
-</a>
-{{ end }}
+
+            {{ if eq .Slug "arca" }}
+            <a
+              class="cta secondary"
+              href="/arca/demo/"
+            >
+              See Arca in action
+            </a>
+            {{ end }}
+
             <a
               class="scroll-hint"
               href="/#proof"
@@ -398,12 +409,235 @@
     {{ end }}
 
 
+    {{ if eq .Slug "vsc" }}
+    <section class="technology-detail vsc-benchmark">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">04</span>
+          <span>Benchmark</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>
+            Storage efficiency under verifiable replay constraints.
+          </h2>
+
+          <p class="lead">
+            VSC Delta reduces storage requirements for long verifiable
+            decision-memory sequences while preserving replayability
+            and verification within the benchmark context.
+          </p>
+        </div>
+
+        <a
+          class="vsc-benchmark__image"
+          href="https://digiemu.github.io/vsc-core/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open the VSC benchmark"
+        >
+          <img
+            src="/assets/images/vsc/benchmarks/vsc-storage-comparison.webp"
+            alt="1000-step storage comparison showing VSC Delta as the smallest verifiable representation in the benchmark"
+            loading="lazy"
+            decoding="async"
+            width="1672"
+            height="941"
+          >
+        </a>
+
+        <div class="vsc-benchmark__meta">
+          <p>
+            In this 1000-step comparison, gzip(VSC Delta) reaches
+            42,345 bytes, lower than the other verifiable
+            representations shown in the benchmark.
+          </p>
+
+          <a
+            class="cta secondary"
+            href="https://digiemu.github.io/vsc-core/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open VSC benchmark
+          </a>
+        </div>
+
+      </div>
+    </section>
+    {{ end }}
+
+
+    {{ if eq .Slug "arca" }}
+    <section class="technology-detail arca-product-proof">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">04</span>
+          <span>Arca in practice</span>
+        </div>
+
+        <div class="arca-product-proof__intro">
+          <h2>
+            From project workspace to published evidence.
+          </h2>
+
+          <p class="lead">
+            Arca turns documentation work into an explicit,
+            inspectable workflow — from project setup and source
+            selection through deterministic composition,
+            publication and controlled handoff.
+          </p>
+        </div>
+
+        <p class="arca-gallery-hint">
+          Select any view to inspect the Arca workspace in full size.
+        </p>
+
+        <div class="arca-thumb-grid">
+
+          <a
+            class="arca-thumb"
+            href="/assets/images/arca/screenshots/workspace.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="arca-thumb__image">
+              <img
+                src="/assets/images/arca/screenshots/workspace.webp"
+                alt="Arca Workspace showing project creation and existing projects"
+                loading="lazy"
+                decoding="async"
+                width="960"
+                height="540"
+              >
+            </span>
+
+            <span class="arca-thumb__meta">
+              <span class="arca-thumb__number">01</span>
+              <strong>Project workspace</strong>
+            </span>
+          </a>
+
+
+          <a
+            class="arca-thumb"
+            href="/assets/images/arca/screenshots/overview.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="arca-thumb__image">
+              <img
+                src="/assets/images/arca/screenshots/overview.webp"
+                alt="Arca Care Home Demo overview showing the workflow stages"
+                loading="lazy"
+                decoding="async"
+                width="960"
+                height="540"
+              >
+            </span>
+
+            <span class="arca-thumb__meta">
+              <span class="arca-thumb__number">02</span>
+              <strong>Workflow overview</strong>
+            </span>
+          </a>
+
+
+          <a
+            class="arca-thumb"
+            href="/assets/images/arca/screenshots/compose.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="arca-thumb__image">
+              <img
+                src="/assets/images/arca/screenshots/compose.webp"
+                alt="Arca Compose view showing selected source documents and saved composition"
+                loading="lazy"
+                decoding="async"
+                width="960"
+                height="540"
+              >
+            </span>
+
+            <span class="arca-thumb__meta">
+              <span class="arca-thumb__number">03</span>
+              <strong>Deterministic composition</strong>
+            </span>
+          </a>
+
+
+          <a
+            class="arca-thumb"
+            href="/assets/images/arca/screenshots/publications.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="arca-thumb__image">
+              <img
+                src="/assets/images/arca/screenshots/publications.webp"
+                alt="Arca Publications view showing lifecycle state, source count and technical evidence"
+                loading="lazy"
+                decoding="async"
+                width="960"
+                height="540"
+              >
+            </span>
+
+            <span class="arca-thumb__meta">
+              <span class="arca-thumb__number">04</span>
+              <strong>Publication evidence</strong>
+            </span>
+          </a>
+
+
+          <a
+            class="arca-thumb"
+            href="/assets/images/arca/screenshots/publish.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="arca-thumb__image">
+              <img
+                src="/assets/images/arca/screenshots/publish.webp"
+                alt="Arca Publish view showing upload, review and publication workflow"
+                loading="lazy"
+                decoding="async"
+                width="960"
+                height="540"
+              >
+            </span>
+
+            <span class="arca-thumb__meta">
+              <span class="arca-thumb__number">05</span>
+              <strong>Repository publish</strong>
+            </span>
+          </a>
+
+        </div>
+
+        <div class="arca-product-proof__action">
+          <a
+            class="cta secondary"
+            href="/arca/demo/"
+          >
+            See Arca in action
+          </a>
+        </div>
+
+      </div>
+    </section>
+    {{ end }}
+
+
     {{ if .Evidence }}
     <section class="technology-detail">
       <div class="container">
 
         <div class="section-label">
-          <span class="section-number">04</span>
+          <span class="section-number">{{ if eq .Slug "arca" }}05{{ else if eq .Slug "vsc" }}05{{ else }}04{{ end }}</span>
           <span>Evidence</span>
         </div>
 
@@ -439,7 +673,7 @@
       <div class="container">
 
         <div class="section-label">
-          <span class="section-number">05</span>
+          <span class="section-number">{{ if eq .Slug "arca" }}06{{ else if eq .Slug "vsc" }}06{{ else }}05{{ end }}</span>
           <span>Boundaries</span>
         </div>
 
@@ -469,7 +703,7 @@
       <div class="container">
 
         <div class="section-label">
-          <span class="section-number">06</span>
+          <span class="section-number">{{ if eq .Slug "arca" }}07{{ else if eq .Slug "vsc" }}07{{ else }}06{{ end }}</span>
           <span>Pilot</span>
         </div>
 
@@ -505,7 +739,6 @@
             {{ .PilotCTA }}
           </a>
         </div>
-
 
         <aside
           class="technology-repository"
@@ -597,7 +830,6 @@
           </a>
         </div>
 
-
         <footer class="site-footer">
 
           <div class="site-footer__brand">
@@ -632,6 +864,7 @@
             <a href="/skc/">SKC</a>
             <a href="/vsc/">VSC</a>
             <a href="/foam/">Foam</a>
+            <a href="/museum/">Museum</a>
           </nav>
 
           <div class="site-footer__meta">
@@ -651,8 +884,7 @@
 
   <script src="/assets/js/header.js" defer></script>
   <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/cursor.js" defer></script>
 
 </body>
 </html>
-
-

@@ -4186,3 +4186,266 @@ html {
     width: 100%;
   }
 }
+
+/* =========================================================
+   TECHNOLOGY PAGE — CONTENT SAFE SECTIONS
+   Allow sections to grow when their content needs more space.
+   ========================================================= */
+
+html body main.technology-page > section.technology-overview,
+html body main.technology-page > section.technology-detail,
+html body main.technology-page > section.arca-product-proof {
+
+  position: relative !important;
+  inset: auto !important;
+
+  display: block !important;
+
+  width: 100% !important;
+
+  height: auto !important;
+  min-height: calc(100svh - 5rem) !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+
+  transform: none !important;
+  translate: none !important;
+
+  padding-top:
+    clamp(5rem, 8vw, 8rem) !important;
+
+  padding-bottom:
+    clamp(5rem, 8vw, 8rem) !important;
+}
+
+
+/* containers must be allowed to grow with their content */
+
+html body main.technology-page > section.technology-overview > .container,
+html body main.technology-page > section.technology-detail > .container,
+html body main.technology-page > section.arca-product-proof > .container {
+
+  position: relative !important;
+
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+}
+
+
+/* prevent large content blocks from being clipped */
+
+.technology-sequence,
+.technology-workflow,
+.technology-evidence-grid,
+.technology-boundary-list,
+.technology-pilot-grid,
+.arca-thumb-grid {
+
+  height: auto !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+}
+
+
+/* give the main content enough room below the intro */
+
+.technology-detail__intro {
+  margin-bottom:
+    clamp(3rem, 6vw, 6rem);
+}
+
+
+/* architecture cards */
+
+.technology-sequence {
+  align-items: stretch;
+}
+
+.technology-sequence__item {
+  height: auto !important;
+  min-height: 0 !important;
+
+  overflow: visible !important;
+}
+
+
+/* workflow rows */
+
+.technology-workflow__item {
+  height: auto !important;
+  min-height: 0 !important;
+
+  overflow: visible !important;
+}
+
+
+/* evidence cards */
+
+.technology-evidence-item {
+  height: auto !important;
+  min-height: 0 !important;
+
+  overflow: visible !important;
+}
+
+
+/* pilot cards */
+
+.technology-pilot-step {
+  height: auto !important;
+  min-height: 0 !important;
+
+  overflow: visible !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  html body main.technology-page > section.technology-overview,
+  html body main.technology-page > section.technology-detail,
+  html body main.technology-page > section.arca-product-proof {
+
+    min-height: 0 !important;
+
+    padding-top:
+      4rem !important;
+
+    padding-bottom:
+      4rem !important;
+  }
+
+}
+
+.vsc-benchmark__image {
+  display: block;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.vsc-benchmark__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.vsc-benchmark__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.vsc-benchmark__meta p {
+  max-width: 48rem;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .vsc-benchmark__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.vsc-benchmark__image {
+  display: block;
+  width: min(100%, 980px);
+  margin:
+    clamp(2rem, 4vw, 3rem)
+    auto
+    0;
+
+  border: 1px solid var(--line);
+  background: var(--bg);
+  overflow: hidden;
+
+  box-shadow:
+    0 1rem 2.5rem
+    rgba(0, 0, 0, 0.05);
+}
+
+.vsc-benchmark__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.vsc-benchmark__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 2rem;
+
+  width: min(100%, 980px);
+  margin:
+    1.25rem
+    auto
+    0;
+}
+
+.vsc-benchmark__meta p {
+  max-width: 42rem;
+  margin: 0;
+
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .vsc-benchmark__image,
+  .vsc-benchmark__meta {
+    width: 100%;
+  }
+
+  .vsc-benchmark__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   ACTIVE TECHNOLOGY NAV — CLEAN STATE
+   ========================================================= */
+
+.site-nav a[aria-current="page"] {
+  position: relative !important;
+  color: var(--text) !important;
+
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-thickness: 0 !important;
+
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.site-nav a[aria-current="page"]::before,
+.site-nav a[aria-current="page"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* subtle active marker below the text */
+.site-nav a[aria-current="page"] {
+  border-bottom:
+    1px solid
+    var(--accent) !important;
+
+  padding-bottom:
+    0.25rem;
+}

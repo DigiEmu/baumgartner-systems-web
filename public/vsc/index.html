@@ -37,17 +37,19 @@
   <meta name="twitter:title" content="VSC — Verification State Compression | Baumgartner Systems">
   <meta name="twitter:description" content="VSC reduces verification-relevant system state while preserving the evidence needed for reconstruction, comparison and reproducibility.">
   <meta name="twitter:image" content="https://baumgartner.systems/assets/images/brand/vsc.webp">
-<meta
-  name="theme-color"
-  content="#b8912b"
-  media="(prefers-color-scheme: light)"
->
 
-<meta
-  name="theme-color"
-  content="#151619"
-  media="(prefers-color-scheme: dark)"
->
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    media="(prefers-color-scheme: light)"
+  >
+
+  <meta
+    name="theme-color"
+    content="#151619"
+    media="(prefers-color-scheme: dark)"
+  >
+
   <link
     rel="icon"
     type="image/webp"
@@ -69,6 +71,8 @@
     rel="stylesheet"
     href="/assets/css/site.css"
   >
+
+  
 
   <script type="application/ld+json">
   {
@@ -114,10 +118,6 @@
     ]
   }
   </script>
-  <script src="/assets/js/header.js" defer></script>
-<script src="/assets/js/section-nav.js" defer></script>
-<script src="/assets/js/theme.js" defer></script>
-<script src="/assets/js/cursor.js" defer></script>
 </head>
 
 <body>
@@ -204,6 +204,10 @@
           Foam
         </a>
 
+        <a href="/museum/">
+          Museum
+        </a>
+
         <a
           href="/pilot/"
           class="site-nav__cta"
@@ -243,6 +247,8 @@
             >
               Explore VSC
             </a>
+
+            
 
             <a
               class="scroll-hint"
@@ -496,11 +502,74 @@
 
 
     
-    <section class="technology-detail">
+    <section class="technology-detail vsc-benchmark">
       <div class="container">
 
         <div class="section-label">
           <span class="section-number">04</span>
+          <span>Benchmark</span>
+        </div>
+
+        <div class="technology-detail__intro">
+          <h2>
+            Storage efficiency under verifiable replay constraints.
+          </h2>
+
+          <p class="lead">
+            VSC Delta reduces storage requirements for long verifiable
+            decision-memory sequences while preserving replayability
+            and verification within the benchmark context.
+          </p>
+        </div>
+
+        <a
+          class="vsc-benchmark__image"
+          href="https://digiemu.github.io/vsc-core/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open the VSC benchmark"
+        >
+          <img
+            src="/assets/images/vsc/benchmarks/vsc-storage-comparison.webp"
+            alt="1000-step storage comparison showing VSC Delta as the smallest verifiable representation in the benchmark"
+            loading="lazy"
+            decoding="async"
+            width="1672"
+            height="941"
+          >
+        </a>
+
+        <div class="vsc-benchmark__meta">
+          <p>
+            In this 1000-step comparison, gzip(VSC Delta) reaches
+            42,345 bytes, lower than the other verifiable
+            representations shown in the benchmark.
+          </p>
+
+          <a
+            class="cta secondary"
+            href="https://digiemu.github.io/vsc-core/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open VSC benchmark
+          </a>
+        </div>
+
+      </div>
+    </section>
+    
+
+
+    
+
+
+    
+    <section class="technology-detail">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">05</span>
           <span>Evidence</span>
         </div>
 
@@ -576,7 +645,7 @@
       <div class="container">
 
         <div class="section-label">
-          <span class="section-number">05</span>
+          <span class="section-number">06</span>
           <span>Boundaries</span>
         </div>
 
@@ -614,7 +683,7 @@
       <div class="container">
 
         <div class="section-label">
-          <span class="section-number">06</span>
+          <span class="section-number">07</span>
           <span>Pilot</span>
         </div>
 
@@ -670,7 +739,6 @@
             Discuss a VSC Pilot
           </a>
         </div>
-
 
         <aside
           class="technology-repository"
@@ -731,7 +799,6 @@
           </a>
         </div>
 
-
         <footer class="site-footer">
 
           <div class="site-footer__brand">
@@ -766,6 +833,7 @@
             <a href="/skc/">SKC</a>
             <a href="/vsc/">VSC</a>
             <a href="/foam/">Foam</a>
+            <a href="/museum/">Museum</a>
           </nav>
 
           <div class="site-footer__meta">
@@ -785,8 +853,7 @@
 
   <script src="/assets/js/header.js" defer></script>
   <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/cursor.js" defer></script>
 
 </body>
 </html>
-
-

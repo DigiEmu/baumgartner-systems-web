@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Virtual Museum — DigiEmu Technology Showcase | Baumgartner Systems</title>
+
+  <meta
+    name="description"
+    content="Explore the DigiEmu Virtual Museum — an interactive showcase of verification research, evidence infrastructure and technology concepts."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/museum/"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Virtual Museum — DigiEmu Technology Showcase | Baumgartner Systems">
+  <meta property="og:description" content="Explore the DigiEmu Virtual Museum — an interactive showcase of verification research, evidence infrastructure and technology concepts.">
+  <meta property="og:url" content="https://baumgartner.systems/museum/">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Virtual Museum — DigiEmu Technology Showcase | Baumgartner Systems">
+  <meta name="twitter:description" content="Explore the DigiEmu Virtual Museum — an interactive showcase of verification research, evidence infrastructure and technology concepts.">
+
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    media="(prefers-color-scheme: light)"
+  >
+
+  <meta
+    name="theme-color"
+    content="#151619"
+    media="(prefers-color-scheme: dark)"
+  >
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <script>
+    (() => {
+      const dark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      document.documentElement.dataset.theme =
+        dark ? "dark" : "light";
+    })();
+  </script>
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/site.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/museum.css"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://baumgartner.systems/#organization",
+        "name": "Baumgartner Systems",
+        "url": "https://baumgartner.systems/",
+        "email": "contact@digiemu.ch",
+        "location": {
+          "@type": "Country",
+          "name": "Switzerland"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://baumgartner.systems/#website",
+        "url": "https://baumgartner.systems/",
+        "name": "Baumgartner Systems",
+        "publisher": {
+          "@id": "https://baumgartner.systems/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://baumgartner.systems/museum/#webpage",
+        "url": "https://baumgartner.systems/museum/",
+        "name": "Virtual Museum — DigiEmu Technology Showcase | Baumgartner Systems",
+        "description": "Explore the DigiEmu Virtual Museum — an interactive showcase of verification research, evidence infrastructure and technology concepts.",
+        "isPartOf": {
+          "@id": "https://baumgartner.systems/#website"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "DigiEmu Virtual Museum"
+        },
+        "publisher": {
+          "@id": "https://baumgartner.systems/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a
+        class="site-brand"
+        href="/"
+        aria-label="Baumgartner Systems home"
+      >
+        <picture class="site-brand__picture">
+          <source
+            srcset="/assets/images/brand/logo-header-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          >
+
+          <img
+            class="site-brand__logo"
+            src="/assets/images/brand/logo-header.webp"
+            alt="Baumgartner Digital Infrastructure"
+            decoding="async"
+          >
+        </picture>
+      </a>
+
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
+      >
+        <span
+          class="mobile-nav-toggle__pearl"
+          aria-hidden="true"
+        >
+          <span class="mobile-nav-toggle__spark"></span>
+        </span>
+
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Technology navigation"
+      >
+        <a href="/">Home</a>
+        <a href="/arca/">Arca</a>
+        <a href="/core/">Core</a>
+        <a href="/skc/">SKC</a>
+        <a href="/vsc/">VSC</a>
+        <a href="/foam/">Foam</a>
+        <a href="/museum/" aria-current="page">Museum</a>
+
+        <a
+          href="/pilot/"
+          class="site-nav__cta"
+        >
+          Discuss a Pilot
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main class="museum-page">
+
+    <section class="museum-hero">
+      <div class="container museum-hero__layout">
+
+        <div class="museum-hero__copy">
+          <p class="eyebrow">
+            DigiEmu Interactive Showcase
+          </p>
+
+          <h1>
+            Virtual Museum
+          </h1>
+
+          <p class="museum-hero__tagline">
+            Walk through the ideas behind verifiable AI infrastructure.
+          </p>
+
+          <p class="lead">
+            The DigiEmu Virtual Museum turns research, architecture and
+            verification concepts into an interactive environment that can
+            be explored rather than simply read.
+          </p>
+
+          <div class="museum-hero__actions">
+            <a
+              class="cta"
+              href="https://pitch.digiemu.ch/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enter the Virtual Museum
+            </a>
+
+            <a
+              class="scroll-hint"
+              href="#experience"
+            >
+              Explore the concept
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="museum-orbit"
+          aria-hidden="true"
+        >
+          <div class="museum-orbit__ring museum-orbit__ring--outer"></div>
+          <div class="museum-orbit__ring museum-orbit__ring--middle"></div>
+          <div class="museum-orbit__ring museum-orbit__ring--inner"></div>
+          <div class="museum-orbit__core"></div>
+
+          <span class="museum-orbit__label museum-orbit__label--one">Evidence</span>
+          <span class="museum-orbit__label museum-orbit__label--two">Replay</span>
+          <span class="museum-orbit__label museum-orbit__label--three">Verification</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section
+      class="museum-section"
+      id="experience"
+    >
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">01</span>
+          <span>Experience</span>
+        </div>
+
+        <div class="museum-section__intro">
+          <h2>
+            A research environment you can walk through.
+          </h2>
+
+          <p class="lead">
+            Instead of presenting DigiEmu only as diagrams and repositories,
+            the museum creates a spatial way to encounter its systems,
+            boundaries and verification ideas.
+          </p>
+        </div>
+
+        <div class="museum-grid museum-grid--three">
+
+          <article class="museum-card">
+            <span class="museum-card__number">01</span>
+
+            <h3>Explore</h3>
+
+            <p>
+              Move through an interactive environment designed around
+              technology, research and verification concepts.
+            </p>
+          </article>
+
+          <article class="museum-card">
+            <span class="museum-card__number">02</span>
+
+            <h3>Understand</h3>
+
+            <p>
+              See how evidence, identity, provenance, replay and verification
+              relate across the DigiEmu ecosystem.
+            </p>
+          </article>
+
+          <article class="museum-card">
+            <span class="museum-card__number">03</span>
+
+            <h3>Connect</h3>
+
+            <p>
+              Use the museum as a bridge from conceptual understanding to the
+              concrete technologies published by DigiEmu.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="museum-section">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="section-number">02</span>
+          <span>What it demonstrates</span>
+        </div>
+
+        <div class="museum-section__intro">
+          <h2>
+            Verification is easier to understand when the system is visible.
+          </h2>
+
+          <p class="lead">
+            The museum is not a substitute for technical documentation.
+            It is an interpretive layer that helps visitors understand the
+            architecture before moving into repositories, benchmarks and pilots.
+          </p>
+        </div>
+
+        <div class="museum-concepts">
+
+          <a class="museum-concept" href="/arca/">
+            <span>ARCA</span>
+            <strong>Evidence workflow integrity</strong>
+            <p>
+              Traceable source, composition, publication and reconstruction.
+            </p>
+          </a>
+
+          <a class="museum-concept" href="/core/">
+            <span>CORE</span>
+            <strong>Verification infrastructure</strong>
+            <p>
+              Deterministic identity, admission and structured verification.
+            </p>
+          </a>
+
+          <a class="museum-concept" href="/skc/">
+            <span>SKC</span>
+            <strong>Semantic state representation</strong>
+            <p>
+              Compact representations for reconstructable semantic state.
+            </p>
+          </a>
+
+          <a class="museum-concept" href="/vsc/">
+            <span>VSC</span>
+            <strong>Verification state compression</strong>
+            <p>
+              Efficient storage of replayable, verifiable decision memory.
+            </p>
+          </a>
+
+          <a class="museum-concept" href="/foam/">
+            <span>FOAM</span>
+            <strong>Research layer</strong>
+            <p>
+              Experimental approaches to long-lived memory and representation.
+            </p>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="museum-section museum-visit">
+      <div class="container museum-visit__inner">
+
+        <div>
+          <div class="section-label">
+            <span class="section-number">03</span>
+            <span>Visit</span>
+          </div>
+
+          <h2>
+            Enter the DigiEmu Virtual Museum.
+          </h2>
+
+          <p class="lead">
+            Open the interactive experience in a new tab and explore it at your
+            own pace.
+          </p>
+        </div>
+
+        <div class="museum-visit__action">
+          <a
+            class="cta"
+            href="https://pitch.digiemu.ch/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Enter the Virtual Museum
+          </a>
+
+          <p>
+            External DigiEmu experience
+            <span aria-hidden="true">↗</span>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="closing-scene">
+      <div class="container closing-scene__inner">
+
+        <div class="closing-scene__cta">
+          <p class="eyebrow">
+            Baumgartner Systems
+          </p>
+
+          <h2>
+            From exploration to verification.
+          </h2>
+
+          <p>
+            If one workflow is worth making reconstructable, start there.
+          </p>
+
+          <a
+            href="/pilot/"
+            class="cta"
+          >
+            Discuss a Pilot
+          </a>
+        </div>
+
+
+        <footer class="site-footer">
+
+          <div class="site-footer__brand">
+            <a
+              href="/"
+              aria-label="Baumgartner Systems home"
+            >
+              <picture class="site-footer__picture">
+                <source
+                  srcset="/assets/images/brand/logo-header-dark.webp"
+                  media="(prefers-color-scheme: dark)"
+                >
+
+                <img
+                  class="site-footer__logo"
+                  src="/assets/images/brand/logo.webp"
+                  alt="Baumgartner Digital Infrastructure"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
+            </a>
+          </div>
+
+          <nav
+            class="site-footer__nav"
+            aria-label="Footer navigation"
+          >
+            <a href="/">Home</a>
+            <a href="/arca/">Arca</a>
+            <a href="/core/">Core</a>
+            <a href="/skc/">SKC</a>
+            <a href="/vsc/">VSC</a>
+            <a href="/foam/">Foam</a>
+            <a href="/museum/">Museum</a>
+          </nav>
+
+          <div class="site-footer__meta">
+            <span>Switzerland</span>
+
+            <span>
+              © 2026 Baumgartner Digital Infrastructure
+            </span>
+          </div>
+
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
