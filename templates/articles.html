@@ -36,6 +36,41 @@
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/articles.css">
 
+
+  <script>
+    (() => {
+      const stored =
+        localStorage.getItem(
+          "baumgartner-theme"
+        );
+
+      const dark =
+        window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+      const theme =
+        stored ||
+        (dark ? "dark" : "light");
+
+      document.documentElement.dataset.theme =
+        theme;
+
+      const meta =
+        document.getElementById(
+          "theme-color-meta"
+        );
+
+      if (meta) {
+        meta.setAttribute(
+          "content",
+          theme === "dark"
+            ? "#151619"
+            : "#b8912b"
+        );
+      }
+    })();
+  </script>
 </head>
 
 <body>
@@ -146,5 +181,6 @@
 
 </body>
 </html>
+
 
 

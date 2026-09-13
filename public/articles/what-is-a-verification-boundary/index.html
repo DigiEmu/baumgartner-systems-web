@@ -34,13 +34,7 @@
   <meta
     name="theme-color"
     content="#b8912b"
-    media="(prefers-color-scheme: light)"
-  >
-
-  <meta
-    name="theme-color"
-    content="#151619"
-    media="(prefers-color-scheme: dark)"
+    id="theme-color-meta"
   >
 
   <link
@@ -72,6 +66,41 @@
       "url": "https:\/\/baumgartner.systems/"
     }
   }
+  </script>
+
+  <script>
+    (() => {
+      const stored =
+        localStorage.getItem(
+          "baumgartner-theme"
+        );
+
+      const dark =
+        window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+      const theme =
+        stored ||
+        (dark ? "dark" : "light");
+
+      document.documentElement.dataset.theme =
+        theme;
+
+      const meta =
+        document.getElementById(
+          "theme-color-meta"
+        );
+
+      if (meta) {
+        meta.setAttribute(
+          "content",
+          theme === "dark"
+            ? "#151619"
+            : "#b8912b"
+        );
+      }
+    })();
   </script>
 </head>
 
@@ -487,6 +516,7 @@
 
 </body>
 </html>
+
 
 
 
