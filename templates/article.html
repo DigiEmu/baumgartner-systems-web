@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>{{ .MetaTitle }}</title>
+
+  <meta
+    name="description"
+    content="{{ .MetaDescription }}"
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="{{ .SiteURL }}{{ .CanonicalPath }}"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ .MetaTitle }}">
+  <meta property="og:description" content="{{ .MetaDescription }}">
+  <meta property="og:url" content="{{ .SiteURL }}{{ .CanonicalPath }}">
+
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    media="(prefers-color-scheme: light)"
+  >
+
+  <meta
+    name="theme-color"
+    content="#151619"
+    media="(prefers-color-scheme: dark)"
+  >
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "{{ .Title }}",
+    "description": "{{ .MetaDescription }}",
+    "datePublished": "{{ .Published }}",
+    "dateModified": "{{ .Modified }}",
+    "mainEntityOfPage": "{{ .SiteURL }}{{ .CanonicalPath }}",
+    "author": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "{{ .SiteURL }}/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "{{ .SiteURL }}/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="article-page">
+
+  <article class="article">
+
+    <header class="article-header">
+
+      <p class="section-label">
+        Technical note
+      </p>
+
+      <h1>{{ .Title }}</h1>
+
+      <p class="article-lead">
+        {{ .Description }}
+      </p>
+
+      <div class="article-meta">
+        <time datetime="{{ .Published }}">
+          {{ .Published }}
+        </time>
+
+        <span aria-hidden="true">·</span>
+
+        <span>{{ .ReadingTime }}</span>
+      </div>
+
+    </header>
+
+    <div class="article-body">
+
+      {{ range .Sections }}
+
+      <section class="article-section">
+
+        <h2>{{ .Title }}</h2>
+
+        {{ range .Paragraphs }}
+        <p>{{ . }}</p>
+        {{ end }}
+
+        {{ if .Points }}
+        <ul>
+          {{ range .Points }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+      </section>
+
+      {{ end }}
+
+    </div>
+
+    {{ if .Related }}
+
+    <aside class="article-related">
+
+      <p class="section-label">
+        Related technical notes
+      </p>
+
+      <ul>
+        {{ range .Related }}
+        <li>
+          <a href="/articles/{{ .Slug }}/">
+            {{ .Title }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+    </aside>
+
+    {{ end }}
+    <aside class="article-cta">
+
+      <p class="section-label">
+        Verification in practice
+      </p>
+
+      <h2>
+        Start with one real workflow.
+      </h2>
+
+      <p>
+        Define one evidence boundary and test whether its decision trail can be reconstructed.
+      </p>
+
+      <a class="cta" href="/pilot/">
+        Discuss a Pilot
+      </a>
+
+    </aside>
+
+  </article>
+
+</main>
+
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
+
+

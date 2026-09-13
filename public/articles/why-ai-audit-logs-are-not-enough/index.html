@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Why AI Audit Logs Are Not Enough | Baumgartner Systems</title>
+
+  <meta
+    name="description"
+    content="AI audit logs record events, but often fail to preserve the evidence, provenance, system state and transformations required to reconstruct an AI-assisted decision."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/articles/why-ai-audit-logs-are-not-enough/"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why AI Audit Logs Are Not Enough | Baumgartner Systems">
+  <meta property="og:description" content="AI audit logs record events, but often fail to preserve the evidence, provenance, system state and transformations required to reconstruct an AI-assisted decision.">
+  <meta property="og:url" content="https://baumgartner.systems/articles/why-ai-audit-logs-are-not-enough/">
+
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    media="(prefers-color-scheme: light)"
+  >
+
+  <meta
+    name="theme-color"
+    content="#151619"
+    media="(prefers-color-scheme: dark)"
+  >
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Why AI Audit Logs Are Not Enough",
+    "description": "AI audit logs record events, but often fail to preserve the evidence, provenance, system state and transformations required to reconstruct an AI-assisted decision.",
+    "datePublished": "2026-09-13",
+    "dateModified": "2026-09-13",
+    "mainEntityOfPage": "https:\/\/baumgartner.systems\/articles\/why-ai-audit-logs-are-not-enough\/",
+    "author": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="article-page">
+
+  <article class="article">
+
+    <header class="article-header">
+
+      <p class="section-label">
+        Technical note
+      </p>
+
+      <h1>Why AI Audit Logs Are Not Enough</h1>
+
+      <p class="article-lead">
+        Audit logs can show that an event occurred. Verification requires enough evidence to reconstruct what happened, which inputs were available, what changed and under which system state.
+      </p>
+
+      <div class="article-meta">
+        <time datetime="2026-09-13">
+          2026-09-13
+        </time>
+
+        <span aria-hidden="true">·</span>
+
+        <span>11 min read</span>
+      </div>
+
+    </header>
+
+    <div class="article-body">
+
+      
+
+      <section class="article-section">
+
+        <h2>Audit logs are event records, not evidence systems</h2>
+
+        
+        <p>Logging is essential operational infrastructure. It can record requests, responses, timestamps, errors, user actions and system events. But an event record is not automatically a sufficient evidence record.</p>
+        
+        <p>An AI-assisted decision may depend on documents, retrieved context, model configuration, intermediate transformations, human review and external systems. A log entry may show that a model was called without preserving enough information to reconstruct the question the model actually received or the evidence available at that moment.</p>
+        
+        <p>This distinction matters when the objective changes from monitoring a running system to explaining a past decision.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>A timestamp does not preserve context</h2>
+
+        
+        <p>A timestamp answers when something happened. It does not necessarily answer what information was available, which version was used or what assumptions were active.</p>
+        
+        <p>If source material, retrieval state, policies or prompt templates later change, the timestamp alone does not recover the original decision context.</p>
+        
+        <p>Reconstructability therefore requires stable references to the relevant evidence basis rather than only chronological records of execution.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Logs rarely capture the complete lineage</h2>
+
+        
+        <p>AI workflows increasingly consist of multiple stages rather than one model call. Data may be collected, normalised, retrieved, summarised, classified, transformed and reviewed before reaching a final decision.</p>
+        
+        <p>Individual components may each produce valid logs while the relationship between those logs remains ambiguous. Verification needs to know how one state became the next.</p>
+        
+
+        
+        <ul>
+          
+          <li>Which source artefact entered the workflow?</li>
+          
+          <li>Which version or representation was used?</li>
+          
+          <li>Which transformation produced the next artefact?</li>
+          
+          <li>Which human or machine identity performed that transformation?</li>
+          
+          <li>Which result became the input to the following stage?</li>
+          
+          <li>Which final artefact informed the recorded decision?</li>
+          
+        </ul>
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>System state is part of the evidence</h2>
+
+        
+        <p>The same apparent request can produce different outcomes when model versions, parameters, retrieval indexes, policies or runtime configuration change.</p>
+        
+        <p>A useful verification record therefore needs an explicit state basis. The exact state required depends on the verification question, but important configuration cannot remain implicit.</p>
+        
+        <p>This does not mean preserving every internal byte of a system. It means identifying which state is materially relevant to the result and retaining enough information to evaluate the same verification question later.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Transformations can change meaning without looking like failures</h2>
+
+        
+        <p>One of the most difficult problems in evidence-sensitive workflows is that information can remain technically valid while its meaning changes.</p>
+        
+        <p>A source document can become a record. The record can become a summary. The summary can become AI context. The AI analysis can become a recommendation. The recommendation can become a decision.</p>
+        
+        <p>Every stage may execute successfully. No checksum needs to fail and no database record needs to be corrupted. Yet qualification, uncertainty, emphasis or contextual relationships can disappear along the way.</p>
+        
+        <p>Traditional logs are good at showing successful execution. They are much weaker at showing whether the meaning relevant to a decision survived a sequence of transformations.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Provenance is different from logging</h2>
+
+        
+        <p>Logging describes events. Provenance describes origin and transformation history.</p>
+        
+        <p>A provenance-aware system links an artefact to the material from which it was derived and records the transitions that produced it.</p>
+        
+        <p>Chain of custody extends this by making control and transfer explicit. In workflows involving several organisations, services or reviewers, knowing who controlled an artefact can be as important as knowing when it was processed.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Verification requires a declared boundary</h2>
+
+        
+        <p>No audit system can prove everything. Verification becomes meaningful only when the system declares what is inside the verification boundary.</p>
+        
+        <p>A recorded evidence trail might verify that a particular source produced a declared state, that a transformation occurred under a defined configuration and that the resulting artefact remained intact.</p>
+        
+        <p>It does not automatically prove that the original source described reality correctly or that the final decision was ethically, legally or professionally correct.</p>
+        
+        <p>Explicit boundaries strengthen verification claims because they distinguish demonstrated properties from assumptions.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>What stronger AI evidence infrastructure should preserve</h2>
+
+        
+        <p>Not every workflow requires the same evidence model. But systems designed for reconstructability typically need several layers beyond ordinary application logs.</p>
+        
+
+        
+        <ul>
+          
+          <li>stable source and artefact identities</li>
+          
+          <li>version information</li>
+          
+          <li>human, model, agent and service identities</li>
+          
+          <li>ordered lineage between workflow stages</li>
+          
+          <li>material configuration and system state</li>
+          
+          <li>recorded transformations</li>
+          
+          <li>provenance and custody information</li>
+          
+          <li>integrity evidence or tamper detection</li>
+          
+          <li>structured verification outcomes</li>
+          
+          <li>a defined basis for replay or independent review</li>
+          
+        </ul>
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>When ordinary logging is enough</h2>
+
+        
+        <p>Not every AI workflow needs a full evidence infrastructure. Operational logs may be completely adequate for debugging, performance monitoring, availability analysis and many low-consequence automation tasks.</p>
+        
+        <p>The need for stronger evidence increases when an organisation must later explain why an outcome occurred, demonstrate which information influenced it, distinguish human from machine actions or review whether a decision was based on the expected state.</p>
+        
+        <p>The question is therefore not whether logs are useful. They are. The question is whether they preserve enough evidence for the verification obligation the organisation actually has.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Can an independent reviewer reconstruct the decision?</h2>
+
+        
+        <p>A practical test is to imagine that the original operators are unavailable six months later.</p>
+        
+        <p>Give an independent reviewer the retained records and ask them to identify the relevant source evidence, participating identities, transformations, system state and final decision path.</p>
+        
+        <p>If the reviewer can see that events occurred but cannot determine how the evidence became the outcome, the organisation has logging but not yet a reconstructable evidence trail.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Start with one workflow</h2>
+
+        
+        <p>The practical path is not to replace every existing log system. Start with one workflow where evidence loss or ambiguity would matter.</p>
+        
+        <p>Map the chain from source evidence to final outcome. Identify which transitions are already recorded, which state remains implicit and which transformations cannot currently be reconstructed.</p>
+        
+        <p>Existing logs can then become one input to a broader evidence architecture rather than being asked to provide guarantees they were never designed to provide.</p>
+        
+
+        
+
+      </section>
+
+      
+
+    </div>
+
+    
+    <aside class="article-cta">
+
+      <p class="section-label">
+        Verification in practice
+      </p>
+
+      <h2>
+        Start with one real workflow.
+      </h2>
+
+      <p>
+        Define one evidence boundary and test whether its decision trail can be reconstructed.
+      </p>
+
+      <a class="cta" href="/pilot/">
+        Discuss a Pilot
+      </a>
+
+    </aside>
+
+  </article>
+
+</main>
+
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
+
+

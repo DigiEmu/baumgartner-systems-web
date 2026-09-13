@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Provenance, Traceability and Verification: What’s the Difference? | Baumgartner Systems</title>
+
+  <meta
+    name="description"
+    content="A technical comparison of provenance, traceability and verification in AI-assisted workflows, including their boundaries, overlaps and role in reconstructable decision trails."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/articles/provenance-traceability-verification-difference/"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Provenance, Traceability and Verification: What’s the Difference? | Baumgartner Systems">
+  <meta property="og:description" content="A technical comparison of provenance, traceability and verification in AI-assisted workflows, including their boundaries, overlaps and role in reconstructable decision trails.">
+  <meta property="og:url" content="https://baumgartner.systems/articles/provenance-traceability-verification-difference/">
+
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    media="(prefers-color-scheme: light)"
+  >
+
+  <meta
+    name="theme-color"
+    content="#151619"
+    media="(prefers-color-scheme: dark)"
+  >
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Provenance, Traceability and Verification: What’s the Difference?",
+    "description": "A technical comparison of provenance, traceability and verification in AI-assisted workflows, including their boundaries, overlaps and role in reconstructable decision trails.",
+    "datePublished": "2026-09-13",
+    "dateModified": "2026-09-13",
+    "mainEntityOfPage": "https:\/\/baumgartner.systems\/articles\/provenance-traceability-verification-difference\/",
+    "author": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="article-page">
+
+  <article class="article">
+
+    <header class="article-header">
+
+      <p class="section-label">
+        Technical note
+      </p>
+
+      <h1>Provenance, Traceability and Verification: What’s the Difference?</h1>
+
+      <p class="article-lead">
+        Provenance, traceability and verification are related but distinct. Together they form a stronger evidence model for reconstructing and independently reviewing AI-assisted workflows.
+      </p>
+
+      <div class="article-meta">
+        <time datetime="2026-09-13">
+          2026-09-13
+        </time>
+
+        <span aria-hidden="true">·</span>
+
+        <span>10 min read</span>
+      </div>
+
+    </header>
+
+    <div class="article-body">
+
+      
+
+      <section class="article-section">
+
+        <h2>Three related concepts, three different questions</h2>
+
+        
+        <p>Provenance, traceability and verification are often used together, but they answer different questions.</p>
+        
+        <p>Provenance asks where an artefact came from. Traceability asks how it moved through a process. Verification asks whether a recorded claim, state or transformation can be independently checked.</p>
+        
+        <p>The concepts overlap because they all contribute to reconstructability, but treating them as interchangeable weakens the architecture.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Provenance: where did this come from?</h2>
+
+        
+        <p>Provenance describes origin and derivation. In an AI-assisted workflow, provenance can identify which document, dataset, model output or human contribution produced a later artefact.</p>
+        
+        <p>A provenance record is especially useful when the same information passes through several representations. It allows a reviewer to move backward from a result to the material from which that result was derived.</p>
+        
+
+        
+        <ul>
+          
+          <li>source identity</li>
+          
+          <li>source version</li>
+          
+          <li>derivation relationship</li>
+          
+          <li>creator or producing system</li>
+          
+          <li>transformation history</li>
+          
+          <li>custody or control where relevant</li>
+          
+        </ul>
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Traceability: how did it move through the workflow?</h2>
+
+        
+        <p>Traceability connects events and artefacts across a process. It is concerned with the path an item followed rather than only its origin.</p>
+        
+        <p>In a multi-stage AI workflow, traceability can show that a source document became a normalized representation, then retrieval context, then a model input, then an analysis and finally a decision record.</p>
+        
+        <p>Good traceability makes the sequence visible. It should be possible to identify which output from one stage became the input to the next.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Verification: can the recorded claim be checked?</h2>
+
+        
+        <p>Verification goes beyond recording origin or movement. It asks whether a specific property can be independently evaluated against a declared basis.</p>
+        
+        <p>For example, a verification result may show that a recorded artefact matches an expected digest, that a required identity was present, that a transformation followed a declared rule or that the same referentially closed inputs produce the same canonical verification outcome.</p>
+        
+        <p>Verification is therefore always scoped. It proves something about a defined boundary rather than establishing universal truth.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Why the terms are often confused</h2>
+
+        
+        <p>The three concepts frequently appear in the same architecture because they depend on overlapping records.</p>
+        
+        <p>A provenance system may contain trace information. A trace may include integrity checks. A verification system may consume provenance records. But the existence of one does not automatically imply the others.</p>
+        
+        <p>Confusion usually appears when a system records metadata and then makes a stronger claim than the metadata actually supports.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Why provenance alone is not enough</h2>
+
+        
+        <p>Knowing where an artefact came from does not necessarily explain every intermediate step that changed it.</p>
+        
+        <p>A final summary may correctly identify its source document while omitting which extraction, filtering or compression step altered the representation.</p>
+        
+        <p>Provenance is necessary for understanding origin, but reconstructability also depends on the sequence and state of the transformations.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Why traceability alone is not enough</h2>
+
+        
+        <p>A trace can show the path through a workflow without proving the integrity or correctness of the recorded transitions.</p>
+        
+        <p>A system might record that artefact A became artefact B, but unless the transformation basis is preserved, a reviewer may not be able to determine whether that transition was valid or reproducible.</p>
+        
+        <p>Traceability provides visibility. Verification provides an independent basis for checking selected properties of the trace.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Why verification without provenance is weak</h2>
+
+        
+        <p>A verification result is only as meaningful as the inputs and identities it refers to.</p>
+        
+        <p>If a system verifies that a file has a particular digest but cannot establish which source artefact that file represents, the integrity claim may be technically correct while operationally ambiguous.</p>
+        
+        <p>Provenance gives verification results context. It connects the verified state to the evidence chain that matters.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>A combined evidence model</h2>
+
+        
+        <p>A stronger architecture treats provenance, traceability and verification as separate but connected layers.</p>
+        
+
+        
+        <ul>
+          
+          <li>Provenance establishes origin and derivation.</li>
+          
+          <li>Traceability establishes ordered movement through the workflow.</li>
+          
+          <li>State records the configuration and context materially relevant to each step.</li>
+          
+          <li>Verification checks declared properties against the preserved evidence basis.</li>
+          
+          <li>Boundary declarations define what the verification claim does and does not cover.</li>
+          
+        </ul>
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>A practical AI-assisted workflow example</h2>
+
+        
+        <p>Consider a workflow in which a source document is ingested, summarized by an AI model, reviewed by a human and used in a later decision.</p>
+        
+        <p>Provenance identifies the original document and the summary derived from it. Traceability records the ordered path from ingestion through summarization and review to the decision record. Verification checks selected properties such as source identity, integrity, required review steps or reproducibility of a defined verification outcome.</p>
+        
+        <p>Together, these layers make it possible to reconstruct more than the final answer. They make the transition from evidence to outcome inspectable.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>What to capture technically</h2>
+
+        
+        <p>The exact schema depends on the workflow, but several elements recur across evidence-sensitive systems.</p>
+        
+
+        
+        <ul>
+          
+          <li>stable identifiers for source and derived artefacts</li>
+          
+          <li>versions or immutable references</li>
+          
+          <li>human, model, agent and service identities</li>
+          
+          <li>ordered parent-child or input-output relationships</li>
+          
+          <li>material configuration and state</li>
+          
+          <li>timestamps where chronology matters</li>
+          
+          <li>integrity evidence</li>
+          
+          <li>structured verification results</li>
+          
+          <li>explicit verification boundaries</li>
+          
+        </ul>
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Boundary conditions matter</h2>
+
+        
+        <p>A provenance record does not prove that a source statement is factually true. A trace does not prove that every transformation preserved meaning. A verification result does not prove properties that were never represented inside the verification boundary.</p>
+        
+        <p>Reliable systems make these limits explicit rather than allowing metadata to imply stronger guarantees than it can support.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>When each concept matters most</h2>
+
+        
+        <p>Provenance matters most when origin, derivation and custody need to be established. Traceability matters most when a workflow spans several stages, systems or actors. Verification matters most when an organisation needs to independently evaluate whether a declared condition was satisfied.</p>
+        
+        <p>In evidence-sensitive AI workflows, the strongest architecture usually combines all three.</p>
+        
+
+        
+
+      </section>
+
+      
+
+    </div>
+
+    
+
+    <aside class="article-related">
+
+      <p class="section-label">
+        Related technical notes
+      </p>
+
+      <ul>
+        
+        <li>
+          <a href="/articles/ai-evidence-infrastructure/">
+            What Is AI Evidence Infrastructure?
+          </a>
+        </li>
+        
+        <li>
+          <a href="/articles/why-ai-audit-logs-are-not-enough/">
+            Why AI Audit Logs Are Not Enough
+          </a>
+        </li>
+        
+      </ul>
+
+    </aside>
+
+    
+    <aside class="article-cta">
+
+      <p class="section-label">
+        Verification in practice
+      </p>
+
+      <h2>
+        Start with one real workflow.
+      </h2>
+
+      <p>
+        Define one evidence boundary and test whether its decision trail can be reconstructed.
+      </p>
+
+      <a class="cta" href="/pilot/">
+        Discuss a Pilot
+      </a>
+
+    </aside>
+
+  </article>
+
+</main>
+
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
+
+

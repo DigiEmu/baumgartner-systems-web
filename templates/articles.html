@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Technical Articles — Baumgartner Systems
+  </title>
+
+  <meta
+    name="description"
+    content="Technical articles on AI evidence infrastructure, provenance, verification boundaries, reconstructable decision trails and deterministic verification."
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/articles/"
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <img
+        class="site-brand__logo"
+        src="/assets/images/brand/logo-header.webp"
+        alt="Baumgartner Digital Infrastructure"
+      >
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav">
+      <a href="/">Home</a>
+      <a href="/articles/" aria-current="page">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="articles-page">
+
+  <div class="container">
+
+    <header class="articles-header">
+
+      <p class="section-label">
+        Research / Technical Notes
+      </p>
+
+      <h1>
+        Verification, evidence and AI infrastructure.
+      </h1>
+
+      <p>
+        Technical notes on reconstructability, provenance,
+        verification boundaries and evidence-aware AI systems.
+      </p>
+
+    </header>
+
+    <div class="article-list">
+
+      {{ range . }}
+
+      <article class="article-card">
+
+        <p class="article-card__meta">
+          {{ .Published }} · {{ .ReadingTime }}
+        </p>
+
+        <h2>
+          <a href="/articles/{{ .Slug }}/">
+            {{ .Title }}
+          </a>
+        </h2>
+
+        <p>
+          {{ .Description }}
+        </p>
+
+        <a
+          class="article-card__link"
+          href="/articles/{{ .Slug }}/"
+        >
+          Read technical note →
+        </a>
+
+      </article>
+
+      {{ end }}
+
+    </div>
+
+  </div>
+
+</main>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+<script src="/assets/js/header.js" defer></script>
+
+</body>
+</html>
+
+

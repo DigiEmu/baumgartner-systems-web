@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>What Is AI Evidence Infrastructure? | Baumgartner Systems</title>
+
+  <meta
+    name="description"
+    content="A technical introduction to AI evidence infrastructure: provenance, lineage, system state, transformations, verification boundaries and reconstructable AI-assisted decision trails."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/articles/ai-evidence-infrastructure/"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What Is AI Evidence Infrastructure? | Baumgartner Systems">
+  <meta property="og:description" content="A technical introduction to AI evidence infrastructure: provenance, lineage, system state, transformations, verification boundaries and reconstructable AI-assisted decision trails.">
+  <meta property="og:url" content="https://baumgartner.systems/articles/ai-evidence-infrastructure/">
+
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    media="(prefers-color-scheme: light)"
+  >
+
+  <meta
+    name="theme-color"
+    content="#151619"
+    media="(prefers-color-scheme: dark)"
+  >
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "What Is AI Evidence Infrastructure?",
+    "description": "A technical introduction to AI evidence infrastructure: provenance, lineage, system state, transformations, verification boundaries and reconstructable AI-assisted decision trails.",
+    "datePublished": "2026-09-13",
+    "dateModified": "2026-09-13",
+    "mainEntityOfPage": "https:\/\/baumgartner.systems\/articles\/ai-evidence-infrastructure\/",
+    "author": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="article-page">
+
+  <article class="article">
+
+    <header class="article-header">
+
+      <p class="section-label">
+        Technical note
+      </p>
+
+      <h1>What Is AI Evidence Infrastructure?</h1>
+
+      <p class="article-lead">
+        AI evidence infrastructure preserves the information required to reconstruct, inspect and verify how an AI-assisted process moved from source material to an outcome.
+      </p>
+
+      <div class="article-meta">
+        <time datetime="2026-09-13">
+          2026-09-13
+        </time>
+
+        <span aria-hidden="true">·</span>
+
+        <span>8 min read</span>
+      </div>
+
+    </header>
+
+    <div class="article-body">
+
+      
+
+      <section class="article-section">
+
+        <h2>AI outputs are not evidence trails</h2>
+
+        
+        <p>An AI system can produce a useful answer while leaving an organisation unable to reconstruct how that answer became part of a decision.</p>
+        
+        <p>A final output normally does not contain the complete evidence basis: source identity, document versions, model or agent identity, configuration, transformations, human review and the state of the workflow at the time the result was produced.</p>
+        
+        <p>AI evidence infrastructure treats those elements as part of the operational system rather than as information to reconstruct manually after an incident or audit.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>The evidence chain</h2>
+
+        
+        <p>A useful verification model follows the chain through which information changes role and meaning.</p>
+        
+
+        
+        <ul>
+          
+          <li>Source evidence establishes what entered the process.</li>
+          
+          <li>Identity records which human, model, agent or system participated.</li>
+          
+          <li>Lineage records how information moved between stages.</li>
+          
+          <li>State captures the relevant configuration and environment.</li>
+          
+          <li>Provenance records origin, custody and transformations.</li>
+          
+          <li>Verification establishes whether the recorded trail can be independently inspected or replayed.</li>
+          
+        </ul>
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Why ordinary audit logs are not enough</h2>
+
+        
+        <p>Traditional logs are useful, but logging and evidence preservation are not the same problem. A log can record that an event happened without preserving the exact information needed to understand what the event meant.</p>
+        
+        <p>For verification, the important question is not simply whether an action was recorded. The question is whether the recorded material is sufficient to reconstruct the verification question later.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Meaning can change while data remains intact</h2>
+
+        
+        <p>Information often passes through several representations: evidence, record, summary, AI analysis, decision and later review.</p>
+        
+        <p>Each representation may be technically valid while context, qualification or emphasis changes. That means integrity cannot be reduced to checking whether a file or database record remained byte-identical.</p>
+        
+        <p>A verification architecture therefore needs to preserve both the recorded artefacts and the relationships between transformations.</p>
+        
+
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Verification requires an explicit boundary</h2>
+
+        
+        <p>Evidence infrastructure does not prove everything. A useful verification system declares what information belongs inside the verification boundary and what remains external.</p>
+        
+        <p>For example, a system may verify the recorded provenance and transformation history of an AI-assisted decision without proving that every external real-world statement in the source material is objectively true.</p>
+        
+
+        
+        <ul>
+          
+          <li>Do not infer authority that was never represented.</li>
+          
+          <li>Do not treat undocumented runtime behaviour as verified state.</li>
+          
+          <li>Do not confuse provenance with factual truth.</li>
+          
+          <li>Do not claim reproducibility outside the declared inputs and environment.</li>
+          
+        </ul>
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>What a reconstructable decision trail contains</h2>
+
+        
+        <p>The exact implementation depends on the workflow, but reconstructability generally requires more than storing the final prompt and response.</p>
+        
+
+        
+        <ul>
+          
+          <li>source identifiers and versions</li>
+          
+          <li>participating human and machine identities</li>
+          
+          <li>relevant configuration and parameters</li>
+          
+          <li>ordered transformations</li>
+          
+          <li>provenance and chain-of-custody records</li>
+          
+          <li>structured verification outcomes</li>
+          
+          <li>a declared replay or review basis</li>
+          
+        </ul>
+        
+
+      </section>
+
+      
+
+      <section class="article-section">
+
+        <h2>Start with one boundary</h2>
+
+        
+        <p>An organisation does not need to make every AI system globally verifiable at once. A practical starting point is one workflow where the cost of losing evidence, context or reconstructability is meaningful.</p>
+        
+        <p>Define the evidence basis, make the transformations explicit, preserve the resulting state and test whether an independent reviewer can reconstruct what happened.</p>
+        
+
+        
+
+      </section>
+
+      
+
+    </div>
+
+    
+    <aside class="article-cta">
+
+      <p class="section-label">
+        Verification in practice
+      </p>
+
+      <h2>
+        Start with one real workflow.
+      </h2>
+
+      <p>
+        Define one evidence boundary and test whether its decision trail can be reconstructed.
+      </p>
+
+      <a class="cta" href="/pilot/">
+        Discuss a Pilot
+      </a>
+
+    </aside>
+
+  </article>
+
+</main>
+
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
+
+
