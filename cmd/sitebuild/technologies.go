@@ -10,7 +10,7 @@ var technologies = []technologyPage{
 		Slug: "arca",
 		Name: "Arca",
 
-		MetaTitle:       "Arca — AI Evidence Infrastructure | Baumgartner Systems",
+		MetaTitle:       "Arca — AI Evidence Infrastructure | Baumgartner Digital Infrastructure",
 		MetaDescription: "Arca captures provenance, lineage and verification evidence across AI-assisted workflows so organisations can reconstruct what happened and why.",
 		Tagline:         "Evidence workflow integrity.",
 
@@ -200,7 +200,7 @@ var technologies = []technologyPage{
 		Slug: "core",
 		Name: "Core",
 
-		MetaTitle:       "Core — Deterministic Verification | Baumgartner Systems",
+		MetaTitle:       "Core — Deterministic Verification | Baumgartner Digital Infrastructure",
 		MetaDescription: "DigiEmu Core provides deterministic identity, state, admission and verification primitives for reproducible AI and knowledge infrastructure.",
 		Tagline:         "Deterministic trust foundation.",
 
@@ -390,7 +390,7 @@ var technologies = []technologyPage{
 		Slug: "skc",
 		Name: "SKC",
 
-		MetaTitle:       "SKC — Semantic Knowledge Compression | Baumgartner Systems",
+		MetaTitle:       "SKC — Semantic Knowledge Compression | Baumgartner Digital Infrastructure",
 		MetaDescription: "SKC explores deterministic semantic compression with reconstructable state, measurable fidelity and graph-level verification.",
 		Tagline:         "Semantic knowledge compression.",
 
@@ -563,7 +563,7 @@ var technologies = []technologyPage{
 		Slug: "vsc",
 		Name: "VSC",
 
-		MetaTitle:       "VSC — Verification State Compression | Baumgartner Systems",
+		MetaTitle:       "VSC — Verification State Compression | Baumgartner Digital Infrastructure",
 		MetaDescription: "VSC reduces verification-relevant system state while preserving the evidence needed for reconstruction, comparison and reproducibility.",
 		Tagline:         "Verification state compression.",
 
@@ -737,7 +737,7 @@ var technologies = []technologyPage{
 		Slug: "foam",
 		Name: "Foam",
 
-		MetaTitle:       "Foam — Memory State Optimisation | Baumgartner Systems",
+		MetaTitle:       "Foam — Memory State Optimisation | Baumgartner Digital Infrastructure",
 		MetaDescription: "Foam explores memory-state optimisation for efficient, reconstructable and verification-aware AI infrastructure.",
 		Tagline:         "Memory state optimisation.",
 
