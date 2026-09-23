@@ -83,16 +83,10 @@
   >
 
   <meta
-  name="theme-color"
-  content="#b8912b"
-  media="(prefers-color-scheme: light)"
->
-
-<meta
-  name="theme-color"
-  content="#151619"
-  media="(prefers-color-scheme: dark)"
->
+    name="theme-color"
+    content="#b8912b"
+    id="theme-color-meta"
+  >
 
   <link
     rel="icon"
@@ -102,19 +96,12 @@
 
   <script>
     (() => {
-      const stored =
-        localStorage.getItem(
-          "baumgartner-theme"
-        );
-
-      const dark =
-        window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-
+      const stored = (() => {
+        try { return localStorage.getItem("baumgartner-theme"); } catch (e) { return null; }
+      })();
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       document.documentElement.dataset.theme =
-        stored ||
-        (dark ? "dark" : "light");
+        stored || (dark ? "dark" : "light");
     })();
   </script>
 

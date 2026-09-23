@@ -9,19 +9,22 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://baumgartner.systems/arca/demo/">
 
-  <meta name="theme-color" content="#b8912b" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151619" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#b8912b" id="theme-color-meta">
 
   <link rel="icon" type="image/webp" href="/assets/images/brand/glyph.webp">
-  <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/arca-demo.css">
 
   <script>
     (() => {
+      const stored = (() => {
+        try { return localStorage.getItem("baumgartner-theme"); } catch (e) { return null; }
+      })();
       const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.dataset.theme = dark ? "dark" : "light";
+      document.documentElement.dataset.theme = stored || (dark ? "dark" : "light");
     })();
   </script>
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/arca-demo.css">
 </head>
 
 <body>
