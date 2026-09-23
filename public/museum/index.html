@@ -38,13 +38,7 @@
   <meta
     name="theme-color"
     content="#b8912b"
-    media="(prefers-color-scheme: light)"
-  >
-
-  <meta
-    name="theme-color"
-    content="#151619"
-    media="(prefers-color-scheme: dark)"
+    id="theme-color-meta"
   >
 
   <link
@@ -55,12 +49,12 @@
 
   <script>
     (() => {
-      const dark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-
+      const stored = (() => {
+        try { return localStorage.getItem("baumgartner-theme"); } catch (e) { return null; }
+      })();
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       document.documentElement.dataset.theme =
-        dark ? "dark" : "light";
+        stored || (dark ? "dark" : "light");
     })();
   </script>
 

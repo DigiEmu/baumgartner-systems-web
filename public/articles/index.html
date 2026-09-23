@@ -45,36 +45,12 @@
 
   <script>
     (() => {
-      const stored =
-        localStorage.getItem(
-          "baumgartner-theme"
-        );
-
-      const dark =
-        window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-
-      const theme =
-        stored ||
-        (dark ? "dark" : "light");
-
+      const stored = (() => {
+        try { return localStorage.getItem("baumgartner-theme"); } catch (e) { return null; }
+      })();
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       document.documentElement.dataset.theme =
-        theme;
-
-      const meta =
-        document.getElementById(
-          "theme-color-meta"
-        );
-
-      if (meta) {
-        meta.setAttribute(
-          "content",
-          theme === "dark"
-            ? "#151619"
-            : "#b8912b"
-        );
-      }
+        stored || (dark ? "dark" : "light");
     })();
   </script>
 </head>
@@ -292,6 +268,8 @@
 <script src="/assets/js/cursor.js" defer></script>
 
 <script src="/assets/js/header.js" defer></script>
+
+<script src="/assets/js/theme.js" defer></script>
 
 </body>
 </html>

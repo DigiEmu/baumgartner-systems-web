@@ -1,50 +1,43 @@
 const root = document.documentElement;
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-const systemTheme = window.matchMedia(
-  "(prefers-color-scheme: dark)"
-);
-
-function applySystemTheme() {
-  root.dataset.theme =
-    systemTheme.matches
-      ? "dark"
-      : "light";
+function storedTheme() {
+  try {
+    return localStorage.getItem("baumgartner-theme");
+  } catch (e) {
+    return null;
+  }
 }
 
-applySystemTheme();
+function applyTheme() {
+  const stored = storedTheme();
+  root.dataset.theme =
+    stored || (systemTheme.matches ? "dark" : "light");
+}
 
-systemTheme.addEventListener(
-  "change",
-  applySystemTheme
-);
+applyTheme();
+
+systemTheme.addEventListener("change", () => {
+  if (!storedTheme()) {
+    applyTheme();
+  }
+});
+
 function syncBrowserThemeColor() {
   const meta = document.getElementById("theme-color-meta");
+  if (!meta) return;
 
-  if (!meta) {
-    return;
-  }
-
-  const theme =
-    document.documentElement.dataset.theme || "light";
-
+  const theme = root.dataset.theme || "light";
   meta.setAttribute(
     "content",
-    theme === "dark"
-      ? "#151619"
-      : "#b8912b"
+    theme === "dark" ? "#151619" : "#b8912b"
   );
 }
 
 syncBrowserThemeColor();
 
-const themeColorObserver = new MutationObserver(
-  syncBrowserThemeColor
-);
-
-themeColorObserver.observe(
-  document.documentElement,
-  {
-    attributes: true,
-    attributeFilter: ["data-theme"]
-  }
-);
+const themeColorObserver = new MutationObserver(syncBrowserThemeColor);
+themeColorObserver.observe(root, {
+  attributes: true,
+  attributeFilter: ["data-theme"],
+});
