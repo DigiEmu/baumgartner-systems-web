@@ -6,7 +6,7 @@ var articles = []articlePage{
 
 		Title: "What Is AI Evidence Infrastructure?",
 
-		MetaTitle: "What Is AI Evidence Infrastructure? | Baumgartner Systems",
+		MetaTitle: "What Is AI Evidence Infrastructure? | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A technical introduction to AI evidence infrastructure: provenance, lineage, system state, transformations, verification boundaries and reconstructable AI-assisted decision trails.",
 
@@ -106,7 +106,7 @@ var articles = []articlePage{
 
 		Title: "Why AI Audit Logs Are Not Enough",
 
-		MetaTitle: "Why AI Audit Logs Are Not Enough | Baumgartner Systems",
+		MetaTitle: "Why AI Audit Logs Are Not Enough | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "AI audit logs record events, but often fail to preserve the evidence, provenance, system state and transformations required to reconstruct an AI-assisted decision.",
 
@@ -241,7 +241,7 @@ var articles = []articlePage{
 
 		Title: "Provenance, Traceability and Verification: What’s the Difference?",
 
-		MetaTitle: "Provenance, Traceability and Verification: What’s the Difference? | Baumgartner Systems",
+		MetaTitle: "Provenance, Traceability and Verification: What’s the Difference? | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A technical comparison of provenance, traceability and verification in AI-assisted workflows, including their boundaries, overlaps and role in reconstructable decision trails.",
 
@@ -392,7 +392,7 @@ var articles = []articlePage{
 
 		Title: "What Is a Verification Boundary?",
 
-		MetaTitle: "What Is a Verification Boundary? | Baumgartner Systems",
+		MetaTitle: "What Is a Verification Boundary? | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A technical explanation of verification boundaries in AI-assisted systems: what belongs inside the boundary, what remains external and why verification claims must stay scoped.",
 
@@ -539,7 +539,7 @@ var articles = []articlePage{
 
 		Title: "From Evidence to Decision: Where Meaning Can Change",
 
-		MetaTitle: "From Evidence to Decision: Where Meaning Can Change | Baumgartner Systems",
+		MetaTitle: "From Evidence to Decision: Where Meaning Can Change | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A technical look at semantic drift in AI-assisted decision chains: how evidence becomes records, summaries, AI analysis, decisions and later review.",
 
@@ -713,7 +713,7 @@ var articles = []articlePage{
 
 		Title: "What Makes an AI-Assisted Decision Reconstructable?",
 
-		MetaTitle: "What Makes an AI-Assisted Decision Reconstructable? | Baumgartner Systems",
+		MetaTitle: "What Makes an AI-Assisted Decision Reconstructable? | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A technical guide to reconstructable AI-assisted decisions: evidence basis, identities, system state, transformations, provenance, verification boundaries and replay requirements.",
 
@@ -877,7 +877,7 @@ var articles = []articlePage{
 
 		Title: "Deterministic Verification in AI Systems",
 
-		MetaTitle: "Deterministic Verification in AI Systems | Baumgartner Systems",
+		MetaTitle: "Deterministic Verification in AI Systems | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A technical explanation of deterministic verification in AI systems: canonical inputs, referential closure, reproducible verification outcomes, boundaries and replay.",
 
@@ -1051,7 +1051,7 @@ var articles = []articlePage{
 
 		Title: "Replayability vs Reproducibility in AI Workflows",
 
-		MetaTitle: "Replayability vs Reproducibility in AI Workflows | Baumgartner Systems",
+		MetaTitle: "Replayability vs Reproducibility in AI Workflows | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A technical comparison of replayability, reproducibility and repeatability in AI workflows, including probabilistic models, evidence state and canonical verification outcomes.",
 
@@ -1220,7 +1220,7 @@ var articles = []articlePage{
 
 		Title: "What Is a Structured Verification Result?",
 
-		MetaTitle: "What Is a Structured Verification Result? | Baumgartner Systems",
+		MetaTitle: "What Is a Structured Verification Result? | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A technical explanation of structured verification results: verification IDs, evidence references, state basis, rule outcomes, reasons, scope, integrity and replay information.",
 
@@ -1417,7 +1417,7 @@ var articles = []articlePage{
 
 		Title: "How to Design an AI Verification Pilot",
 
-		MetaTitle: "How to Design an AI Verification Pilot | Baumgartner Systems",
+		MetaTitle: "How to Design an AI Verification Pilot | Baumgartner Digital Infrastructure",
 
 		MetaDescription: "A practical guide to designing an AI verification pilot: scope, verification questions, evidence, state, success criteria, replay, outputs and pilot boundaries.",
 

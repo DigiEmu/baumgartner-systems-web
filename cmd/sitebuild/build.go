@@ -49,7 +49,7 @@ func buildTechnologyPages() error {
 		technology.CanonicalPath = "/" + technology.Slug + "/"
 
 		if technology.MetaTitle == "" {
-			technology.MetaTitle = technology.Name + " — Baumgartner Systems"
+			technology.MetaTitle = technology.Name + " — Baumgartner Digital Infrastructure"
 		}
 
 		if technology.MetaDescription == "" {
