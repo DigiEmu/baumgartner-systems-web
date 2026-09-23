@@ -16,6 +16,16 @@ var articles = []articlePage{
 		Modified:    "2026-09-13",
 		ReadingTime: "8 min read",
 
+		Related: []articleLink{{
+			Title: "Why AI Audit Logs Are Not Enough",
+			Slug:  "why-ai-audit-logs-are-not-enough",
+		}, {
+			Title: "Provenance, Traceability and Verification: What’s the Difference?",
+			Slug:  "provenance-traceability-verification-difference",
+		}, {
+			Title: "What Is a Verification Boundary?",
+			Slug:  "what-is-a-verification-boundary",
+		}},
 		Sections: []articleSection{
 			{
 				Title: "AI outputs are not evidence trails",
@@ -106,6 +116,16 @@ var articles = []articlePage{
 		Modified:    "2026-09-13",
 		ReadingTime: "11 min read",
 
+		Related: []articleLink{{
+			Title: "Provenance, Traceability and Verification: What’s the Difference?",
+			Slug:  "provenance-traceability-verification-difference",
+		}, {
+			Title: "What Makes an AI-Assisted Decision Reconstructable?",
+			Slug:  "what-makes-an-ai-assisted-decision-reconstructable",
+		}, {
+			Title: "Deterministic Verification in AI Systems",
+			Slug:  "deterministic-verification-in-ai-systems",
+		}},
 		Sections: []articleSection{
 			{
 				Title: "Audit logs are event records, not evidence systems",
@@ -231,17 +251,16 @@ var articles = []articlePage{
 		Modified:    "2026-09-13",
 		ReadingTime: "10 min read",
 
-		Related: []articleLink{
-			{
-				Title: "What Is AI Evidence Infrastructure?",
-				Slug:  "ai-evidence-infrastructure",
-			},
-			{
-				Title: "Why AI Audit Logs Are Not Enough",
-				Slug:  "why-ai-audit-logs-are-not-enough",
-			},
-		},
-
+		Related: []articleLink{{
+			Title: "What Makes an AI-Assisted Decision Reconstructable?",
+			Slug:  "what-makes-an-ai-assisted-decision-reconstructable",
+		}, {
+			Title: "Replayability vs Reproducibility in AI Workflows",
+			Slug:  "replayability-vs-reproducibility-in-ai-workflows",
+		}, {
+			Title: "What Is a Structured Verification Result?",
+			Slug:  "what-is-a-structured-verification-result",
+		}},
 		Sections: []articleSection{
 			{
 				Title: "Three related concepts, three different questions",
@@ -383,21 +402,16 @@ var articles = []articlePage{
 		Modified:    "2026-09-13",
 		ReadingTime: "10 min read",
 
-		Related: []articleLink{
-			{
-				Title: "What Is AI Evidence Infrastructure?",
-				Slug:  "ai-evidence-infrastructure",
-			},
-			{
-				Title: "Provenance, Traceability and Verification: What’s the Difference?",
-				Slug:  "provenance-traceability-verification-difference",
-			},
-			{
-				Title: "Why AI Audit Logs Are Not Enough",
-				Slug:  "why-ai-audit-logs-are-not-enough",
-			},
-		},
-
+		Related: []articleLink{{
+			Title: "Deterministic Verification in AI Systems",
+			Slug:  "deterministic-verification-in-ai-systems",
+		}, {
+			Title: "Replayability vs Reproducibility in AI Workflows",
+			Slug:  "replayability-vs-reproducibility-in-ai-workflows",
+		}, {
+			Title: "How to Design an AI Verification Pilot",
+			Slug:  "how-to-design-an-ai-verification-pilot",
+		}},
 		Sections: []articleSection{
 			{
 				Title: "Verification is always about something specific",
@@ -535,21 +549,16 @@ var articles = []articlePage{
 		Modified:    "2026-09-13",
 		ReadingTime: "11 min read",
 
-		Related: []articleLink{
-			{
-				Title: "What Is AI Evidence Infrastructure?",
-				Slug:  "ai-evidence-infrastructure",
-			},
-			{
-				Title: "What Is a Verification Boundary?",
-				Slug:  "what-is-a-verification-boundary",
-			},
-			{
-				Title: "Provenance, Traceability and Verification: What’s the Difference?",
-				Slug:  "provenance-traceability-verification-difference",
-			},
-		},
-
+		Related: []articleLink{{
+			Title: "What Is a Structured Verification Result?",
+			Slug:  "what-is-a-structured-verification-result",
+		}, {
+			Title: "What Makes an AI-Assisted Decision Reconstructable?",
+			Slug:  "what-makes-an-ai-assisted-decision-reconstructable",
+		}, {
+			Title: "What Is a Verification Boundary?",
+			Slug:  "what-is-a-verification-boundary",
+		}},
 		Sections: []articleSection{
 			{
 				Title: "Data integrity does not guarantee meaning integrity",
@@ -695,6 +704,955 @@ var articles = []articlePage{
 					"A practical assessment can begin with one real workflow and map every transition from source evidence to final decision.",
 					"At each step, ask what information entered, what representation left, what changed, who or what performed the transformation and whether the relationship can later be reconstructed.",
 					"The result is often more revealing than examining the final AI output alone.",
+				},
+			},
+		},
+	},
+	{
+		Slug: "what-makes-an-ai-assisted-decision-reconstructable",
+
+		Title: "What Makes an AI-Assisted Decision Reconstructable?",
+
+		MetaTitle: "What Makes an AI-Assisted Decision Reconstructable? | Baumgartner Systems",
+
+		MetaDescription: "A technical guide to reconstructable AI-assisted decisions: evidence basis, identities, system state, transformations, provenance, verification boundaries and replay requirements.",
+
+		Description: "A decision is reconstructable when an independent reviewer can recover the evidence basis, participating identities, relevant state, transformations and decision path without relying on undocumented context.",
+
+		Published:   "2026-09-23",
+		Modified:    "2026-09-23",
+		ReadingTime: "11 min read",
+
+		Related: []articleLink{
+			{
+				Title: "What Is AI Evidence Infrastructure?",
+				Slug:  "ai-evidence-infrastructure",
+			},
+			{
+				Title: "What Is a Verification Boundary?",
+				Slug:  "what-is-a-verification-boundary",
+			},
+			{
+				Title: "From Evidence to Decision: Where Meaning Can Change",
+				Slug:  "from-evidence-to-decision-where-meaning-can-change",
+			},
+		},
+
+		Sections: []articleSection{
+			{
+				Title: "Reconstructability is more than keeping a log",
+				Paragraphs: []string{
+					"A reconstructable AI-assisted decision is one that can later be examined without depending on memory, undocumented assumptions or the continued availability of the original operators.",
+					"The objective is not to recreate every internal detail of a system. It is to preserve enough evidence to answer the verification question that matters.",
+					"That usually requires more than timestamps, prompts and final outputs.",
+				},
+			},
+			{
+				Title: "The evidence basis must be identifiable",
+				Paragraphs: []string{
+					"Every reconstructable decision starts with a defined evidence basis.",
+					"A reviewer should be able to determine which documents, records, measurements, retrieved context or other artefacts were available when the decision process occurred.",
+					"If the source basis cannot be identified reliably, later reconstruction is already ambiguous.",
+				},
+				Points: []string{
+					"stable source identifiers",
+					"versions or immutable references",
+					"capture or publication time where relevant",
+					"integrity evidence",
+					"provenance relationships",
+				},
+			},
+			{
+				Title: "Participating identities must be explicit",
+				Paragraphs: []string{
+					"AI-assisted workflows often involve several actors: users, reviewers, models, agents, services and external systems.",
+					"Reconstructability requires knowing which identity performed which action or produced which artefact.",
+					"An anonymous transformation may still be observable, but it weakens the ability to evaluate responsibility, authority and workflow integrity.",
+				},
+			},
+			{
+				Title: "Relevant system state must be preserved",
+				Paragraphs: []string{
+					"The same apparent input may produce different outcomes under different system states.",
+					"Model version, prompt template, retrieval index, policy version, runtime configuration, parameters and other state may materially affect the result.",
+					"A reconstructable workflow therefore records the state required to evaluate the same verification question later.",
+				},
+			},
+			{
+				Title: "Transformations must be connected",
+				Paragraphs: []string{
+					"A collection of artefacts is not yet a decision trail.",
+					"The system must preserve the relationships between inputs and outputs: which artefact produced which derived artefact, through which transformation and under which state.",
+					"This becomes especially important when information passes through extraction, normalization, summarization, classification or AI analysis.",
+				},
+			},
+			{
+				Title: "Provenance explains origin and derivation",
+				Paragraphs: []string{
+					"Provenance gives the decision trail historical context.",
+					"It links a later artefact to the material from which it was derived and helps distinguish original evidence from transformed representations.",
+					"Without provenance, a reviewer may see the final record but remain unable to determine where its content originated.",
+				},
+			},
+			{
+				Title: "Human review must remain distinguishable from model output",
+				Paragraphs: []string{
+					"A reconstructable decision should separate machine-generated analysis from human interpretation and final authority.",
+					"If a reviewer corrected, accepted, rejected or overrode an AI output, that action should remain explicit rather than being merged into a single final record.",
+					"This distinction helps later reviewers understand which conclusions came from the model and which came from accountable human judgment.",
+				},
+			},
+			{
+				Title: "The verification boundary defines what can be reconstructed",
+				Paragraphs: []string{
+					"Reconstructability is always bounded.",
+					"A system can only reconstruct information that was captured or represented inside its declared verification boundary.",
+					"External facts, hidden model internals, undocumented reasoning or authority that was never recorded cannot be recovered simply because the surrounding workflow was logged.",
+				},
+			},
+			{
+				Title: "Referential closure reduces ambiguity",
+				Paragraphs: []string{
+					"A verification question becomes stronger when all references required to evaluate it are explicit.",
+					"If a decision depends on a policy, capability, owner, model version or source record, the verifier should not need to infer which external object was intended.",
+					"Referentially closed inputs reduce hidden dependencies and make replay or independent review more reliable.",
+				},
+			},
+			{
+				Title: "Replay does not always mean regenerating the same model output",
+				Paragraphs: []string{
+					"Replay can be valuable when a workflow is deterministic enough to reproduce the same canonical verification outcome.",
+					"But reconstruction does not always require generating the same natural-language model output.",
+					"For probabilistic systems, the more important objective may be to reproduce the evidence basis, state, transformation path and verification conditions under which the original outcome was produced.",
+				},
+			},
+			{
+				Title: "Structured verification results preserve the verification claim",
+				Paragraphs: []string{
+					"A verification result should record more than pass or fail.",
+					"It should identify the verification question, evidence basis, relevant state, rules evaluated, outcome and scope of the claim.",
+					"Structured results make later comparison and independent review easier than free-form audit notes.",
+				},
+			},
+			{
+				Title: "What a reconstructable decision trail usually contains",
+				Paragraphs: []string{
+					"The exact implementation depends on the workflow, but several elements recur across systems designed for later review.",
+				},
+				Points: []string{
+					"source and derived artefact identifiers",
+					"versions or immutable references",
+					"human and machine identities",
+					"ordered lineage",
+					"material system state",
+					"transformation records",
+					"provenance and custody where relevant",
+					"integrity evidence",
+					"human review events",
+					"structured verification results",
+					"a declared verification boundary",
+				},
+			},
+			{
+				Title: "A simple reconstruction test",
+				Paragraphs: []string{
+					"A useful test is to remove the original operators from the scenario.",
+					"Could an independent reviewer six months later determine what evidence was available, which identities participated, what changed, which state mattered and how the final decision was reached?",
+					"If the answer depends on undocumented knowledge, the workflow is not yet fully reconstructable.",
+				},
+			},
+			{
+				Title: "Start with one decision path",
+				Paragraphs: []string{
+					"Reconstructability does not need to begin with an entire enterprise platform.",
+					"Choose one AI-assisted decision path and map it from source evidence to final outcome.",
+					"Identify which parts are already preserved, which dependencies remain implicit and which transitions cannot currently be independently reviewed.",
+					"That gap analysis becomes the basis for a focused verification pilot.",
+				},
+			},
+		},
+	},
+	{
+		Slug: "deterministic-verification-in-ai-systems",
+
+		Title: "Deterministic Verification in AI Systems",
+
+		MetaTitle: "Deterministic Verification in AI Systems | Baumgartner Systems",
+
+		MetaDescription: "A technical explanation of deterministic verification in AI systems: canonical inputs, referential closure, reproducible verification outcomes, boundaries and replay.",
+
+		Description: "Deterministic verification does not require a generative model to produce identical free-form output. It requires the same declared verification inputs and rules to produce the same canonical verification result.",
+
+		Published:   "2026-09-23",
+		Modified:    "2026-09-23",
+		ReadingTime: "11 min read",
+
+		Related: []articleLink{
+			{
+				Title: "What Makes an AI-Assisted Decision Reconstructable?",
+				Slug:  "what-makes-an-ai-assisted-decision-reconstructable",
+			},
+			{
+				Title: "What Is a Verification Boundary?",
+				Slug:  "what-is-a-verification-boundary",
+			},
+			{
+				Title: "What Is AI Evidence Infrastructure?",
+				Slug:  "ai-evidence-infrastructure",
+			},
+		},
+
+		Sections: []articleSection{
+			{
+				Title: "Deterministic verification is not deterministic generation",
+				Paragraphs: []string{
+					"AI systems often contain probabilistic components. The same natural-language request may produce different wording, ordering or emphasis across repeated model runs.",
+					"That does not make deterministic verification impossible.",
+					"Deterministic verification concerns the verification process itself: when the same declared inputs, state and verification rules are evaluated, the canonical verification result should remain stable.",
+				},
+			},
+			{
+				Title: "The verification target must be explicit",
+				Paragraphs: []string{
+					"Determinism is meaningful only when the system defines exactly what is being verified.",
+					"A verifier may evaluate source identity, artefact integrity, required capabilities, ownership, state consistency, policy conditions or whether a declared transformation chain is complete.",
+					"Without a clearly defined verification target, repeated execution may be consistent while still answering different questions.",
+				},
+			},
+			{
+				Title: "Canonical inputs reduce ambiguity",
+				Paragraphs: []string{
+					"A deterministic verifier needs a stable representation of the inputs relevant to the verification question.",
+					"Canonicalisation removes irrelevant representational differences such as ordering, formatting or equivalent encodings where those differences are not intended to affect the result.",
+					"The goal is not to erase meaningful state. It is to make semantically equivalent verification inputs evaluate consistently.",
+				},
+			},
+			{
+				Title: "Referential closure matters",
+				Paragraphs: []string{
+					"A verification input is stronger when every reference required by the verification rule can be resolved from the declared evidence and state basis.",
+					"If the verifier must guess which policy, identity, capability, owner or external object a reference points to, the result depends on hidden context.",
+					"Referential closure reduces those hidden dependencies and makes repeated evaluation more reliable.",
+				},
+			},
+			{
+				Title: "Determinism depends on declared state",
+				Paragraphs: []string{
+					"The same apparent input may produce a different verification result if the policy version, capability registry, ownership state or configuration changes.",
+					"This is not a failure of determinism. It means the verification state changed.",
+					"A reproducible verification result therefore needs to identify the state basis against which the rule was evaluated.",
+				},
+			},
+			{
+				Title: "A canonical verification result should be structured",
+				Paragraphs: []string{
+					"Free-form text is a weak representation for deterministic verification because wording can vary without changing the underlying result.",
+					"A stronger approach uses a structured verification result with explicit fields for the verification question, inputs, state basis, rule evaluations, outcome and boundary.",
+					"Human-readable explanations can still be generated from that structure, but they should not be the canonical result.",
+				},
+				Points: []string{
+					"verification identifier",
+					"input or evidence references",
+					"state basis",
+					"rules evaluated",
+					"per-rule outcomes",
+					"canonical overall outcome",
+					"boundary or scope",
+					"integrity evidence",
+				},
+			},
+			{
+				Title: "Pass or fail alone is not enough",
+				Paragraphs: []string{
+					"A deterministic boolean result is useful, but insufficient for later review.",
+					"Two failures may have different causes. One may result from a missing capability, another from unresolved ownership or inconsistent state.",
+					"Structured reasons make deterministic results inspectable and allow independent systems to compare outcomes without relying on natural-language interpretation.",
+				},
+			},
+			{
+				Title: "Replay should reproduce the verification outcome",
+				Paragraphs: []string{
+					"Replay in a verification system means evaluating the same verification question against the same canonical evidence and state basis.",
+					"If those inputs are unchanged, the verifier should produce the same canonical outcome.",
+					"This is a different requirement from reproducing every runtime detail or every token generated by an AI model.",
+				},
+			},
+			{
+				Title: "Probabilistic model output can still be verified deterministically",
+				Paragraphs: []string{
+					"A probabilistic model may produce variable natural-language output while the surrounding evidence process remains deterministic.",
+					"For example, the system may verify that a specific source set was used, that a required reviewer participated, that a model output belongs to a recorded run and that the final decision references the expected artefacts.",
+					"The verifier does not need to prove that another model invocation would generate identical text.",
+				},
+			},
+			{
+				Title: "Determinism has a boundary",
+				Paragraphs: []string{
+					"Deterministic verification should not be confused with universal reproducibility.",
+					"A verifier can reproduce a canonical result only for the inputs, rules and state represented inside its verification boundary.",
+					"Undocumented external context, hidden runtime behaviour or unrepresented authority remains outside that claim.",
+				},
+			},
+			{
+				Title: "Byte-identical binaries are not always required",
+				Paragraphs: []string{
+					"A useful verification architecture distinguishes semantic determinism from build identity.",
+					"Different compilers, platforms or toolchains may produce binaries that are not byte-identical while the verifier still produces the same canonical result for the same referentially closed inputs.",
+					"The required level of reproducibility should match the property being verified.",
+				},
+			},
+			{
+				Title: "Deterministic verification supports independent review",
+				Paragraphs: []string{
+					"When verification logic and inputs are explicit, a second implementation or reviewer can evaluate the same question independently.",
+					"Agreement between independent evaluations is stronger evidence than relying on an opaque internal status flag.",
+					"This makes deterministic verification useful for audit, interoperability and controlled cross-system validation.",
+				},
+			},
+			{
+				Title: "What a deterministic verification workflow needs",
+				Paragraphs: []string{
+					"Several properties make deterministic verification practical.",
+				},
+				Points: []string{
+					"a clearly defined verification question",
+					"canonical input representation",
+					"referentially closed references",
+					"declared state basis",
+					"versioned verification rules",
+					"structured canonical results",
+					"explicit failure reasons",
+					"integrity evidence",
+					"a declared verification boundary",
+					"a replay basis",
+				},
+			},
+			{
+				Title: "A simple example",
+				Paragraphs: []string{
+					"Consider an admission decision in which an agent requests access to perform an action.",
+					"The verifier receives the agent identity, required capability, ownership relationship, policy version and current declared state.",
+					"If those inputs are identical, the same admission rule should produce the same canonical accept or reject result and the same structured reason.",
+					"The wider AI system may remain probabilistic. The admission verification itself does not need to be.",
+				},
+			},
+			{
+				Title: "Start with one deterministic question",
+				Paragraphs: []string{
+					"The easiest way to introduce deterministic verification is not to make an entire AI system deterministic.",
+					"Choose one bounded question whose answer should not depend on undocumented interpretation.",
+					"Define the inputs, state, rules and canonical result. Then replay that verification question repeatedly and confirm that the same referentially closed basis produces the same outcome.",
+				},
+			},
+		},
+	},
+	{
+		Slug: "replayability-vs-reproducibility-in-ai-workflows",
+
+		Title: "Replayability vs Reproducibility in AI Workflows",
+
+		MetaTitle: "Replayability vs Reproducibility in AI Workflows | Baumgartner Systems",
+
+		MetaDescription: "A technical comparison of replayability, reproducibility and repeatability in AI workflows, including probabilistic models, evidence state and canonical verification outcomes.",
+
+		Description: "Replayability and reproducibility are related but different. A workflow may be replayable without reproducing identical model text, while still reproducing the same evidence basis and canonical verification outcome.",
+
+		Published:   "2026-09-23",
+		Modified:    "2026-09-23",
+		ReadingTime: "11 min read",
+
+		Related: []articleLink{
+			{
+				Title: "Deterministic Verification in AI Systems",
+				Slug:  "deterministic-verification-in-ai-systems",
+			},
+			{
+				Title: "What Makes an AI-Assisted Decision Reconstructable?",
+				Slug:  "what-makes-an-ai-assisted-decision-reconstructable",
+			},
+			{
+				Title: "What Is a Verification Boundary?",
+				Slug:  "what-is-a-verification-boundary",
+			},
+		},
+
+		Sections: []articleSection{
+			{
+				Title: "Replayability and reproducibility are not the same thing",
+				Paragraphs: []string{
+					"Replayability describes the ability to execute the same defined process or verification question again.",
+					"Reproducibility describes the ability to recover the same relevant result under a declared basis.",
+					"In AI systems, these concepts must be separated because a replayed probabilistic model may not produce identical free-form text even when the surrounding evidence and verification conditions are unchanged.",
+				},
+			},
+			{
+				Title: "Replayability: can the process be run again?",
+				Paragraphs: []string{
+					"A workflow is replayable when the information required to execute it again has been preserved.",
+					"This usually includes the input references, relevant state, configuration, model or service identities, transformation order and verification rules.",
+					"Replayability is therefore primarily about recoverability of process.",
+				},
+			},
+			{
+				Title: "Reproducibility: can the relevant result be recovered?",
+				Paragraphs: []string{
+					"Reproducibility focuses on outcome rather than only execution.",
+					"The relevant outcome depends on the verification question. In one system it may be a canonical accept or reject result. In another it may be a structured evidence state, integrity result or policy evaluation.",
+					"The key is to define what must remain invariant before claiming reproducibility.",
+				},
+			},
+			{
+				Title: "Repeatability is narrower",
+				Paragraphs: []string{
+					"Repeatability is often used for repeated execution under the same environment and conditions.",
+					"A test may be repeatable on the same machine, runtime and configuration while not yet being reproducible across an independent environment.",
+					"This distinction matters when evidence needs to survive beyond the original system or operator.",
+				},
+			},
+			{
+				Title: "Probabilistic generation complicates the terminology",
+				Paragraphs: []string{
+					"Generative AI systems may vary output even when prompts and source context appear unchanged.",
+					"Sampling behaviour, model implementation, runtime state and provider-side changes can all influence free-form generation.",
+					"That makes byte-identical output a poor default definition of reproducibility for many AI-assisted workflows.",
+				},
+			},
+			{
+				Title: "Define the invariant first",
+				Paragraphs: []string{
+					"Reproducibility claims become useful only when the invariant is explicit.",
+					"For an evidence workflow, the invariant may be the source set, provenance graph, structured state or canonical verification result rather than the exact wording of a model response.",
+					"Once the invariant is declared, replay can be evaluated against the correct property.",
+				},
+			},
+			{
+				Title: "A replay basis must be preserved",
+				Paragraphs: []string{
+					"A replayable system needs enough recorded information to reconstruct the execution or verification context.",
+				},
+				Points: []string{
+					"source and artefact identities",
+					"versions or immutable references",
+					"model, agent and service identities",
+					"relevant configuration",
+					"policy or rule versions",
+					"ordered transformations",
+					"material system state",
+					"verification boundary",
+				},
+			},
+			{
+				Title: "Replay without provenance can be misleading",
+				Paragraphs: []string{
+					"A workflow may be technically rerunnable while still lacking evidence that the replay used the same source basis as the original execution.",
+					"Provenance connects replayed inputs to the historical artefacts that mattered in the original process.",
+					"Without that link, a rerun may look equivalent while operating on changed or substituted evidence.",
+				},
+			},
+			{
+				Title: "Replay without state can produce false comparisons",
+				Paragraphs: []string{
+					"Model version, retrieval state, policy configuration and runtime parameters may all influence the result.",
+					"If those factors are not preserved, a later replay can answer a different question while appearing to repeat the original one.",
+					"State is therefore part of the replay basis whenever it materially affects the outcome.",
+				},
+			},
+			{
+				Title: "Canonical verification results make reproducibility practical",
+				Paragraphs: []string{
+					"A structured canonical result gives replay a stable comparison target.",
+					"Rather than comparing free-form explanations, the system can compare the verification identifier, state basis, rule outcomes, reasons and overall canonical result.",
+					"This creates a clearer distinction between variable presentation and invariant verification semantics.",
+				},
+			},
+			{
+				Title: "Replaying an AI workflow is not the same as replaying a verifier",
+				Paragraphs: []string{
+					"A complete AI workflow may contain probabilistic generation, external APIs, human judgment and changing data sources.",
+					"A verifier can still be replayable and reproducible even when the larger workflow is not fully deterministic.",
+					"This is one reason verification should be treated as its own bounded system rather than as an informal property of the entire AI application.",
+				},
+			},
+			{
+				Title: "A useful example",
+				Paragraphs: []string{
+					"Consider an AI-assisted review where a model analyses a fixed evidence package and a deterministic verifier checks whether required sources, identities and review steps are present.",
+					"A later replay may produce slightly different model wording. The workflow is still useful to reproduce if the same evidence package, state and review conditions can be reconstructed.",
+					"The canonical verification result should remain the same if the declared verification inputs and rules are unchanged.",
+				},
+			},
+			{
+				Title: "Independent reproduction is stronger than local replay",
+				Paragraphs: []string{
+					"A process replayed successfully by the original system provides useful evidence.",
+					"An independent implementation that evaluates the same canonical verification basis provides stronger evidence because it reduces dependence on hidden local behaviour.",
+					"This is especially valuable for interoperability, audit and cross-system validation.",
+				},
+			},
+			{
+				Title: "What should be reproducible?",
+				Paragraphs: []string{
+					"The answer depends on the workflow, but several targets are often more useful than byte-identical model output.",
+				},
+				Points: []string{
+					"evidence identity",
+					"provenance relationships",
+					"declared state basis",
+					"verification rule set",
+					"structured rule outcomes",
+					"canonical verification result",
+					"integrity evidence",
+					"declared boundary and scope",
+				},
+			},
+			{
+				Title: "Start with one replay question",
+				Paragraphs: []string{
+					"A practical test is to take one historical AI-assisted decision and ask whether the relevant verification question can be evaluated again.",
+					"Can the original evidence basis be recovered? Can the relevant state be reconstructed? Are the same rules available? Can the canonical result be compared?",
+					"If not, the gap reveals which evidence or state must be preserved to make future decisions replayable and reproducible.",
+				},
+			},
+		},
+	},
+	{
+		Slug: "what-is-a-structured-verification-result",
+
+		Title: "What Is a Structured Verification Result?",
+
+		MetaTitle: "What Is a Structured Verification Result? | Baumgartner Systems",
+
+		MetaDescription: "A technical explanation of structured verification results: verification IDs, evidence references, state basis, rule outcomes, reasons, scope, integrity and replay information.",
+
+		Description: "A structured verification result records not only whether a check passed or failed, but also what was verified, which evidence and state were used, which rules were evaluated and what the result actually proves.",
+
+		Published:   "2026-09-23",
+		Modified:    "2026-09-23",
+		ReadingTime: "10 min read",
+
+		Related: []articleLink{
+			{
+				Title: "Deterministic Verification in AI Systems",
+				Slug:  "deterministic-verification-in-ai-systems",
+			},
+			{
+				Title: "Replayability vs Reproducibility in AI Workflows",
+				Slug:  "replayability-vs-reproducibility-in-ai-workflows",
+			},
+			{
+				Title: "What Is a Verification Boundary?",
+				Slug:  "what-is-a-verification-boundary",
+			},
+		},
+
+		Sections: []articleSection{
+			{
+				Title: "Pass or fail is not enough",
+				Paragraphs: []string{
+					"A verification result that contains only PASS or FAIL is easy to read but difficult to audit.",
+					"It does not explain what was verified, which evidence was considered, which state was used, which rule caused the outcome or what the result does not cover.",
+					"A structured verification result makes those elements explicit.",
+				},
+			},
+			{
+				Title: "A verification result is an evidence artefact",
+				Paragraphs: []string{
+					"A useful verification result should be treated as a durable artefact rather than a transient status message.",
+					"It should be possible to store it, compare it, inspect it independently and associate it with the evidence and state that produced it.",
+					"This turns verification from a runtime event into something that can support later review.",
+				},
+			},
+			{
+				Title: "The verification identifier",
+				Paragraphs: []string{
+					"Each verification result should have a stable identifier.",
+					"The identifier allows other records, audits or later replays to refer to the exact verification event rather than to an ambiguous description such as the latest result.",
+					"It also makes it easier to distinguish multiple checks against the same subject.",
+				},
+			},
+			{
+				Title: "The subject or target must be explicit",
+				Paragraphs: []string{
+					"A verification result should state what was actually evaluated.",
+					"The subject may be an artefact, admission request, workflow state, publication package, model run, policy decision or another bounded object.",
+					"If the target is ambiguous, the result becomes difficult to interpret outside the original application context.",
+				},
+			},
+			{
+				Title: "Evidence references anchor the result",
+				Paragraphs: []string{
+					"A verification claim is only meaningful when it can be connected to the evidence on which it depends.",
+					"Structured results should therefore reference the relevant source artefacts, derived artefacts or other evidence objects.",
+					"Those references should be stable enough for later inspection or replay.",
+				},
+			},
+			{
+				Title: "The state basis must be recorded",
+				Paragraphs: []string{
+					"Verification can depend on more than the visible artefacts.",
+					"Policy versions, capability registries, ownership state, configuration, runtime parameters or other declared system state may influence the result.",
+					"A structured result should identify the state basis that was materially relevant to the verification question.",
+				},
+			},
+			{
+				Title: "Rules should be individually inspectable",
+				Paragraphs: []string{
+					"An overall result may depend on several independent conditions.",
+					"Instead of recording only one final outcome, a structured result can preserve the rules evaluated and the outcome of each rule.",
+					"This makes failures easier to diagnose and later comparisons more meaningful.",
+				},
+				Points: []string{
+					"rule identifier",
+					"rule version",
+					"input references",
+					"expected condition",
+					"observed condition",
+					"rule outcome",
+					"structured reason",
+				},
+			},
+			{
+				Title: "Reasons should be structured, not only textual",
+				Paragraphs: []string{
+					"Natural-language explanations are useful for humans but weak as canonical machine-readable evidence.",
+					"A stronger result records a stable reason code or reason type and may also include a human-readable explanation.",
+					"This allows independent systems to compare outcomes without depending on wording.",
+				},
+			},
+			{
+				Title: "The overall result should be canonical",
+				Paragraphs: []string{
+					"A deterministic verifier benefits from a canonical overall result such as PASS, FAIL or another explicitly defined state.",
+					"The canonical value should be derived from the declared rule outcomes rather than from an informal narrative.",
+					"Human-readable summaries can be generated from the structured result, but the summary should not replace it.",
+				},
+			},
+			{
+				Title: "Scope and boundary belong in the result",
+				Paragraphs: []string{
+					"A verification result should record what its claim actually covers.",
+					"If the verifier checked provenance, integrity and required identities, the result should not silently imply that factual truth, ethical correctness or full legal compliance were also proven.",
+					"Recording the verification boundary makes the result safer to interpret later.",
+				},
+			},
+			{
+				Title: "Integrity information protects the verification artefact",
+				Paragraphs: []string{
+					"A verification result can itself become evidence in a later process.",
+					"For that reason, systems may preserve integrity information such as hashes, signatures or immutable references associated with the result.",
+					"The exact mechanism depends on the threat model, but the objective is to make later alteration detectable.",
+				},
+			},
+			{
+				Title: "Replay information supports reproducibility",
+				Paragraphs: []string{
+					"A structured result can also record the information required to evaluate the same verification question again.",
+					"This may include the canonical input references, state basis, rule versions and verifier version.",
+					"The replay basis allows a later evaluator to determine whether the same declared conditions produce the same canonical verification result.",
+				},
+			},
+			{
+				Title: "A minimal conceptual structure",
+				Paragraphs: []string{
+					"A verification result does not need to be large to be useful. Even a compact structure can preserve the essential evidence.",
+				},
+				Points: []string{
+					"verification_id",
+					"subject",
+					"evidence_refs",
+					"state_basis",
+					"rules",
+					"rule_outcomes",
+					"overall_result",
+					"reasons",
+					"boundary",
+					"integrity",
+					"replay_basis",
+				},
+			},
+			{
+				Title: "Why free-form verification reports are difficult to compare",
+				Paragraphs: []string{
+					"Two human-readable reports may describe the same underlying result using different language.",
+					"That makes automated comparison, cross-system validation and regression testing difficult.",
+					"Structured canonical fields provide a stable comparison layer while still allowing narrative explanations to remain available for human readers.",
+				},
+			},
+			{
+				Title: "Structured results support interoperability",
+				Paragraphs: []string{
+					"When systems exchange verification outcomes, a machine-readable result is easier to validate than an opaque success flag or free-form report.",
+					"An external reviewer can inspect the evidence references, state basis, rule outcomes and scope without needing access to the originating application's internal UI.",
+					"This creates a stronger basis for cross-system verification and independent review.",
+				},
+			},
+			{
+				Title: "A simple example",
+				Paragraphs: []string{
+					"Consider an admission verifier deciding whether an agent may perform an action.",
+					"The structured result can identify the agent, requested action, capability evidence, ownership state, policy version, individual rule outcomes and canonical admission result.",
+					"If admission fails because a required capability is missing, the result can preserve that exact reason instead of recording only rejected.",
+				},
+			},
+			{
+				Title: "The result should preserve uncertainty about what was not verified",
+				Paragraphs: []string{
+					"Structured verification should not make a result appear broader than it is.",
+					"Fields describing scope, assumptions or unsupported claims help later users distinguish demonstrated properties from information that remained outside the verification boundary.",
+					"This is especially important when verification results are reused by systems far removed from the original workflow.",
+				},
+			},
+			{
+				Title: "Start with the verification question",
+				Paragraphs: []string{
+					"The best way to design a verification result is to begin with one bounded verification question.",
+					"Identify which evidence, state and rules are required to answer it. Then define the minimum structured result needed to preserve the outcome and its scope.",
+					"A good schema should make the verification claim clearer, not merely produce more metadata.",
+				},
+			},
+		},
+	},
+	{
+		Slug: "how-to-design-an-ai-verification-pilot",
+
+		Title: "How to Design an AI Verification Pilot",
+
+		MetaTitle: "How to Design an AI Verification Pilot | Baumgartner Systems",
+
+		MetaDescription: "A practical guide to designing an AI verification pilot: scope, verification questions, evidence, state, success criteria, replay, outputs and pilot boundaries.",
+
+		Description: "A useful AI verification pilot starts with one bounded decision path, one explicit verification question and a small evidence package that can be inspected, replayed and independently reviewed.",
+
+		Published:   "2026-09-23",
+		Modified:    "2026-09-23",
+		ReadingTime: "12 min read",
+
+		Related: []articleLink{
+			{
+				Title: "What Is a Structured Verification Result?",
+				Slug:  "what-is-a-structured-verification-result",
+			},
+			{
+				Title: "What Makes an AI-Assisted Decision Reconstructable?",
+				Slug:  "what-makes-an-ai-assisted-decision-reconstructable",
+			},
+			{
+				Title: "Deterministic Verification in AI Systems",
+				Slug:  "deterministic-verification-in-ai-systems",
+			},
+		},
+
+		Sections: []articleSection{
+			{
+				Title: "A verification pilot should answer one concrete question",
+				Paragraphs: []string{
+					"A verification pilot is not a miniature enterprise transformation programme.",
+					"It is a bounded experiment designed to determine whether a specific AI-assisted workflow can produce evidence that is traceable, reconstructable and independently reviewable.",
+					"The strongest pilots begin with one concrete verification question rather than with a broad request to make the AI system trustworthy.",
+				},
+			},
+			{
+				Title: "Start with an existing workflow",
+				Paragraphs: []string{
+					"A pilot is easier to evaluate when it uses a workflow that already exists.",
+					"The workflow may involve document analysis, classification, recommendation, summarisation, admission, review or another AI-assisted decision path.",
+					"Starting from a real process makes it possible to compare the existing evidence trail with a controlled verification approach.",
+				},
+			},
+			{
+				Title: "Choose one bounded decision path",
+				Paragraphs: []string{
+					"Do not begin with every model, every department or every possible failure mode.",
+					"Select one path from source evidence to AI output and, where relevant, to human review or final decision.",
+					"A narrow path is easier to instrument, test, replay and explain.",
+				},
+			},
+			{
+				Title: "Define the verification question",
+				Paragraphs: []string{
+					"The verification question determines what evidence the pilot must preserve.",
+					"A useful question is explicit enough that two independent reviewers can understand what a successful result would demonstrate.",
+				},
+				Points: []string{
+					"Were the expected source artefacts used?",
+					"Can the AI output be linked to a recorded model run?",
+					"Was the required reviewer involved?",
+					"Was the correct policy version applied?",
+					"Can the final decision be reconstructed from preserved evidence?",
+					"Does replay produce the same canonical verification result?",
+				},
+			},
+			{
+				Title: "Define the verification boundary",
+				Paragraphs: []string{
+					"A pilot should state what is inside and outside scope before testing begins.",
+					"The boundary may include identities, artefacts, transformations, state, rules and verification outputs.",
+					"Claims outside that boundary should remain explicit limitations rather than being silently implied by a successful pilot.",
+				},
+			},
+			{
+				Title: "Inventory the evidence that already exists",
+				Paragraphs: []string{
+					"Before adding new infrastructure, inspect what the workflow already records.",
+					"Many systems already contain useful evidence in logs, document stores, model run records, review interfaces or configuration repositories.",
+					"The pilot should identify which evidence can already support reconstruction and which critical relationships remain missing.",
+				},
+			},
+			{
+				Title: "Identify the missing evidence",
+				Paragraphs: []string{
+					"Verification gaps are often not missing documents but missing relationships.",
+					"A source may exist without a stable identifier. A model output may exist without a link to the exact source set. A review decision may exist without the policy state against which it was made.",
+					"The pilot should make these missing connections visible.",
+				},
+			},
+			{
+				Title: "Capture only material state",
+				Paragraphs: []string{
+					"A pilot does not need to record every runtime detail.",
+					"It should preserve the state that materially affects the verification question.",
+					"Examples may include model version, policy version, prompt template, retrieval configuration, capability registry, ownership state or relevant runtime parameters.",
+				},
+			},
+			{
+				Title: "Create a canonical evidence package",
+				Paragraphs: []string{
+					"The pilot benefits from a small, defined package containing the evidence required for later review.",
+					"This package should be understandable outside the live application and should not depend on hidden application state.",
+				},
+				Points: []string{
+					"source artefact references",
+					"derived artefact references",
+					"identity information",
+					"material system state",
+					"transformation relationships",
+					"review events",
+					"verification rules",
+					"structured verification result",
+				},
+			},
+			{
+				Title: "Do not use production data unless it is necessary",
+				Paragraphs: []string{
+					"Early verification pilots can often be run with synthetic, anonymised or otherwise controlled test data.",
+					"This reduces operational and privacy risk while the verification design is still being evaluated.",
+					"Production data should be introduced only when it is required to answer the pilot question and appropriate controls are in place.",
+				},
+			},
+			{
+				Title: "Define success criteria before implementation",
+				Paragraphs: []string{
+					"A pilot is easier to evaluate when success criteria are defined before the result is known.",
+					"Criteria should describe observable properties rather than broad statements about trust or reliability.",
+				},
+				Points: []string{
+					"required artefacts can be identified",
+					"provenance can be followed from source to outcome",
+					"material state is preserved",
+					"verification rules are inspectable",
+					"the result is machine-readable",
+					"the decision can be reconstructed",
+					"replay produces the expected canonical verification outcome",
+					"limitations remain explicit",
+				},
+			},
+			{
+				Title: "Use a structured verification result",
+				Paragraphs: []string{
+					"The pilot should produce a durable verification artefact rather than only a dashboard status.",
+					"A structured result can record the subject, evidence references, state basis, rule outcomes, reasons, overall result and verification boundary.",
+					"This makes the pilot easier to compare, automate and independently review.",
+				},
+			},
+			{
+				Title: "Include at least one negative test",
+				Paragraphs: []string{
+					"A verification pilot should not only demonstrate successful cases.",
+					"Remove or alter one required condition and confirm that the verifier detects the difference.",
+					"A missing evidence reference, wrong policy version, unresolved identity or incomplete review step can provide a useful controlled failure case.",
+				},
+			},
+			{
+				Title: "Test reconstruction",
+				Paragraphs: []string{
+					"After the workflow has run, separate the reviewer from the original operators.",
+					"Ask whether that reviewer can determine what evidence was available, what state mattered, what transformations occurred and how the result was reached.",
+					"If reconstruction depends on verbal explanation from the implementation team, the evidence package is still incomplete.",
+				},
+			},
+			{
+				Title: "Test replay separately",
+				Paragraphs: []string{
+					"Reconstruction and replay answer different questions.",
+					"Reconstruction asks whether the historical decision path can be understood. Replay asks whether the relevant verification question can be evaluated again against the same canonical basis.",
+					"A strong pilot tests both where the workflow permits it.",
+				},
+			},
+			{
+				Title: "Do not require identical generative output",
+				Paragraphs: []string{
+					"A probabilistic model may produce different wording during a replay.",
+					"That variation does not automatically invalidate the verification pilot.",
+					"The pilot should define which properties must remain invariant, such as evidence identity, rule evaluation, state basis or canonical verification outcome.",
+				},
+			},
+			{
+				Title: "Use independent review where possible",
+				Paragraphs: []string{
+					"A pilot becomes stronger when someone other than the original implementer can inspect the evidence and evaluate the result.",
+					"Independent review exposes undocumented assumptions and reveals whether the verification package is truly understandable outside the originating system.",
+					"The reviewer does not need to reproduce the whole application to provide useful evidence.",
+				},
+			},
+			{
+				Title: "Keep the first pilot small",
+				Paragraphs: []string{
+					"A useful first pilot may involve only a handful of controlled cases.",
+					"The purpose is to validate the evidence model, verification boundary and reconstruction process before increasing operational complexity.",
+					"A small pilot with clear evidence is usually more informative than a large pilot with ambiguous success criteria.",
+				},
+			},
+			{
+				Title: "Record limitations explicitly",
+				Paragraphs: []string{
+					"A pilot should end with a precise statement of what was demonstrated and what remains unverified.",
+					"For example, a pilot may demonstrate provenance, state reconstruction and deterministic rule evaluation without establishing factual correctness of the model output.",
+					"Explicit limitations prevent pilot evidence from being interpreted as a broader assurance claim.",
+				},
+			},
+			{
+				Title: "The final pilot package",
+				Paragraphs: []string{
+					"A well-designed verification pilot should produce a compact set of reusable evidence rather than only a presentation.",
+				},
+				Points: []string{
+					"pilot scope",
+					"verification question",
+					"verification boundary",
+					"test cases",
+					"evidence package",
+					"structured verification results",
+					"negative test evidence",
+					"reconstruction findings",
+					"replay findings",
+					"known limitations",
+					"next-step recommendations",
+				},
+			},
+			{
+				Title: "From pilot to production",
+				Paragraphs: []string{
+					"A successful pilot does not automatically mean that the workflow is ready for production deployment.",
+					"It demonstrates that a bounded verification approach works under the tested conditions.",
+					"The next step is to decide which evidence controls should become operational, which interfaces require automation and which external assurance or governance requirements still need to be addressed.",
+				},
+			},
+			{
+				Title: "Start with the smallest meaningful verification problem",
+				Paragraphs: []string{
+					"The best pilot is usually not the most ambitious one.",
+					"Choose a decision path where missing provenance, uncertain state or weak reconstruction already creates a practical problem.",
+					"Make that one path inspectable from source evidence to verification result. Then use the evidence from the pilot to decide whether the verification approach should expand.",
 				},
 			},
 		},

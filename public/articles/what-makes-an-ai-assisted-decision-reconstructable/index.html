@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>What Makes an AI-Assisted Decision Reconstructable? | Baumgartner Systems</title>
+
+  <meta
+    name="description"
+    content="A technical guide to reconstructable AI-assisted decisions: evidence basis, identities, system state, transformations, provenance, verification boundaries and replay requirements."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/articles/what-makes-an-ai-assisted-decision-reconstructable/"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What Makes an AI-Assisted Decision Reconstructable? | Baumgartner Systems">
+  <meta property="og:description" content="A technical guide to reconstructable AI-assisted decisions: evidence basis, identities, system state, transformations, provenance, verification boundaries and replay requirements.">
+  <meta property="og:url" content="https://baumgartner.systems/articles/what-makes-an-ai-assisted-decision-reconstructable/">
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    id="theme-color-meta"
+  >
+
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "What Makes an AI-Assisted Decision Reconstructable?",
+    "description": "A technical guide to reconstructable AI-assisted decisions: evidence basis, identities, system state, transformations, provenance, verification boundaries and replay requirements.",
+    "datePublished": "2026-09-23",
+    "dateModified": "2026-09-23",
+    "mainEntityOfPage": "https:\/\/baumgartner.systems\/articles\/what-makes-an-ai-assisted-decision-reconstructable\/",
+    "author": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    }
+  }
+  </script>
+
+  <script>
+    (() => {
+      const stored = (() => {
+        try { return localStorage.getItem("baumgartner-theme"); } catch (e) { return null; }
+      })();
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme =
+        stored || (dark ? "dark" : "light");
+    })();
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="article-page">
+
+  <article class="article">
+
+    <header class="article-header">
+
+      <p class="section-label">
+        Technical note
+      </p>
+
+      <h1>What Makes an AI-Assisted Decision Reconstructable?</h1>
+
+      <p class="article-lead">
+        A decision is reconstructable when an independent reviewer can recover the evidence basis, participating identities, relevant state, transformations and decision path without relying on undocumented context.
+      </p>
+
+      <div class="article-meta">
+        <time datetime="2026-09-23">
+          2026-09-23
+        </time>
+
+        <span aria-hidden="true">·</span>
+
+        <span>11 min read</span>
+      </div>
+
+    </header>
+
+    <div class="article-body">
+
+      <section class="article-section">
+
+        <h2>Reconstructability is more than keeping a log</h2>
+        <p>A reconstructable AI-assisted decision is one that can later be examined without depending on memory, undocumented assumptions or the continued availability of the original operators.</p>
+        <p>The objective is not to recreate every internal detail of a system. It is to preserve enough evidence to answer the verification question that matters.</p>
+        <p>That usually requires more than timestamps, prompts and final outputs.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>The evidence basis must be identifiable</h2>
+        <p>Every reconstructable decision starts with a defined evidence basis.</p>
+        <p>A reviewer should be able to determine which documents, records, measurements, retrieved context or other artefacts were available when the decision process occurred.</p>
+        <p>If the source basis cannot be identified reliably, later reconstruction is already ambiguous.</p>
+        <ul>
+          <li>stable source identifiers</li>
+          <li>versions or immutable references</li>
+          <li>capture or publication time where relevant</li>
+          <li>integrity evidence</li>
+          <li>provenance relationships</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Participating identities must be explicit</h2>
+        <p>AI-assisted workflows often involve several actors: users, reviewers, models, agents, services and external systems.</p>
+        <p>Reconstructability requires knowing which identity performed which action or produced which artefact.</p>
+        <p>An anonymous transformation may still be observable, but it weakens the ability to evaluate responsibility, authority and workflow integrity.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Relevant system state must be preserved</h2>
+        <p>The same apparent input may produce different outcomes under different system states.</p>
+        <p>Model version, prompt template, retrieval index, policy version, runtime configuration, parameters and other state may materially affect the result.</p>
+        <p>A reconstructable workflow therefore records the state required to evaluate the same verification question later.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Transformations must be connected</h2>
+        <p>A collection of artefacts is not yet a decision trail.</p>
+        <p>The system must preserve the relationships between inputs and outputs: which artefact produced which derived artefact, through which transformation and under which state.</p>
+        <p>This becomes especially important when information passes through extraction, normalization, summarization, classification or AI analysis.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Provenance explains origin and derivation</h2>
+        <p>Provenance gives the decision trail historical context.</p>
+        <p>It links a later artefact to the material from which it was derived and helps distinguish original evidence from transformed representations.</p>
+        <p>Without provenance, a reviewer may see the final record but remain unable to determine where its content originated.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Human review must remain distinguishable from model output</h2>
+        <p>A reconstructable decision should separate machine-generated analysis from human interpretation and final authority.</p>
+        <p>If a reviewer corrected, accepted, rejected or overrode an AI output, that action should remain explicit rather than being merged into a single final record.</p>
+        <p>This distinction helps later reviewers understand which conclusions came from the model and which came from accountable human judgment.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>The verification boundary defines what can be reconstructed</h2>
+        <p>Reconstructability is always bounded.</p>
+        <p>A system can only reconstruct information that was captured or represented inside its declared verification boundary.</p>
+        <p>External facts, hidden model internals, undocumented reasoning or authority that was never recorded cannot be recovered simply because the surrounding workflow was logged.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Referential closure reduces ambiguity</h2>
+        <p>A verification question becomes stronger when all references required to evaluate it are explicit.</p>
+        <p>If a decision depends on a policy, capability, owner, model version or source record, the verifier should not need to infer which external object was intended.</p>
+        <p>Referentially closed inputs reduce hidden dependencies and make replay or independent review more reliable.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Replay does not always mean regenerating the same model output</h2>
+        <p>Replay can be valuable when a workflow is deterministic enough to reproduce the same canonical verification outcome.</p>
+        <p>But reconstruction does not always require generating the same natural-language model output.</p>
+        <p>For probabilistic systems, the more important objective may be to reproduce the evidence basis, state, transformation path and verification conditions under which the original outcome was produced.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Structured verification results preserve the verification claim</h2>
+        <p>A verification result should record more than pass or fail.</p>
+        <p>It should identify the verification question, evidence basis, relevant state, rules evaluated, outcome and scope of the claim.</p>
+        <p>Structured results make later comparison and independent review easier than free-form audit notes.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>What a reconstructable decision trail usually contains</h2>
+        <p>The exact implementation depends on the workflow, but several elements recur across systems designed for later review.</p>
+        <ul>
+          <li>source and derived artefact identifiers</li>
+          <li>versions or immutable references</li>
+          <li>human and machine identities</li>
+          <li>ordered lineage</li>
+          <li>material system state</li>
+          <li>transformation records</li>
+          <li>provenance and custody where relevant</li>
+          <li>integrity evidence</li>
+          <li>human review events</li>
+          <li>structured verification results</li>
+          <li>a declared verification boundary</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>A simple reconstruction test</h2>
+        <p>A useful test is to remove the original operators from the scenario.</p>
+        <p>Could an independent reviewer six months later determine what evidence was available, which identities participated, what changed, which state mattered and how the final decision was reached?</p>
+        <p>If the answer depends on undocumented knowledge, the workflow is not yet fully reconstructable.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Start with one decision path</h2>
+        <p>Reconstructability does not need to begin with an entire enterprise platform.</p>
+        <p>Choose one AI-assisted decision path and map it from source evidence to final outcome.</p>
+        <p>Identify which parts are already preserved, which dependencies remain implicit and which transitions cannot currently be independently reviewed.</p>
+        <p>That gap analysis becomes the basis for a focused verification pilot.</p>
+
+      </section>
+
+    </div>
+
+    <aside class="article-related">
+
+      <p class="section-label">
+        Related technical notes
+      </p>
+
+      <ul>
+        <li>
+          <a href="/articles/ai-evidence-infrastructure/">
+            What Is AI Evidence Infrastructure?
+          </a>
+        </li>
+        <li>
+          <a href="/articles/what-is-a-verification-boundary/">
+            What Is a Verification Boundary?
+          </a>
+        </li>
+        <li>
+          <a href="/articles/from-evidence-to-decision-where-meaning-can-change/">
+            From Evidence to Decision: Where Meaning Can Change
+          </a>
+        </li>
+      </ul>
+
+    </aside>
+    <aside class="article-cta">
+
+      <p class="section-label">
+        Verification pilot
+      </p>
+
+      <h2>
+        Start with one verification problem that matters.
+      </h2>
+
+      <p>
+        Map one AI-assisted decision path from source evidence to outcome,
+        identify the verification gaps, and test whether the process can be
+        reconstructed and independently reviewed.
+      </p>
+
+      <a class="cta" href="/pilot/">
+        Discuss a Pilot
+      </a>
+
+      <p class="article-cta__secondary">
+        <a href="/articles/how-to-design-an-ai-verification-pilot/">
+          Explore the pilot approach
+        </a>
+      </p>
+
+    </aside>
+
+  </article>
+
+</main>
+
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
+
+
+
+
+
+

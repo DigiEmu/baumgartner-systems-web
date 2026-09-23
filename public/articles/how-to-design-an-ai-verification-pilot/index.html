@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>How to Design an AI Verification Pilot | Baumgartner Systems</title>
+
+  <meta
+    name="description"
+    content="A practical guide to designing an AI verification pilot: scope, verification questions, evidence, state, success criteria, replay, outputs and pilot boundaries."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/articles/how-to-design-an-ai-verification-pilot/"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Design an AI Verification Pilot | Baumgartner Systems">
+  <meta property="og:description" content="A practical guide to designing an AI verification pilot: scope, verification questions, evidence, state, success criteria, replay, outputs and pilot boundaries.">
+  <meta property="og:url" content="https://baumgartner.systems/articles/how-to-design-an-ai-verification-pilot/">
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    id="theme-color-meta"
+  >
+
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Design an AI Verification Pilot",
+    "description": "A practical guide to designing an AI verification pilot: scope, verification questions, evidence, state, success criteria, replay, outputs and pilot boundaries.",
+    "datePublished": "2026-09-23",
+    "dateModified": "2026-09-23",
+    "mainEntityOfPage": "https:\/\/baumgartner.systems\/articles\/how-to-design-an-ai-verification-pilot\/",
+    "author": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    }
+  }
+  </script>
+
+  <script>
+    (() => {
+      const stored = (() => {
+        try { return localStorage.getItem("baumgartner-theme"); } catch (e) { return null; }
+      })();
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme =
+        stored || (dark ? "dark" : "light");
+    })();
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="article-page">
+
+  <article class="article">
+
+    <header class="article-header">
+
+      <p class="section-label">
+        Technical note
+      </p>
+
+      <h1>How to Design an AI Verification Pilot</h1>
+
+      <p class="article-lead">
+        A useful AI verification pilot starts with one bounded decision path, one explicit verification question and a small evidence package that can be inspected, replayed and independently reviewed.
+      </p>
+
+      <div class="article-meta">
+        <time datetime="2026-09-23">
+          2026-09-23
+        </time>
+
+        <span aria-hidden="true">·</span>
+
+        <span>12 min read</span>
+      </div>
+
+    </header>
+
+    <div class="article-body">
+
+      <section class="article-section">
+
+        <h2>A verification pilot should answer one concrete question</h2>
+        <p>A verification pilot is not a miniature enterprise transformation programme.</p>
+        <p>It is a bounded experiment designed to determine whether a specific AI-assisted workflow can produce evidence that is traceable, reconstructable and independently reviewable.</p>
+        <p>The strongest pilots begin with one concrete verification question rather than with a broad request to make the AI system trustworthy.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Start with an existing workflow</h2>
+        <p>A pilot is easier to evaluate when it uses a workflow that already exists.</p>
+        <p>The workflow may involve document analysis, classification, recommendation, summarisation, admission, review or another AI-assisted decision path.</p>
+        <p>Starting from a real process makes it possible to compare the existing evidence trail with a controlled verification approach.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Choose one bounded decision path</h2>
+        <p>Do not begin with every model, every department or every possible failure mode.</p>
+        <p>Select one path from source evidence to AI output and, where relevant, to human review or final decision.</p>
+        <p>A narrow path is easier to instrument, test, replay and explain.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Define the verification question</h2>
+        <p>The verification question determines what evidence the pilot must preserve.</p>
+        <p>A useful question is explicit enough that two independent reviewers can understand what a successful result would demonstrate.</p>
+        <ul>
+          <li>Were the expected source artefacts used?</li>
+          <li>Can the AI output be linked to a recorded model run?</li>
+          <li>Was the required reviewer involved?</li>
+          <li>Was the correct policy version applied?</li>
+          <li>Can the final decision be reconstructed from preserved evidence?</li>
+          <li>Does replay produce the same canonical verification result?</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Define the verification boundary</h2>
+        <p>A pilot should state what is inside and outside scope before testing begins.</p>
+        <p>The boundary may include identities, artefacts, transformations, state, rules and verification outputs.</p>
+        <p>Claims outside that boundary should remain explicit limitations rather than being silently implied by a successful pilot.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Inventory the evidence that already exists</h2>
+        <p>Before adding new infrastructure, inspect what the workflow already records.</p>
+        <p>Many systems already contain useful evidence in logs, document stores, model run records, review interfaces or configuration repositories.</p>
+        <p>The pilot should identify which evidence can already support reconstruction and which critical relationships remain missing.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Identify the missing evidence</h2>
+        <p>Verification gaps are often not missing documents but missing relationships.</p>
+        <p>A source may exist without a stable identifier. A model output may exist without a link to the exact source set. A review decision may exist without the policy state against which it was made.</p>
+        <p>The pilot should make these missing connections visible.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Capture only material state</h2>
+        <p>A pilot does not need to record every runtime detail.</p>
+        <p>It should preserve the state that materially affects the verification question.</p>
+        <p>Examples may include model version, policy version, prompt template, retrieval configuration, capability registry, ownership state or relevant runtime parameters.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Create a canonical evidence package</h2>
+        <p>The pilot benefits from a small, defined package containing the evidence required for later review.</p>
+        <p>This package should be understandable outside the live application and should not depend on hidden application state.</p>
+        <ul>
+          <li>source artefact references</li>
+          <li>derived artefact references</li>
+          <li>identity information</li>
+          <li>material system state</li>
+          <li>transformation relationships</li>
+          <li>review events</li>
+          <li>verification rules</li>
+          <li>structured verification result</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Do not use production data unless it is necessary</h2>
+        <p>Early verification pilots can often be run with synthetic, anonymised or otherwise controlled test data.</p>
+        <p>This reduces operational and privacy risk while the verification design is still being evaluated.</p>
+        <p>Production data should be introduced only when it is required to answer the pilot question and appropriate controls are in place.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Define success criteria before implementation</h2>
+        <p>A pilot is easier to evaluate when success criteria are defined before the result is known.</p>
+        <p>Criteria should describe observable properties rather than broad statements about trust or reliability.</p>
+        <ul>
+          <li>required artefacts can be identified</li>
+          <li>provenance can be followed from source to outcome</li>
+          <li>material state is preserved</li>
+          <li>verification rules are inspectable</li>
+          <li>the result is machine-readable</li>
+          <li>the decision can be reconstructed</li>
+          <li>replay produces the expected canonical verification outcome</li>
+          <li>limitations remain explicit</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Use a structured verification result</h2>
+        <p>The pilot should produce a durable verification artefact rather than only a dashboard status.</p>
+        <p>A structured result can record the subject, evidence references, state basis, rule outcomes, reasons, overall result and verification boundary.</p>
+        <p>This makes the pilot easier to compare, automate and independently review.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Include at least one negative test</h2>
+        <p>A verification pilot should not only demonstrate successful cases.</p>
+        <p>Remove or alter one required condition and confirm that the verifier detects the difference.</p>
+        <p>A missing evidence reference, wrong policy version, unresolved identity or incomplete review step can provide a useful controlled failure case.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Test reconstruction</h2>
+        <p>After the workflow has run, separate the reviewer from the original operators.</p>
+        <p>Ask whether that reviewer can determine what evidence was available, what state mattered, what transformations occurred and how the result was reached.</p>
+        <p>If reconstruction depends on verbal explanation from the implementation team, the evidence package is still incomplete.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Test replay separately</h2>
+        <p>Reconstruction and replay answer different questions.</p>
+        <p>Reconstruction asks whether the historical decision path can be understood. Replay asks whether the relevant verification question can be evaluated again against the same canonical basis.</p>
+        <p>A strong pilot tests both where the workflow permits it.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Do not require identical generative output</h2>
+        <p>A probabilistic model may produce different wording during a replay.</p>
+        <p>That variation does not automatically invalidate the verification pilot.</p>
+        <p>The pilot should define which properties must remain invariant, such as evidence identity, rule evaluation, state basis or canonical verification outcome.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Use independent review where possible</h2>
+        <p>A pilot becomes stronger when someone other than the original implementer can inspect the evidence and evaluate the result.</p>
+        <p>Independent review exposes undocumented assumptions and reveals whether the verification package is truly understandable outside the originating system.</p>
+        <p>The reviewer does not need to reproduce the whole application to provide useful evidence.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Keep the first pilot small</h2>
+        <p>A useful first pilot may involve only a handful of controlled cases.</p>
+        <p>The purpose is to validate the evidence model, verification boundary and reconstruction process before increasing operational complexity.</p>
+        <p>A small pilot with clear evidence is usually more informative than a large pilot with ambiguous success criteria.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Record limitations explicitly</h2>
+        <p>A pilot should end with a precise statement of what was demonstrated and what remains unverified.</p>
+        <p>For example, a pilot may demonstrate provenance, state reconstruction and deterministic rule evaluation without establishing factual correctness of the model output.</p>
+        <p>Explicit limitations prevent pilot evidence from being interpreted as a broader assurance claim.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>The final pilot package</h2>
+        <p>A well-designed verification pilot should produce a compact set of reusable evidence rather than only a presentation.</p>
+        <ul>
+          <li>pilot scope</li>
+          <li>verification question</li>
+          <li>verification boundary</li>
+          <li>test cases</li>
+          <li>evidence package</li>
+          <li>structured verification results</li>
+          <li>negative test evidence</li>
+          <li>reconstruction findings</li>
+          <li>replay findings</li>
+          <li>known limitations</li>
+          <li>next-step recommendations</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>From pilot to production</h2>
+        <p>A successful pilot does not automatically mean that the workflow is ready for production deployment.</p>
+        <p>It demonstrates that a bounded verification approach works under the tested conditions.</p>
+        <p>The next step is to decide which evidence controls should become operational, which interfaces require automation and which external assurance or governance requirements still need to be addressed.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Start with the smallest meaningful verification problem</h2>
+        <p>The best pilot is usually not the most ambitious one.</p>
+        <p>Choose a decision path where missing provenance, uncertain state or weak reconstruction already creates a practical problem.</p>
+        <p>Make that one path inspectable from source evidence to verification result. Then use the evidence from the pilot to decide whether the verification approach should expand.</p>
+
+      </section>
+
+    </div>
+
+    <aside class="article-related">
+
+      <p class="section-label">
+        Related technical notes
+      </p>
+
+      <ul>
+        <li>
+          <a href="/articles/what-is-a-structured-verification-result/">
+            What Is a Structured Verification Result?
+          </a>
+        </li>
+        <li>
+          <a href="/articles/what-makes-an-ai-assisted-decision-reconstructable/">
+            What Makes an AI-Assisted Decision Reconstructable?
+          </a>
+        </li>
+        <li>
+          <a href="/articles/deterministic-verification-in-ai-systems/">
+            Deterministic Verification in AI Systems
+          </a>
+        </li>
+      </ul>
+
+    </aside>
+    <aside class="article-cta">
+
+      <p class="section-label">
+        Verification pilot
+      </p>
+
+      <h2>
+        Start with one verification problem that matters.
+      </h2>
+
+      <p>
+        Map one AI-assisted decision path from source evidence to outcome,
+        identify the verification gaps, and test whether the process can be
+        reconstructed and independently reviewed.
+      </p>
+
+      <a class="cta" href="/pilot/">
+        Discuss a Pilot
+      </a>
+
+      <p class="article-cta__secondary">
+        <a href="/articles/what-is-a-structured-verification-result/">
+          Explore structured verification results
+        </a>
+      </p>
+
+    </aside>
+
+  </article>
+
+</main>
+
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
+
+
+
+
+
+

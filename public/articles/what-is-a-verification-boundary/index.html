@@ -162,273 +162,138 @@
 
     <div class="article-body">
 
-      
-
       <section class="article-section">
 
         <h2>Verification is always about something specific</h2>
-
-        
         <p>A verification result is meaningful only when it is clear what was actually verified.</p>
-        
         <p>In AI-assisted systems, this can include source identity, system state, configuration, provenance, workflow transitions, required approvals or the integrity of a recorded artefact.</p>
-        
         <p>A verification boundary defines the set of inputs, identities, state and rules that belong to that claim.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>The boundary separates verified state from assumed context</h2>
-
-        
         <p>Every system depends on information that may exist outside the verification process. External facts, undocumented human assumptions, hidden runtime behaviour or third-party services may influence an outcome without being represented inside the evidence model.</p>
-        
         <p>A sound verification architecture distinguishes these external dependencies from the material it can actually inspect and evaluate.</p>
-        
         <p>Without this distinction, a narrow technical check can easily be mistaken for a much broader guarantee.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>What can belong inside a verification boundary</h2>
-
-        
         <p>The exact contents depend on the verification question. A useful boundary includes only the information required to make that question sufficiently explicit and reviewable.</p>
-        
-
-        
         <ul>
-          
           <li>source and artefact identities</li>
-          
           <li>versions or immutable references</li>
-          
           <li>human, model, agent and service identities</li>
-          
           <li>relevant configuration and parameters</li>
-          
           <li>declared system state</li>
-          
           <li>ordered transformations</li>
-          
           <li>provenance and lineage records</li>
-          
           <li>required approvals or authority relationships</li>
-          
           <li>integrity evidence</li>
-          
           <li>the rule or condition being evaluated</li>
-          
         </ul>
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>What usually remains outside the boundary</h2>
-
-        
         <p>A verification system should not silently claim authority over information it cannot observe or represent.</p>
-        
-
-        
         <ul>
-          
           <li>objective truth of external real-world statements</li>
-          
           <li>undocumented human reasoning</li>
-          
           <li>hidden model internals that were not captured</li>
-          
           <li>authority that was never explicitly represented</li>
-          
           <li>runtime behaviour outside the recorded system state</li>
-          
           <li>ethical or legal correctness unless encoded as an explicit rule set</li>
-          
         </ul>
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Why verification boundaries matter in AI systems</h2>
-
-        
         <p>AI-assisted workflows often contain opaque or probabilistic components. That makes precise scoping especially important.</p>
-        
         <p>A system may be able to verify that a specific model version received a specific evidence package under a declared configuration. It may also verify that the resulting artefact entered a later workflow stage unchanged.</p>
-        
         <p>That does not mean the system has proven that the model&#39;s reasoning was correct or that the source material described reality accurately.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>A simple example</h2>
-
-        
         <p>Imagine an AI-assisted review process in which a document is uploaded, summarized, reviewed by a human and used to support a later decision.</p>
-        
         <p>The verification boundary might include the original document identity, the exact source version, the summarization configuration, the generated summary, the reviewer identity and the final decision record.</p>
-        
         <p>Within that boundary, the system may be able to verify which source was used, how the summary entered the workflow and whether the expected review step occurred.</p>
-        
         <p>It still cannot automatically prove that every statement in the original document was true or that the reviewer reached the best possible decision.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Referential closure makes verification stronger</h2>
-
-        
         <p>A verification question becomes stronger when every reference required to evaluate it is explicit inside the declared state basis.</p>
-        
         <p>If a rule depends on a user identity, policy version, capability, ownership relationship or configuration value, those references should be represented rather than inferred from external context.</p>
-        
         <p>This is sometimes described as making the verification input referentially closed: the verifier should not need to guess which external object or authority a reference was intended to mean.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Boundaries should be declared before the result</h2>
-
-        
         <p>A weak architecture defines the meaning of a verification result after seeing the outcome. A stronger architecture declares the scope first.</p>
-        
         <p>The verification question, required inputs, relevant state and expected condition should be explicit before evaluation.</p>
-        
         <p>That makes the resulting record easier to review, replay and challenge.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>A verification boundary is not a security perimeter</h2>
-
-        
         <p>The term boundary can sound similar to a network or security perimeter, but the concepts are different.</p>
-        
         <p>A security boundary controls access or trust between system components. A verification boundary defines which evidence and state support a particular verification claim.</p>
-        
         <p>The two may overlap, but neither substitutes for the other.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Verification claims should match the boundary</h2>
-
-        
         <p>The language of a verification result should never be broader than the evidence it evaluates.</p>
-        
         <p>If the system checks integrity, say that integrity was verified. If it checks that a required identity and capability were present, say that admission conditions were satisfied.</p>
-        
         <p>Avoid turning a bounded technical result into claims such as true, safe, compliant or correct unless those properties were explicitly represented and evaluated.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>How to define a boundary in practice</h2>
-
-        
         <p>A practical boundary definition starts with a single question rather than an entire platform.</p>
-        
-
-        
         <ul>
-          
           <li>State exactly what must be verified.</li>
-          
           <li>Identify every input required to evaluate that condition.</li>
-          
           <li>Represent identities and authority explicitly.</li>
-          
           <li>Record the state and configuration that materially affect the result.</li>
-          
           <li>Declare which external assumptions remain outside the system.</li>
-          
           <li>Produce a structured result that records both the outcome and its scope.</li>
-          
         </ul>
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Boundaries make verification more credible</h2>
-
-        
         <p>Limiting a verification claim does not weaken it. In many cases, it makes the claim more credible.</p>
-        
         <p>A system that clearly states what it can verify, what evidence supports the result and what remains outside its scope is easier to audit than one that relies on broad trust language.</p>
-        
         <p>Good verification infrastructure is not omniscient. It is explicit about its evidence, state and limits.</p>
-        
-
-        
 
       </section>
 
-      
-
     </div>
-
-    
 
     <aside class="article-related">
 
@@ -437,47 +302,49 @@
       </p>
 
       <ul>
-        
         <li>
-          <a href="/articles/ai-evidence-infrastructure/">
-            What Is AI Evidence Infrastructure?
+          <a href="/articles/deterministic-verification-in-ai-systems/">
+            Deterministic Verification in AI Systems
           </a>
         </li>
-        
         <li>
-          <a href="/articles/provenance-traceability-verification-difference/">
-            Provenance, Traceability and Verification: What’s the Difference?
+          <a href="/articles/replayability-vs-reproducibility-in-ai-workflows/">
+            Replayability vs Reproducibility in AI Workflows
           </a>
         </li>
-        
         <li>
-          <a href="/articles/why-ai-audit-logs-are-not-enough/">
-            Why AI Audit Logs Are Not Enough
+          <a href="/articles/how-to-design-an-ai-verification-pilot/">
+            How to Design an AI Verification Pilot
           </a>
         </li>
-        
       </ul>
 
     </aside>
-
-    
     <aside class="article-cta">
 
       <p class="section-label">
-        Verification in practice
+        Verification pilot
       </p>
 
       <h2>
-        Start with one real workflow.
+        Start with one verification problem that matters.
       </h2>
 
       <p>
-        Define one evidence boundary and test whether its decision trail can be reconstructed.
+        Map one AI-assisted decision path from source evidence to outcome,
+        identify the verification gaps, and test whether the process can be
+        reconstructed and independently reviewed.
       </p>
 
       <a class="cta" href="/pilot/">
         Discuss a Pilot
       </a>
+
+      <p class="article-cta__secondary">
+        <a href="/articles/how-to-design-an-ai-verification-pilot/">
+          Explore the pilot approach
+        </a>
+      </p>
 
     </aside>
 
@@ -492,6 +359,8 @@
 
 </body>
 </html>
+
+
 
 
 
