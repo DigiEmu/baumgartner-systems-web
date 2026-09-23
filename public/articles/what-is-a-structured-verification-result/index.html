@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>What Is a Structured Verification Result? | Baumgartner Systems</title>
+
+  <meta
+    name="description"
+    content="A technical explanation of structured verification results: verification IDs, evidence references, state basis, rule outcomes, reasons, scope, integrity and replay information."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/articles/what-is-a-structured-verification-result/"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What Is a Structured Verification Result? | Baumgartner Systems">
+  <meta property="og:description" content="A technical explanation of structured verification results: verification IDs, evidence references, state basis, rule outcomes, reasons, scope, integrity and replay information.">
+  <meta property="og:url" content="https://baumgartner.systems/articles/what-is-a-structured-verification-result/">
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    id="theme-color-meta"
+  >
+
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "What Is a Structured Verification Result?",
+    "description": "A technical explanation of structured verification results: verification IDs, evidence references, state basis, rule outcomes, reasons, scope, integrity and replay information.",
+    "datePublished": "2026-09-23",
+    "dateModified": "2026-09-23",
+    "mainEntityOfPage": "https:\/\/baumgartner.systems\/articles\/what-is-a-structured-verification-result\/",
+    "author": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    }
+  }
+  </script>
+
+  <script>
+    (() => {
+      const stored = (() => {
+        try { return localStorage.getItem("baumgartner-theme"); } catch (e) { return null; }
+      })();
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme =
+        stored || (dark ? "dark" : "light");
+    })();
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="article-page">
+
+  <article class="article">
+
+    <header class="article-header">
+
+      <p class="section-label">
+        Technical note
+      </p>
+
+      <h1>What Is a Structured Verification Result?</h1>
+
+      <p class="article-lead">
+        A structured verification result records not only whether a check passed or failed, but also what was verified, which evidence and state were used, which rules were evaluated and what the result actually proves.
+      </p>
+
+      <div class="article-meta">
+        <time datetime="2026-09-23">
+          2026-09-23
+        </time>
+
+        <span aria-hidden="true">·</span>
+
+        <span>10 min read</span>
+      </div>
+
+    </header>
+
+    <div class="article-body">
+
+      <section class="article-section">
+
+        <h2>Pass or fail is not enough</h2>
+        <p>A verification result that contains only PASS or FAIL is easy to read but difficult to audit.</p>
+        <p>It does not explain what was verified, which evidence was considered, which state was used, which rule caused the outcome or what the result does not cover.</p>
+        <p>A structured verification result makes those elements explicit.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>A verification result is an evidence artefact</h2>
+        <p>A useful verification result should be treated as a durable artefact rather than a transient status message.</p>
+        <p>It should be possible to store it, compare it, inspect it independently and associate it with the evidence and state that produced it.</p>
+        <p>This turns verification from a runtime event into something that can support later review.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>The verification identifier</h2>
+        <p>Each verification result should have a stable identifier.</p>
+        <p>The identifier allows other records, audits or later replays to refer to the exact verification event rather than to an ambiguous description such as the latest result.</p>
+        <p>It also makes it easier to distinguish multiple checks against the same subject.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>The subject or target must be explicit</h2>
+        <p>A verification result should state what was actually evaluated.</p>
+        <p>The subject may be an artefact, admission request, workflow state, publication package, model run, policy decision or another bounded object.</p>
+        <p>If the target is ambiguous, the result becomes difficult to interpret outside the original application context.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Evidence references anchor the result</h2>
+        <p>A verification claim is only meaningful when it can be connected to the evidence on which it depends.</p>
+        <p>Structured results should therefore reference the relevant source artefacts, derived artefacts or other evidence objects.</p>
+        <p>Those references should be stable enough for later inspection or replay.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>The state basis must be recorded</h2>
+        <p>Verification can depend on more than the visible artefacts.</p>
+        <p>Policy versions, capability registries, ownership state, configuration, runtime parameters or other declared system state may influence the result.</p>
+        <p>A structured result should identify the state basis that was materially relevant to the verification question.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Rules should be individually inspectable</h2>
+        <p>An overall result may depend on several independent conditions.</p>
+        <p>Instead of recording only one final outcome, a structured result can preserve the rules evaluated and the outcome of each rule.</p>
+        <p>This makes failures easier to diagnose and later comparisons more meaningful.</p>
+        <ul>
+          <li>rule identifier</li>
+          <li>rule version</li>
+          <li>input references</li>
+          <li>expected condition</li>
+          <li>observed condition</li>
+          <li>rule outcome</li>
+          <li>structured reason</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Reasons should be structured, not only textual</h2>
+        <p>Natural-language explanations are useful for humans but weak as canonical machine-readable evidence.</p>
+        <p>A stronger result records a stable reason code or reason type and may also include a human-readable explanation.</p>
+        <p>This allows independent systems to compare outcomes without depending on wording.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>The overall result should be canonical</h2>
+        <p>A deterministic verifier benefits from a canonical overall result such as PASS, FAIL or another explicitly defined state.</p>
+        <p>The canonical value should be derived from the declared rule outcomes rather than from an informal narrative.</p>
+        <p>Human-readable summaries can be generated from the structured result, but the summary should not replace it.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Scope and boundary belong in the result</h2>
+        <p>A verification result should record what its claim actually covers.</p>
+        <p>If the verifier checked provenance, integrity and required identities, the result should not silently imply that factual truth, ethical correctness or full legal compliance were also proven.</p>
+        <p>Recording the verification boundary makes the result safer to interpret later.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Integrity information protects the verification artefact</h2>
+        <p>A verification result can itself become evidence in a later process.</p>
+        <p>For that reason, systems may preserve integrity information such as hashes, signatures or immutable references associated with the result.</p>
+        <p>The exact mechanism depends on the threat model, but the objective is to make later alteration detectable.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Replay information supports reproducibility</h2>
+        <p>A structured result can also record the information required to evaluate the same verification question again.</p>
+        <p>This may include the canonical input references, state basis, rule versions and verifier version.</p>
+        <p>The replay basis allows a later evaluator to determine whether the same declared conditions produce the same canonical verification result.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>A minimal conceptual structure</h2>
+        <p>A verification result does not need to be large to be useful. Even a compact structure can preserve the essential evidence.</p>
+        <ul>
+          <li>verification_id</li>
+          <li>subject</li>
+          <li>evidence_refs</li>
+          <li>state_basis</li>
+          <li>rules</li>
+          <li>rule_outcomes</li>
+          <li>overall_result</li>
+          <li>reasons</li>
+          <li>boundary</li>
+          <li>integrity</li>
+          <li>replay_basis</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Why free-form verification reports are difficult to compare</h2>
+        <p>Two human-readable reports may describe the same underlying result using different language.</p>
+        <p>That makes automated comparison, cross-system validation and regression testing difficult.</p>
+        <p>Structured canonical fields provide a stable comparison layer while still allowing narrative explanations to remain available for human readers.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Structured results support interoperability</h2>
+        <p>When systems exchange verification outcomes, a machine-readable result is easier to validate than an opaque success flag or free-form report.</p>
+        <p>An external reviewer can inspect the evidence references, state basis, rule outcomes and scope without needing access to the originating application&#39;s internal UI.</p>
+        <p>This creates a stronger basis for cross-system verification and independent review.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>A simple example</h2>
+        <p>Consider an admission verifier deciding whether an agent may perform an action.</p>
+        <p>The structured result can identify the agent, requested action, capability evidence, ownership state, policy version, individual rule outcomes and canonical admission result.</p>
+        <p>If admission fails because a required capability is missing, the result can preserve that exact reason instead of recording only rejected.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>The result should preserve uncertainty about what was not verified</h2>
+        <p>Structured verification should not make a result appear broader than it is.</p>
+        <p>Fields describing scope, assumptions or unsupported claims help later users distinguish demonstrated properties from information that remained outside the verification boundary.</p>
+        <p>This is especially important when verification results are reused by systems far removed from the original workflow.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Start with the verification question</h2>
+        <p>The best way to design a verification result is to begin with one bounded verification question.</p>
+        <p>Identify which evidence, state and rules are required to answer it. Then define the minimum structured result needed to preserve the outcome and its scope.</p>
+        <p>A good schema should make the verification claim clearer, not merely produce more metadata.</p>
+
+      </section>
+
+    </div>
+
+    <aside class="article-related">
+
+      <p class="section-label">
+        Related technical notes
+      </p>
+
+      <ul>
+        <li>
+          <a href="/articles/deterministic-verification-in-ai-systems/">
+            Deterministic Verification in AI Systems
+          </a>
+        </li>
+        <li>
+          <a href="/articles/replayability-vs-reproducibility-in-ai-workflows/">
+            Replayability vs Reproducibility in AI Workflows
+          </a>
+        </li>
+        <li>
+          <a href="/articles/what-is-a-verification-boundary/">
+            What Is a Verification Boundary?
+          </a>
+        </li>
+      </ul>
+
+    </aside>
+    <aside class="article-cta">
+
+      <p class="section-label">
+        Verification pilot
+      </p>
+
+      <h2>
+        Start with one verification problem that matters.
+      </h2>
+
+      <p>
+        Map one AI-assisted decision path from source evidence to outcome,
+        identify the verification gaps, and test whether the process can be
+        reconstructed and independently reviewed.
+      </p>
+
+      <a class="cta" href="/pilot/">
+        Discuss a Pilot
+      </a>
+
+      <p class="article-cta__secondary">
+        <a href="/articles/how-to-design-an-ai-verification-pilot/">
+          Explore the pilot approach
+        </a>
+      </p>
+
+    </aside>
+
+  </article>
+
+</main>
+
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
+
+
+
+
+
+

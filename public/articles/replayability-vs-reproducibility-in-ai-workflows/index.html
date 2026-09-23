@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Replayability vs Reproducibility in AI Workflows | Baumgartner Systems</title>
+
+  <meta
+    name="description"
+    content="A technical comparison of replayability, reproducibility and repeatability in AI workflows, including probabilistic models, evidence state and canonical verification outcomes."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://baumgartner.systems/articles/replayability-vs-reproducibility-in-ai-workflows/"
+  >
+
+  <meta property="og:site_name" content="Baumgartner Systems">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Replayability vs Reproducibility in AI Workflows | Baumgartner Systems">
+  <meta property="og:description" content="A technical comparison of replayability, reproducibility and repeatability in AI workflows, including probabilistic models, evidence state and canonical verification outcomes.">
+  <meta property="og:url" content="https://baumgartner.systems/articles/replayability-vs-reproducibility-in-ai-workflows/">
+  <meta
+    name="theme-color"
+    content="#b8912b"
+    id="theme-color-meta"
+  >
+
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="/assets/images/brand/glyph.webp"
+  >
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Replayability vs Reproducibility in AI Workflows",
+    "description": "A technical comparison of replayability, reproducibility and repeatability in AI workflows, including probabilistic models, evidence state and canonical verification outcomes.",
+    "datePublished": "2026-09-23",
+    "dateModified": "2026-09-23",
+    "mainEntityOfPage": "https:\/\/baumgartner.systems\/articles\/replayability-vs-reproducibility-in-ai-workflows\/",
+    "author": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Baumgartner Digital Infrastructure",
+      "url": "https:\/\/baumgartner.systems/"
+    }
+  }
+  </script>
+
+  <script>
+    (() => {
+      const stored = (() => {
+        try { return localStorage.getItem("baumgartner-theme"); } catch (e) { return null; }
+      })();
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme =
+        stored || (dark ? "dark" : "light");
+    })();
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <a
+      class="site-brand"
+      href="/"
+      aria-label="Baumgartner Systems home"
+    >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
+    </a>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span
+        class="mobile-nav-toggle__pearl"
+        aria-hidden="true"
+      >
+        <span class="mobile-nav-toggle__spark"></span>
+      </span>
+
+      <span class="sr-only">Menu</span>
+    </button>
+
+
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/arca/">Arca</a>
+      <a href="/pilot/">Pilot</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="article-page">
+
+  <article class="article">
+
+    <header class="article-header">
+
+      <p class="section-label">
+        Technical note
+      </p>
+
+      <h1>Replayability vs Reproducibility in AI Workflows</h1>
+
+      <p class="article-lead">
+        Replayability and reproducibility are related but different. A workflow may be replayable without reproducing identical model text, while still reproducing the same evidence basis and canonical verification outcome.
+      </p>
+
+      <div class="article-meta">
+        <time datetime="2026-09-23">
+          2026-09-23
+        </time>
+
+        <span aria-hidden="true">·</span>
+
+        <span>11 min read</span>
+      </div>
+
+    </header>
+
+    <div class="article-body">
+
+      <section class="article-section">
+
+        <h2>Replayability and reproducibility are not the same thing</h2>
+        <p>Replayability describes the ability to execute the same defined process or verification question again.</p>
+        <p>Reproducibility describes the ability to recover the same relevant result under a declared basis.</p>
+        <p>In AI systems, these concepts must be separated because a replayed probabilistic model may not produce identical free-form text even when the surrounding evidence and verification conditions are unchanged.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Replayability: can the process be run again?</h2>
+        <p>A workflow is replayable when the information required to execute it again has been preserved.</p>
+        <p>This usually includes the input references, relevant state, configuration, model or service identities, transformation order and verification rules.</p>
+        <p>Replayability is therefore primarily about recoverability of process.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Reproducibility: can the relevant result be recovered?</h2>
+        <p>Reproducibility focuses on outcome rather than only execution.</p>
+        <p>The relevant outcome depends on the verification question. In one system it may be a canonical accept or reject result. In another it may be a structured evidence state, integrity result or policy evaluation.</p>
+        <p>The key is to define what must remain invariant before claiming reproducibility.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Repeatability is narrower</h2>
+        <p>Repeatability is often used for repeated execution under the same environment and conditions.</p>
+        <p>A test may be repeatable on the same machine, runtime and configuration while not yet being reproducible across an independent environment.</p>
+        <p>This distinction matters when evidence needs to survive beyond the original system or operator.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Probabilistic generation complicates the terminology</h2>
+        <p>Generative AI systems may vary output even when prompts and source context appear unchanged.</p>
+        <p>Sampling behaviour, model implementation, runtime state and provider-side changes can all influence free-form generation.</p>
+        <p>That makes byte-identical output a poor default definition of reproducibility for many AI-assisted workflows.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Define the invariant first</h2>
+        <p>Reproducibility claims become useful only when the invariant is explicit.</p>
+        <p>For an evidence workflow, the invariant may be the source set, provenance graph, structured state or canonical verification result rather than the exact wording of a model response.</p>
+        <p>Once the invariant is declared, replay can be evaluated against the correct property.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>A replay basis must be preserved</h2>
+        <p>A replayable system needs enough recorded information to reconstruct the execution or verification context.</p>
+        <ul>
+          <li>source and artefact identities</li>
+          <li>versions or immutable references</li>
+          <li>model, agent and service identities</li>
+          <li>relevant configuration</li>
+          <li>policy or rule versions</li>
+          <li>ordered transformations</li>
+          <li>material system state</li>
+          <li>verification boundary</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Replay without provenance can be misleading</h2>
+        <p>A workflow may be technically rerunnable while still lacking evidence that the replay used the same source basis as the original execution.</p>
+        <p>Provenance connects replayed inputs to the historical artefacts that mattered in the original process.</p>
+        <p>Without that link, a rerun may look equivalent while operating on changed or substituted evidence.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Replay without state can produce false comparisons</h2>
+        <p>Model version, retrieval state, policy configuration and runtime parameters may all influence the result.</p>
+        <p>If those factors are not preserved, a later replay can answer a different question while appearing to repeat the original one.</p>
+        <p>State is therefore part of the replay basis whenever it materially affects the outcome.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Canonical verification results make reproducibility practical</h2>
+        <p>A structured canonical result gives replay a stable comparison target.</p>
+        <p>Rather than comparing free-form explanations, the system can compare the verification identifier, state basis, rule outcomes, reasons and overall canonical result.</p>
+        <p>This creates a clearer distinction between variable presentation and invariant verification semantics.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Replaying an AI workflow is not the same as replaying a verifier</h2>
+        <p>A complete AI workflow may contain probabilistic generation, external APIs, human judgment and changing data sources.</p>
+        <p>A verifier can still be replayable and reproducible even when the larger workflow is not fully deterministic.</p>
+        <p>This is one reason verification should be treated as its own bounded system rather than as an informal property of the entire AI application.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>A useful example</h2>
+        <p>Consider an AI-assisted review where a model analyses a fixed evidence package and a deterministic verifier checks whether required sources, identities and review steps are present.</p>
+        <p>A later replay may produce slightly different model wording. The workflow is still useful to reproduce if the same evidence package, state and review conditions can be reconstructed.</p>
+        <p>The canonical verification result should remain the same if the declared verification inputs and rules are unchanged.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Independent reproduction is stronger than local replay</h2>
+        <p>A process replayed successfully by the original system provides useful evidence.</p>
+        <p>An independent implementation that evaluates the same canonical verification basis provides stronger evidence because it reduces dependence on hidden local behaviour.</p>
+        <p>This is especially valuable for interoperability, audit and cross-system validation.</p>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>What should be reproducible?</h2>
+        <p>The answer depends on the workflow, but several targets are often more useful than byte-identical model output.</p>
+        <ul>
+          <li>evidence identity</li>
+          <li>provenance relationships</li>
+          <li>declared state basis</li>
+          <li>verification rule set</li>
+          <li>structured rule outcomes</li>
+          <li>canonical verification result</li>
+          <li>integrity evidence</li>
+          <li>declared boundary and scope</li>
+        </ul>
+
+      </section>
+
+      <section class="article-section">
+
+        <h2>Start with one replay question</h2>
+        <p>A practical test is to take one historical AI-assisted decision and ask whether the relevant verification question can be evaluated again.</p>
+        <p>Can the original evidence basis be recovered? Can the relevant state be reconstructed? Are the same rules available? Can the canonical result be compared?</p>
+        <p>If not, the gap reveals which evidence or state must be preserved to make future decisions replayable and reproducible.</p>
+
+      </section>
+
+    </div>
+
+    <aside class="article-related">
+
+      <p class="section-label">
+        Related technical notes
+      </p>
+
+      <ul>
+        <li>
+          <a href="/articles/deterministic-verification-in-ai-systems/">
+            Deterministic Verification in AI Systems
+          </a>
+        </li>
+        <li>
+          <a href="/articles/what-makes-an-ai-assisted-decision-reconstructable/">
+            What Makes an AI-Assisted Decision Reconstructable?
+          </a>
+        </li>
+        <li>
+          <a href="/articles/what-is-a-verification-boundary/">
+            What Is a Verification Boundary?
+          </a>
+        </li>
+      </ul>
+
+    </aside>
+    <aside class="article-cta">
+
+      <p class="section-label">
+        Verification pilot
+      </p>
+
+      <h2>
+        Start with one verification problem that matters.
+      </h2>
+
+      <p>
+        Map one AI-assisted decision path from source evidence to outcome,
+        identify the verification gaps, and test whether the process can be
+        reconstructed and independently reviewed.
+      </p>
+
+      <a class="cta" href="/pilot/">
+        Discuss a Pilot
+      </a>
+
+      <p class="article-cta__secondary">
+        <a href="/articles/how-to-design-an-ai-verification-pilot/">
+          Explore the pilot approach
+        </a>
+      </p>
+
+    </aside>
+
+  </article>
+
+</main>
+
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/theme.js" defer></script>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
+
+
+
+
+
+
+

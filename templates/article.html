@@ -162,31 +162,31 @@
 
     <div class="article-body">
 
-      {{ range .Sections }}
+      {{- range .Sections }}
 
       <section class="article-section">
 
         <h2>{{ .Title }}</h2>
 
-        {{ range .Paragraphs }}
+        {{- range .Paragraphs }}
         <p>{{ . }}</p>
-        {{ end }}
+        {{- end }}
 
-        {{ if .Points }}
+        {{- if .Points }}
         <ul>
-          {{ range .Points }}
+          {{- range .Points }}
           <li>{{ . }}</li>
-          {{ end }}
+          {{- end }}
         </ul>
-        {{ end }}
+        {{- end }}
 
       </section>
 
-      {{ end }}
+      {{- end }}
 
     </div>
 
-    {{ if .Related }}
+    {{- if .Related }}
 
     <aside class="article-related">
 
@@ -195,35 +195,49 @@
       </p>
 
       <ul>
-        {{ range .Related }}
+        {{- range .Related }}
         <li>
           <a href="/articles/{{ .Slug }}/">
             {{ .Title }}
           </a>
         </li>
-        {{ end }}
+        {{- end }}
       </ul>
 
     </aside>
 
-    {{ end }}
+    {{- end }}
     <aside class="article-cta">
 
       <p class="section-label">
-        Verification in practice
+        Verification pilot
       </p>
 
       <h2>
-        Start with one real workflow.
+        Start with one verification problem that matters.
       </h2>
 
       <p>
-        Define one evidence boundary and test whether its decision trail can be reconstructed.
+        Map one AI-assisted decision path from source evidence to outcome,
+        identify the verification gaps, and test whether the process can be
+        reconstructed and independently reviewed.
       </p>
 
       <a class="cta" href="/pilot/">
         Discuss a Pilot
       </a>
+
+      <p class="article-cta__secondary">
+{{- if eq .Slug "how-to-design-an-ai-verification-pilot" }}
+        <a href="/articles/what-is-a-structured-verification-result/">
+          Explore structured verification results
+        </a>
+{{- else }}
+        <a href="/articles/how-to-design-an-ai-verification-pilot/">
+          Explore the pilot approach
+        </a>
+{{- end }}
+      </p>
 
     </aside>
 
@@ -238,6 +252,8 @@
 
 </body>
 </html>
+
+
 
 
 

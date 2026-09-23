@@ -162,333 +162,168 @@
 
     <div class="article-body">
 
-      
-
       <section class="article-section">
 
         <h2>Data integrity does not guarantee meaning integrity</h2>
-
-        
         <p>A document can remain unmodified while its meaning changes in the way it is represented, summarized or interpreted downstream.</p>
-        
         <p>Checksums, signatures and immutable storage are valuable because they show that recorded bytes remained intact. But many decision failures occur without any corruption of the underlying data.</p>
-        
         <p>The change happens in representation: which details are selected, which context is omitted, how uncertainty is expressed and which interpretation becomes dominant.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>The chain from evidence to decision</h2>
-
-        
         <p>A typical evidence-sensitive workflow contains several representational transitions rather than one direct step from source to outcome.</p>
-        
-
-        
         <ul>
-          
           <li>Evidence</li>
-          
           <li>Record</li>
-          
           <li>Summary</li>
-          
           <li>AI analysis</li>
-          
           <li>Decision</li>
-          
           <li>Review</li>
-          
         </ul>
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Evidence: the original basis</h2>
-
-        
         <p>Evidence is the source material available to the process: documents, measurements, records, statements, observations or other artefacts.</p>
-        
         <p>At this stage, meaning is still closely tied to the original context. The evidence may contain ambiguity, contradiction, uncertainty or qualifications that later stages compress or reorganize.</p>
-        
         <p>A reliable evidence architecture therefore starts by preserving identity, version and provenance before interpretation begins.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Record: structure already introduces selection</h2>
-
-        
         <p>Turning evidence into a structured record is already a transformation.</p>
-        
         <p>Fields are selected. Categories are assigned. Free text may be normalized. Some information becomes first-class data while other information remains in notes or disappears entirely.</p>
-        
         <p>Nothing needs to be technically incorrect for this step to change what later systems can see.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Summary: compression creates semantic risk</h2>
-
-        
         <p>Summaries are useful precisely because they remove information. That also makes them one of the most important semantic boundaries in a decision chain.</p>
-        
         <p>A summary may preserve the main conclusion while losing uncertainty, chronology, dissenting evidence, exceptions or conditions attached to the source.</p>
-        
         <p>The result can be factually consistent with the original material while supporting a different interpretation.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>AI analysis: interpretation becomes explicit</h2>
-
-        
         <p>When AI analyses a record or summary, the system moves from representation toward interpretation.</p>
-        
         <p>Model behaviour may depend on prompt structure, retrieved context, configuration, model version and system state. The same source evidence can therefore support different analyses under different conditions.</p>
-        
         <p>For reconstructability, the analysis should remain linked to the exact evidence basis and relevant configuration that produced it.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Decision: interpretation becomes consequence</h2>
-
-        
         <p>A decision converts analysis into an operational consequence.</p>
-        
         <p>At this stage, the important question is not only what the AI produced, but how that output was used, weighted or overridden by human judgment and policy.</p>
-        
         <p>A strong decision trail distinguishes source evidence, machine analysis, human interpretation and the final authority responsible for the outcome.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Review: later reconstruction can introduce another interpretation</h2>
-
-        
         <p>Review is often treated as a neutral reconstruction of what happened. In practice, reviewers may see a different subset of records, summaries or system outputs than the original decision-makers.</p>
-        
         <p>If the original evidence basis and transformation chain are unavailable, the review may evaluate the record of the decision rather than the information that actually produced it.</p>
-        
         <p>That creates a second-order semantic risk: the review can become an interpretation of an interpretation.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Where semantic drift can occur</h2>
-
-        
         <p>Semantic drift does not require malicious alteration. It can emerge naturally whenever information changes representation.</p>
-        
-
-        
         <ul>
-          
           <li>omission of contextual detail</li>
-          
           <li>loss of uncertainty or qualification</li>
-          
           <li>reordering of evidence</li>
-          
           <li>normalization into categories</li>
-          
           <li>summarization</li>
-          
           <li>translation</li>
-          
           <li>model interpretation</li>
-          
           <li>human interpretation</li>
-          
           <li>policy mapping</li>
-          
           <li>later reconstruction from incomplete records</li>
-          
         </ul>
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Why hashes alone cannot detect semantic drift</h2>
-
-        
         <p>A cryptographic hash can prove that a particular artefact has not changed. It cannot prove that a later summary preserved the important meaning of the earlier artefact.</p>
-        
         <p>If both the source and summary are individually intact, their hashes may both verify successfully while the relationship between them remains semantically weak.</p>
-        
         <p>This is why evidence integrity and transformation verification should be treated as related but separate problems.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Preserve transitions, not only artefacts</h2>
-
-        
         <p>A reconstructable system records more than a collection of documents. It preserves the relationships between them.</p>
-        
         <p>For every material transition, the system should be able to identify the input, output, actor or process, relevant configuration and the type of transformation that occurred.</p>
-        
         <p>That makes it possible to inspect where meaning may have changed rather than merely confirming that individual files exist.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Semantic preservation is not absolute</h2>
-
-        
         <p>No technical system can guarantee preservation of every possible human interpretation.</p>
-        
         <p>The practical objective is narrower: define which semantic properties matter to the workflow and preserve enough evidence to evaluate whether those properties survived a transformation.</p>
-        
         <p>For one workflow, chronology may be critical. For another, uncertainty or source attribution may matter more.</p>
-        
         <p>The verification boundary should state which properties are being evaluated rather than claiming universal semantic equivalence.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>A useful technical model</h2>
-
-        
         <p>A stronger evidence chain treats each transition as an explicit object of review.</p>
-        
-
-        
         <ul>
-          
           <li>identify the source artefact</li>
-          
           <li>record the derived artefact</li>
-          
           <li>record the transformation type</li>
-          
           <li>record the participating identity or system</li>
-          
           <li>capture materially relevant configuration</li>
-          
           <li>preserve provenance and lineage</li>
-          
           <li>record integrity evidence</li>
-          
           <li>declare which semantic properties matter</li>
-          
           <li>produce a structured verification outcome</li>
-          
         </ul>
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Meaning should be reviewable at the point of change</h2>
-
-        
         <p>The most useful place to detect semantic change is the transition where it occurs, not months later at the end of the process.</p>
-        
         <p>If a summary removes a qualification, that relationship should be inspectable between source and summary. If AI analysis introduces an interpretation, the evidence basis and configuration should remain visible at that stage.</p>
-        
         <p>This reduces the need to infer meaning retrospectively from incomplete downstream records.</p>
-        
-
-        
 
       </section>
-
-      
 
       <section class="article-section">
 
         <h2>Start with one transformation chain</h2>
-
-        
         <p>A practical assessment can begin with one real workflow and map every transition from source evidence to final decision.</p>
-        
         <p>At each step, ask what information entered, what representation left, what changed, who or what performed the transformation and whether the relationship can later be reconstructed.</p>
-        
         <p>The result is often more revealing than examining the final AI output alone.</p>
-        
-
-        
 
       </section>
 
-      
-
     </div>
-
-    
 
     <aside class="article-related">
 
@@ -497,47 +332,49 @@
       </p>
 
       <ul>
-        
         <li>
-          <a href="/articles/ai-evidence-infrastructure/">
-            What Is AI Evidence Infrastructure?
+          <a href="/articles/what-is-a-structured-verification-result/">
+            What Is a Structured Verification Result?
           </a>
         </li>
-        
+        <li>
+          <a href="/articles/what-makes-an-ai-assisted-decision-reconstructable/">
+            What Makes an AI-Assisted Decision Reconstructable?
+          </a>
+        </li>
         <li>
           <a href="/articles/what-is-a-verification-boundary/">
             What Is a Verification Boundary?
           </a>
         </li>
-        
-        <li>
-          <a href="/articles/provenance-traceability-verification-difference/">
-            Provenance, Traceability and Verification: What’s the Difference?
-          </a>
-        </li>
-        
       </ul>
 
     </aside>
-
-    
     <aside class="article-cta">
 
       <p class="section-label">
-        Verification in practice
+        Verification pilot
       </p>
 
       <h2>
-        Start with one real workflow.
+        Start with one verification problem that matters.
       </h2>
 
       <p>
-        Define one evidence boundary and test whether its decision trail can be reconstructed.
+        Map one AI-assisted decision path from source evidence to outcome,
+        identify the verification gaps, and test whether the process can be
+        reconstructed and independently reviewed.
       </p>
 
       <a class="cta" href="/pilot/">
         Discuss a Pilot
       </a>
+
+      <p class="article-cta__secondary">
+        <a href="/articles/how-to-design-an-ai-verification-pilot/">
+          Explore the pilot approach
+        </a>
+      </p>
 
     </aside>
 
@@ -552,6 +389,8 @@
 
 </body>
 </html>
+
+
 
 
 
