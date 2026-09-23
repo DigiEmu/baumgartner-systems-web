@@ -9,12 +9,12 @@
   >
 
   <title>
-    Technical Articles — Baumgartner Digital Infrastructure
+    AI Verification & Evidence Articles | Baumgartner Digital Infrastructure
   </title>
 
   <meta
     name="description"
-    content="Technical articles on AI evidence infrastructure, provenance, verification boundaries, reconstructable decision trails and deterministic verification."
+    content="Technical notes on AI evidence, provenance, verification, reconstructability, replay and practical verification workflows."
   >
 
   <link
@@ -120,38 +120,99 @@
 
     </header>
 
-    <div class="article-list">
+    <section class="articles-cluster" aria-labelledby="foundations-heading">
 
-      {{- range . }}
+      <p class="section-label">
+        Foundations
+      </p>
 
-      <article class="article-card">
+      <h2 id="foundations-heading">
+        Evidence and verification foundations.
+      </h2>
 
-        <p class="article-card__meta">
-          {{ .Published }} · {{ .ReadingTime }}
-        </p>
+      <div class="article-list">
 
-        <h2>
-          <a href="/articles/{{ .Slug }}/">
-            {{ .Title }}
+{{- range . }}
+{{- if eq .Cluster "Foundations" }}
+
+        <article class="article-card">
+
+          <p class="article-card__meta">
+            {{ .Published }} · {{ .ReadingTime }}
+          </p>
+
+          <h3>
+            <a href="/articles/{{ .Slug }}/">
+              {{ .Title }}
+            </a>
+          </h3>
+
+          <p>
+            {{ .Description }}
+          </p>
+
+          <a
+            class="article-card__link"
+            href="/articles/{{ .Slug }}/"
+          >
+            Read technical note →
           </a>
-        </h2>
 
-        <p>
-          {{ .Description }}
-        </p>
+        </article>
 
-        <a
-          class="article-card__link"
-          href="/articles/{{ .Slug }}/"
-        >
-          Read technical note →
-        </a>
+{{- end }}
+{{- end }}
 
-      </article>
+      </div>
 
-      {{- end }}
+    </section>
 
-    </div>
+    <section class="articles-cluster" aria-labelledby="verification-heading">
+
+      <p class="section-label">
+        Verification &amp; Reconstructability
+      </p>
+
+      <h2 id="verification-heading">
+        From reconstruction to practical verification.
+      </h2>
+
+      <div class="article-list">
+
+{{- range . }}
+{{- if eq .Cluster "Verification & Reconstructability" }}
+
+        <article class="article-card">
+
+          <p class="article-card__meta">
+            {{ .Published }} · {{ .ReadingTime }}
+          </p>
+
+          <h3>
+            <a href="/articles/{{ .Slug }}/">
+              {{ .Title }}
+            </a>
+          </h3>
+
+          <p>
+            {{ .Description }}
+          </p>
+
+          <a
+            class="article-card__link"
+            href="/articles/{{ .Slug }}/"
+          >
+            Read technical note →
+          </a>
+
+        </article>
+
+{{- end }}
+{{- end }}
+
+      </div>
+
+    </section>
 
   </div>
 
@@ -165,6 +226,7 @@
 
 </body>
 </html>
+
 
 
 

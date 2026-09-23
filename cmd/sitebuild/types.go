@@ -78,6 +78,7 @@ type articleLink struct {
 
 type articlePage struct {
 	Slug            string
+	Cluster         string
 	Title           string
 	MetaTitle       string
 	MetaDescription string
