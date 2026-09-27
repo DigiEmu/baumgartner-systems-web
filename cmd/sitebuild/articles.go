@@ -2,13 +2,14 @@ package main
 
 var articles = []articlePage{
 	{
-		Slug: "ai-evidence-infrastructure",
+		Slug:    "ai-evidence-infrastructure",
+		Cluster: "Foundations",
 
 		Title: "What Is AI Evidence Infrastructure?",
 
-		MetaTitle: "What Is AI Evidence Infrastructure? | Baumgartner Digital Infrastructure",
+		MetaTitle: "AI Evidence Infrastructure | Baumgartner Digital Infrastructure",
 
-		MetaDescription: "A technical introduction to AI evidence infrastructure: provenance, lineage, system state, transformations, verification boundaries and reconstructable AI-assisted decision trails.",
+		MetaDescription: "Learn how AI evidence infrastructure preserves provenance, system state and transformations so AI-assisted decisions can be reconstructed and independently reviewed.",
 
 		Description: "AI evidence infrastructure preserves the information required to reconstruct, inspect and verify how an AI-assisted process moved from source material to an outcome.",
 
@@ -102,7 +103,8 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "why-ai-audit-logs-are-not-enough",
+		Slug:    "why-ai-audit-logs-are-not-enough",
+		Cluster: "Foundations",
 
 		Title: "Why AI Audit Logs Are Not Enough",
 
@@ -237,7 +239,8 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "provenance-traceability-verification-difference",
+		Slug:    "provenance-traceability-verification-difference",
+		Cluster: "Foundations",
 
 		Title: "Provenance, Traceability and Verification: What’s the Difference?",
 
@@ -388,7 +391,8 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "what-is-a-verification-boundary",
+		Slug:    "what-is-a-verification-boundary",
+		Cluster: "Foundations",
 
 		Title: "What Is a Verification Boundary?",
 
@@ -535,13 +539,14 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "from-evidence-to-decision-where-meaning-can-change",
+		Slug:    "from-evidence-to-decision-where-meaning-can-change",
+		Cluster: "Foundations",
 
 		Title: "From Evidence to Decision: Where Meaning Can Change",
 
-		MetaTitle: "From Evidence to Decision: Where Meaning Can Change | Baumgartner Digital Infrastructure",
+		MetaTitle: "Evidence-to-Decision Semantic Drift | Baumgartner Digital Infrastructure",
 
-		MetaDescription: "A technical look at semantic drift in AI-assisted decision chains: how evidence becomes records, summaries, AI analysis, decisions and later review.",
+		MetaDescription: "Explore how meaning can change as evidence becomes records, summaries, AI analysis and decisions, even when the underlying data remains technically intact.",
 
 		Description: "Information can remain technically intact while meaning changes across summaries, transformations, AI analysis and decision records. This article examines where those shifts occur and how to make them inspectable.",
 
@@ -709,7 +714,8 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "what-makes-an-ai-assisted-decision-reconstructable",
+		Slug:    "what-makes-an-ai-assisted-decision-reconstructable",
+		Cluster: "Verification & Reconstructability",
 
 		Title: "What Makes an AI-Assisted Decision Reconstructable?",
 
@@ -873,7 +879,8 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "deterministic-verification-in-ai-systems",
+		Slug:    "deterministic-verification-in-ai-systems",
+		Cluster: "Verification & Reconstructability",
 
 		Title: "Deterministic Verification in AI Systems",
 
@@ -1047,7 +1054,8 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "replayability-vs-reproducibility-in-ai-workflows",
+		Slug:    "replayability-vs-reproducibility-in-ai-workflows",
+		Cluster: "Verification & Reconstructability",
 
 		Title: "Replayability vs Reproducibility in AI Workflows",
 
@@ -1216,7 +1224,8 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "what-is-a-structured-verification-result",
+		Slug:    "what-is-a-structured-verification-result",
+		Cluster: "Verification & Reconstructability",
 
 		Title: "What Is a Structured Verification Result?",
 
@@ -1413,7 +1422,8 @@ var articles = []articlePage{
 		},
 	},
 	{
-		Slug: "how-to-design-an-ai-verification-pilot",
+		Slug:    "how-to-design-an-ai-verification-pilot",
+		Cluster: "Verification & Reconstructability",
 
 		Title: "How to Design an AI Verification Pilot",
 
