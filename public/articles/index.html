@@ -71,11 +71,19 @@
       href="/"
       aria-label="Baumgartner Digital Infrastructure home"
     >
-      <img
-        class="site-brand__logo"
-        src="/assets/images/brand/logo-header.webp"
-        alt="Baumgartner Digital Infrastructure"
-      >
+      <picture class="site-brand__picture">
+        <source
+          srcset="/assets/images/brand/logo-header-dark.webp"
+          media="(prefers-color-scheme: dark)"
+        >
+
+        <img
+          class="site-brand__logo"
+          src="/assets/images/brand/logo-header.webp"
+          alt="Baumgartner Digital Infrastructure"
+          decoding="async"
+        >
+      </picture>
     </a>
     <button
       class="mobile-nav-toggle"
@@ -95,7 +103,7 @@
     </button>
 
 
-    <nav class="site-nav" id="site-nav">
+    <nav class="site-nav" id="site-nav" aria-label="Article navigation">
       <a href="/">Home</a>
       <a href="/articles/" aria-current="page">Articles</a>
       <a href="/arca/">Arca</a>
