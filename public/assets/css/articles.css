@@ -83,11 +83,14 @@
 .article-list {
   display: grid;
   gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
 }
 
 .article-card {
   padding: 2rem;
   border: 1px solid var(--line);
+  min-width: 0;
 }
 
 .article-card h2,
@@ -156,6 +159,12 @@
 }
 
 .articles-cluster {
+  position: static;
+  min-height: 0;
+  display: block;
+  padding: 0;
+  border-top: 0;
+  background: transparent;
   margin-top: 4rem;
 }
 
