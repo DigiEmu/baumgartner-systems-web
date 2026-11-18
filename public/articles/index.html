@@ -28,6 +28,10 @@
   <meta property="og:description" content="Technical notes on AI evidence, provenance, verification, reconstructability, replay and practical verification workflows.">
   <meta property="og:url" content="https://baumgartner.systems/articles/">
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Verification & Evidence Articles | Baumgartner Digital Infrastructure">
+  <meta name="twitter:description" content="Technical notes on AI evidence, provenance, verification, reconstructability, replay and practical verification workflows.">
+
   <meta
     name="robots"
     content="index,follow,max-image-preview:large"
@@ -58,6 +62,121 @@
       document.documentElement.dataset.theme =
         stored || (dark ? "dark" : "light");
     })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://baumgartner.systems/#organization",
+        "name": "Baumgartner Digital Infrastructure",
+        "url": "https://baumgartner.systems/",
+        "email": "contact@digiemu.ch",
+        "location": {
+          "@type": "Country",
+          "name": "Switzerland"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://baumgartner.systems/#website",
+        "url": "https://baumgartner.systems/",
+        "name": "Baumgartner Digital Infrastructure",
+        "publisher": {
+          "@id": "https://baumgartner.systems/#organization"
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://baumgartner.systems/articles/#webpage",
+        "url": "https://baumgartner.systems/articles/",
+        "name": "AI Verification & Evidence Articles | Baumgartner Digital Infrastructure",
+        "description": "Technical notes on AI evidence, provenance, verification, reconstructability, replay and practical verification workflows.",
+        "isPartOf": {
+          "@id": "https://baumgartner.systems/#website"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "AI evidence, provenance and verification technical notes"
+        },
+        "mainEntity": {
+          "@id": "https://baumgartner.systems/articles/#itemlist"
+        },
+        "publisher": {
+          "@id": "https://baumgartner.systems/#organization"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://baumgartner.systems/articles/#itemlist",
+        "numberOfItems":  10 ,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "url": "https://baumgartner.systems/articles/ai-evidence-infrastructure/",
+            "name": "What Is AI Evidence Infrastructure?"
+          },
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "url": "https://baumgartner.systems/articles/why-ai-audit-logs-are-not-enough/",
+            "name": "Why AI Audit Logs Are Not Enough"
+          },
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "url": "https://baumgartner.systems/articles/provenance-traceability-verification-difference/",
+            "name": "Provenance, Traceability and Verification: What’s the Difference?"
+          },
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "url": "https://baumgartner.systems/articles/what-is-a-verification-boundary/",
+            "name": "What Is a Verification Boundary?"
+          },
+          {
+            "@type": "ListItem",
+            "position":  5 ,
+            "url": "https://baumgartner.systems/articles/from-evidence-to-decision-where-meaning-can-change/",
+            "name": "From Evidence to Decision: Where Meaning Can Change"
+          },
+          {
+            "@type": "ListItem",
+            "position":  6 ,
+            "url": "https://baumgartner.systems/articles/what-makes-an-ai-assisted-decision-reconstructable/",
+            "name": "What Makes an AI-Assisted Decision Reconstructable?"
+          },
+          {
+            "@type": "ListItem",
+            "position":  7 ,
+            "url": "https://baumgartner.systems/articles/deterministic-verification-in-ai-systems/",
+            "name": "Deterministic Verification in AI Systems"
+          },
+          {
+            "@type": "ListItem",
+            "position":  8 ,
+            "url": "https://baumgartner.systems/articles/replayability-vs-reproducibility-in-ai-workflows/",
+            "name": "Replayability vs Reproducibility in AI Workflows"
+          },
+          {
+            "@type": "ListItem",
+            "position":  9 ,
+            "url": "https://baumgartner.systems/articles/what-is-a-structured-verification-result/",
+            "name": "What Is a Structured Verification Result?"
+          },
+          {
+            "@type": "ListItem",
+            "position":  10 ,
+            "url": "https://baumgartner.systems/articles/how-to-design-an-ai-verification-pilot/",
+            "name": "How to Design an AI Verification Pilot"
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </head>
 

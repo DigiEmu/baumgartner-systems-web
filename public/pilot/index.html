@@ -21,6 +21,10 @@
   >
   <meta property="og:url" content="https://baumgartner.systems/pilot/">
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Verification Pilot | Baumgartner Digital Infrastructure">
+  <meta name="twitter:description" content="A focused pilot for making one AI-assisted workflow traceable, verifiable and reconstructable.">
+
   <meta name="theme-color" content="#b8912b" id="theme-color-meta">
 
   <link rel="icon" type="image/webp" href="/assets/images/brand/glyph.webp">
@@ -37,6 +41,51 @@
 
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/pilot.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://baumgartner.systems/#organization",
+        "name": "Baumgartner Digital Infrastructure",
+        "url": "https://baumgartner.systems/",
+        "email": "contact@digiemu.ch",
+        "location": {
+          "@type": "Country",
+          "name": "Switzerland"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://baumgartner.systems/#website",
+        "url": "https://baumgartner.systems/",
+        "name": "Baumgartner Digital Infrastructure",
+        "publisher": {
+          "@id": "https://baumgartner.systems/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://baumgartner.systems/pilot/#webpage",
+        "url": "https://baumgartner.systems/pilot/",
+        "name": "AI Verification Pilot | Baumgartner Digital Infrastructure",
+        "description": "Start with one AI-assisted workflow. Define the evidence boundary, run a focused verification pilot and review a concrete evidence package.",
+        "isPartOf": {
+          "@id": "https://baumgartner.systems/#website"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "AI verification pilot"
+        },
+        "publisher": {
+          "@id": "https://baumgartner.systems/#organization"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>

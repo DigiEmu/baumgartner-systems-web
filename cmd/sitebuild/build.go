@@ -82,6 +82,10 @@ func buildTechnologyPages() error {
 }
 
 func buildArticlePages() error {
+	for i := range articles {
+		articles[i].Position = i + 1
+	}
+
 	indexTemplate, err := template.ParseFiles(
 		"templates/articles.html",
 	)
