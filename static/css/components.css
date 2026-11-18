@@ -3028,6 +3028,35 @@ main section[id] {
 
 
 /* =========================================================
+   NARROW DESKTOP NAV — keep the full menu on one line
+   ========================================================= */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .site-header__inner {
+    gap: 0.75rem;
+  }
+
+  .site-brand__logo {
+    width: 9.5rem;
+  }
+
+  .site-nav {
+    gap: 0.75rem;
+  }
+
+  .site-nav a {
+    font-size: 0.76rem;
+  }
+
+  .site-nav__cta {
+    min-height: 2.4rem;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+}
+
+/* =========================================================
    MOBILE HEADER + NAV
    ========================================================= */
 
