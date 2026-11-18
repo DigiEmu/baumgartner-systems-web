@@ -450,6 +450,12 @@ main section[id] {
   right: 0;
 }
 
+.site-nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 
 /* ---------------------------------------------------------
    Header CTA — gold metal variant

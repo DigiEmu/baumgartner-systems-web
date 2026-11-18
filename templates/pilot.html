@@ -107,10 +107,30 @@
         </picture>
       </a>
 
-      <nav class="pilot-nav" aria-label="Pilot navigation">
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
+      >
+        <span
+          class="mobile-nav-toggle__pearl"
+          aria-hidden="true"
+        >
+          <span class="mobile-nav-toggle__spark"></span>
+        </span>
+
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Pilot navigation">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
         <a href="/arca/">Arca</a>
         <a href="/arca/demo/">Demo</a>
-        <a class="pilot-nav__cta" href="mailto:contact@digiemu.ch">
+        <a href="/pilot/" aria-current="page">Pilot</a>
+        <a class="site-nav__cta" href="mailto:contact@digiemu.ch">
           Discuss a Pilot
         </a>
       </nav>

@@ -77,14 +77,6 @@
   }
 }
 
-.pilot-nav {
-  gap: 1.35rem !important;
-}
-
-.pilot-nav__cta {
-  margin-left: .25rem;
-}
-
 .pilot-section:first-of-type {
   padding-top: clamp(6rem, 10vw, 10rem) !important;
 }

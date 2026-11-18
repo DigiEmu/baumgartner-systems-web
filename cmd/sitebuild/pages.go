@@ -16,6 +16,11 @@ var staticPages = []page{
 	},
 
 	{
+		Source: "templates/services.html",
+		Target: "services/index.html",
+	},
+
+	{
 		Source: "templates/museum.html",
 		Target: "museum/index.html",
 	},
